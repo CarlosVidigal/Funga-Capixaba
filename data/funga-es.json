@@ -1,11 +1,17 @@
 {
-  "version": 1,
-  "lastUpdated": "2026-11-23T21:08:37.408Z",
+  "version": 2,
+  "lastUpdated": "2026-11-23T21:46:44.291Z",
   "syncHistory": [
     {
       "version": "v1",
       "label": "v1 (23/11/2026)",
       "total": 300,
+      "added": 300
+    },
+    {
+      "version": "v2",
+      "label": "v2 (23/11/2026)",
+      "total": 600,
       "added": 300
     }
   ],
@@ -2709,6 +2715,2706 @@
       "lng": -40.310446,
       "municipality": "Espírito Santo",
       "date": "2025-06-21"
+    },
+    {
+      "id": "splink-918--40.072564_-19.391589",
+      "source": "speciesLink",
+      "species": "Kretzschmaria clavus",
+      "lat": -19.391589,
+      "lng": -40.072564,
+      "municipality": "Linhares",
+      "date": "2007"
+    },
+    {
+      "id": "splink-4675269--41.72_-20.42",
+      "source": "speciesLink",
+      "species": "Hypotrachyna sinuosa",
+      "lat": -20.42,
+      "lng": -41.72,
+      "municipality": "Iúna Mun.",
+      "date": "1984"
+    },
+    {
+      "id": "splink-04511109--41.72_-20.42",
+      "source": "speciesLink",
+      "species": "Porpidia",
+      "lat": -20.42,
+      "lng": -41.72,
+      "municipality": "Mun. Iúna, Parque Nacional do Caparaó, along trail from Terreirão to the summit of Pico da Bandeira",
+      "date": "1984"
+    },
+    {
+      "id": "splink-4513462--41.72_-20.42",
+      "source": "speciesLink",
+      "species": "Tephromela",
+      "lat": -20.42,
+      "lng": -41.72,
+      "municipality": "Iúna Mun.",
+      "date": "1984"
+    },
+    {
+      "id": "splink-1933-0003193--40.66306_-19.4625",
+      "source": "speciesLink",
+      "species": "Lecidea Ach., 1803",
+      "lat": -19.4625,
+      "lng": -40.66306,
+      "municipality": "Colatina",
+      "date": "1928"
+    },
+    {
+      "id": "splink-381318--40.851736_-19.225475",
+      "source": "speciesLink",
+      "species": "Cladina confusa",
+      "lat": -19.225475,
+      "lng": -40.851736,
+      "municipality": "Pancas",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-381317--40.851736_-19.225475",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -19.225475,
+      "lng": -40.851736,
+      "municipality": "Pancas",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-381319--40.851736_-19.225475",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -19.225475,
+      "lng": -40.851736,
+      "municipality": "Pancas",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-513072--41.091944_-20.515556",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -20.515556,
+      "lng": -41.091944,
+      "municipality": "Castelo",
+      "date": "2016"
+    },
+    {
+      "id": "splink-100968--40.722294_-20.83826",
+      "source": "speciesLink",
+      "species": "Cladonia crispatula",
+      "lat": -20.83826,
+      "lng": -40.722294,
+      "municipality": "Piuma",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-381454--40.072564_-19.391589",
+      "source": "speciesLink",
+      "species": "Cladonia rappii",
+      "lat": -19.391589,
+      "lng": -40.072564,
+      "municipality": "Linhares",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-265207--40.292846_-20.330203",
+      "source": "speciesLink",
+      "species": "Cladonia verticillaris",
+      "lat": -20.330203,
+      "lng": -40.292846,
+      "municipality": "Vila Velha",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-416857--41.845636_-20.689368",
+      "source": "speciesLink",
+      "species": "Leptogium subjuressianum",
+      "lat": -20.689368,
+      "lng": -41.845636,
+      "municipality": "Dores do Rio Preto",
+      "date": "2009"
+    },
+    {
+      "id": "splink-416860--41.845636_-20.689368",
+      "source": "speciesLink",
+      "species": "Leptogium subjuressianum",
+      "lat": -20.689368,
+      "lng": -41.845636,
+      "municipality": "Dores do Rio Preto",
+      "date": "2009"
+    },
+    {
+      "id": "splink-193977--40.338124_-20.319925",
+      "source": "speciesLink",
+      "species": "Calvatia",
+      "lat": -20.319925,
+      "lng": -40.338124,
+      "municipality": "Vitória",
+      "date": "1984"
+    },
+    {
+      "id": "splink-WIS-L-0147724--42.9_-20.25",
+      "source": "speciesLink",
+      "species": "Stegobolus schizostomus",
+      "lat": -20.25,
+      "lng": -42.9,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0147686--42.9_-20.25",
+      "source": "speciesLink",
+      "species": "Stegobolus schizostomus",
+      "lat": -20.25,
+      "lng": -42.9,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0115675--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Arthonia",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0124361--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Calopadia chacoensis",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0117082--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Cryptothecia",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0130030--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Diorygma poitaei",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0133223--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Letrouitia domingensis",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0008044--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Phaeotrema",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0115692--41.239451_-19.354633",
+      "source": "speciesLink",
+      "species": "Phyllopsora",
+      "lat": -19.354633,
+      "lng": -41.239451,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0126937--40_-19.366667",
+      "source": "speciesLink",
+      "species": "Caprettia amazonensis",
+      "lat": -19.366667,
+      "lng": -40,
+      "municipality": "20 km E of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0127048--40_-19.366667",
+      "source": "speciesLink",
+      "species": "Coenogonium subluteum",
+      "lat": -19.366667,
+      "lng": -40,
+      "municipality": "20 km E of Linhares, rainforest on Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0129998--39.906891_-19.468594",
+      "source": "speciesLink",
+      "species": "Diorygma pruinosum",
+      "lat": -19.468594,
+      "lng": -39.906891,
+      "municipality": "About 20 km east of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0125984--40_-19.366667",
+      "source": "speciesLink",
+      "species": "Anisomeridium foliicola",
+      "lat": -19.366667,
+      "lng": -40,
+      "municipality": "20 km E of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-WIS-L-0126226--40_-19.366667",
+      "source": "speciesLink",
+      "species": "Bacidina apiahica",
+      "lat": -19.366667,
+      "lng": -40,
+      "municipality": "20 km E of Linhares, at Rio Doce",
+      "date": "1980"
+    },
+    {
+      "id": "splink-798--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Entoloma sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-826--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Clitocybula sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-807--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Favolaschia sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-809--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Favolaschia sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-823--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Filoboletus sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-797--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-800--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-808--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-813--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-815--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-818--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-819--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-822--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Mycena sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-396--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Pleurotus sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-803--40.54_-19.88",
+      "source": "speciesLink",
+      "species": "Deconica sp.",
+      "lat": -19.88,
+      "lng": -40.54,
+      "municipality": "Santa Tereza",
+      "date": "2022"
+    },
+    {
+      "id": "splink-BPI 295332--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Deflexula subsimplex (Henn.) Corner",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 256082--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Favolus brasiliensis (Fr.) Fr.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1925"
+    },
+    {
+      "id": "splink-BPI 217929--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Polyporus proditor (Speg.) Bres.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 206800--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Polyporus crocatus Fr.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 695458--40.416667_-20.266667",
+      "source": "speciesLink",
+      "species": "Meliola moelleriana G.Winter",
+      "lat": -20.266667,
+      "lng": -40.416667,
+      "municipality": "Cariacica",
+      "date": "1937"
+    },
+    {
+      "id": "splink-BPI 363397--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Fusicoccum kesslerianum Rick",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1907"
+    },
+    {
+      "id": "splink-BPI 326389--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Odontia Pers.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-BPI 295202--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Lachnocladium Lév., 1846",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 277361--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Stereum vellereum Berk.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 594395--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Kretzschmaria Fr.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 587476--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Hypoxylon Adanson, 1763",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 261272--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Mycobonia flava (Sw.) Pat.",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1923"
+    },
+    {
+      "id": "splink-BPI 751496--40.653715_-19.824407",
+      "source": "speciesLink",
+      "species": "Lepiota P.Browne, 1756",
+      "lat": -19.824407,
+      "lng": -40.653715,
+      "municipality": "Santa Teresa",
+      "date": "1925"
+    },
+    {
+      "id": "splink-CUP-024050--40.058149_-19.393643",
+      "source": "speciesLink",
+      "species": "Omphalia flavida Maubl. & Rangel",
+      "lat": -19.393643,
+      "lng": -40.058149,
+      "municipality": "Linhares",
+      "date": "1933"
+    },
+    {
+      "id": "splink-BM000746681--40.578294_-19.618978",
+      "source": "speciesLink",
+      "species": "Cladonia penicillata (Vain.) Ahti & Marcelli",
+      "lat": -19.618978,
+      "lng": -40.578294,
+      "municipality": "Colatina",
+      "date": "1929"
+    },
+    {
+      "id": "splink-10394--40.333333_-19.265",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus niger",
+      "lat": -19.265,
+      "lng": -40.333333,
+      "municipality": "Rio Bananal",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10395--40.333333_-19.265",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus niger",
+      "lat": -19.265,
+      "lng": -40.333333,
+      "municipality": "Rio Bananal",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10392--40.42_-20.263889",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus niger",
+      "lat": -20.263889,
+      "lng": -40.42,
+      "municipality": "Cariacica",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10385--40.42_-20.263889",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus japonicus",
+      "lat": -20.263889,
+      "lng": -40.42,
+      "municipality": "Cariacica",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10401--40.333333_-19.265",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus awamori",
+      "lat": -19.265,
+      "lng": -40.333333,
+      "municipality": "Rio Bananal",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10386--40.42_-20.263889",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus aculeatus",
+      "lat": -20.263889,
+      "lng": -40.42,
+      "municipality": "Cariacica",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10389--40.072222_-19.391111",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus aculeatus",
+      "lat": -19.391111,
+      "lng": -40.072222,
+      "municipality": "Linhares",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-10396--40.42_-20.263889",
+      "source": "speciesLink",
+      "species": "Aspergillus aspergillus aculeatus",
+      "lat": -20.263889,
+      "lng": -40.42,
+      "municipality": "Cariacica",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5997--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5996--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5994--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5993--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5992--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5990--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5989--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5988--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5985--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5984--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5981--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5980--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5977--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5976--40.337799_-20.319401",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.319401,
+      "lng": -40.337799,
+      "municipality": "Vitória",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5972--40.746101_-20.0406",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.0406,
+      "lng": -40.746101,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-CMRP5969--40.746101_-20.0406",
+      "source": "speciesLink",
+      "species": "Aspergillus",
+      "lat": -20.0406,
+      "lng": -40.746101,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-75825--41.135074_-20.340201",
+      "source": "speciesLink",
+      "species": "Oidium",
+      "lat": -20.340201,
+      "lng": -41.135074,
+      "municipality": "Venda Nova do Imigrante",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-15136--40.511348_-20.658482",
+      "source": "speciesLink",
+      "species": "Microthyrina paraguayensis",
+      "lat": -20.658482,
+      "lng": -40.511348,
+      "municipality": "Guarapi",
+      "date": "1884"
+    },
+    {
+      "id": "splink-41--41.1347_-20.3397",
+      "source": "speciesLink",
+      "species": "Fusarium",
+      "lat": -20.3397,
+      "lng": -41.1347,
+      "municipality": "Venda Nova do Imigrante",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-111--39.8638_-18.7138",
+      "source": "speciesLink",
+      "species": "Metarhizium anisopliae",
+      "lat": -18.7138,
+      "lng": -39.8638,
+      "municipality": "São Mateus",
+      "date": "1999"
+    },
+    {
+      "id": "splink-230--40.269_-19.81193",
+      "source": "speciesLink",
+      "species": "Beauveria bassiana",
+      "lat": -19.81193,
+      "lng": -40.269,
+      "municipality": "Aracruz",
+      "date": "1999"
+    },
+    {
+      "id": "splink-107--40.2887_-19.8163",
+      "source": "speciesLink",
+      "species": "Isaria farinosa",
+      "lat": -19.8163,
+      "lng": -40.2887,
+      "municipality": "Aracruz",
+      "date": "1999"
+    },
+    {
+      "id": "splink-6670--40.600625_-19.936035",
+      "source": "speciesLink",
+      "species": "Saccharomyces cerevisiae",
+      "lat": -19.936035,
+      "lng": -40.600625,
+      "municipality": "Santa Teresa",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-513044--40.051667_-19.0975",
+      "source": "speciesLink",
+      "species": "Fungi sp.",
+      "lat": -19.0975,
+      "lng": -40.051667,
+      "municipality": "Linhares",
+      "date": "2011"
+    },
+    {
+      "id": "splink-466023--41.808333_-20.458333",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.458333,
+      "lng": -41.808333,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-466025--41.744167_-20.507778",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.507778,
+      "lng": -41.744167,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-466028--41.808333_-20.458333",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.458333,
+      "lng": -41.808333,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-466029--41.808333_-20.458333",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.458333,
+      "lng": -41.808333,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-466039--41.809167_-20.440556",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.440556,
+      "lng": -41.809167,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-529352--41.847222_-20.419444",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.419444,
+      "lng": -41.847222,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-529354--41.744167_-20.507778",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.507778,
+      "lng": -41.744167,
+      "municipality": "Ibitirama",
+      "date": "2011"
+    },
+    {
+      "id": "splink-529355--41.744167_-20.507778",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.507778,
+      "lng": -41.744167,
+      "municipality": "Ibitirama",
+      "date": "2011"
+    },
+    {
+      "id": "splink-529356--41.847222_-20.419444",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.419444,
+      "lng": -41.847222,
+      "municipality": "Alto Caparaó",
+      "date": "2011"
+    },
+    {
+      "id": "splink-193968--40.292846_-20.330203",
+      "source": "speciesLink",
+      "species": "Auricularia cornea",
+      "lat": -20.330203,
+      "lng": -40.292846,
+      "municipality": "Vila Velha",
+      "date": "1985"
+    },
+    {
+      "id": "splink-466026--41.815278_-20.463333",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.463333,
+      "lng": -41.815278,
+      "municipality": "Alto Caparaó",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-466033--41.744167_-20.508056",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.508056,
+      "lng": -41.744167,
+      "municipality": "Alto Caparaó",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-381451--40.072564_-19.391589",
+      "source": "speciesLink",
+      "species": "Coenogonium",
+      "lat": -19.391589,
+      "lng": -40.072564,
+      "municipality": "Linhares",
+      "date": "Sem data"
+    },
+    {
+      "id": "splink-512742--40.546111_-19.888333",
+      "source": "speciesLink",
+      "species": "Oudemansiella platensis",
+      "lat": -19.888333,
+      "lng": -40.546111,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-512744--40.546111_-19.888333",
+      "source": "speciesLink",
+      "species": "Oudemansiella platensis",
+      "lat": -19.888333,
+      "lng": -40.546111,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-528953--47.070278_-19.035833",
+      "source": "speciesLink",
+      "species": "Arthonia",
+      "lat": -19.035833,
+      "lng": -47.070278,
+      "municipality": "Sooretama",
+      "date": "2022"
+    },
+    {
+      "id": "splink-528952--41.83_-20.481944",
+      "source": "speciesLink",
+      "species": "Leptogium",
+      "lat": -20.481944,
+      "lng": -41.83,
+      "municipality": "Dores do Rio Preto",
+      "date": "2024"
+    },
+    {
+      "id": "splink-528954--40.285556_-20.161389",
+      "source": "speciesLink",
+      "species": "Leptogium",
+      "lat": -20.161389,
+      "lng": -40.285556,
+      "municipality": "Cariacica",
+      "date": "2022"
+    },
+    {
+      "id": "splink-376044--41.013056_-20.382222",
+      "source": "speciesLink",
+      "species": "Marasmiellus colocasiae",
+      "lat": -20.382222,
+      "lng": -41.013056,
+      "municipality": "Domingos Martins",
+      "date": "2005"
+    },
+    {
+      "id": "splink-CGMS_Liq 35053--41.7833333_-20.4347222",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4347222,
+      "lng": -41.7833333,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 44067--41.7958333_-20.4347222",
+      "source": "speciesLink",
+      "species": "Parmotrema",
+      "lat": -20.4347222,
+      "lng": -41.7958333,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 44070--41.8041667_-20.4213889",
+      "source": "speciesLink",
+      "species": "Parmotrema",
+      "lat": -20.4213889,
+      "lng": -41.8041667,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 44072--41.8041667_-20.4213889",
+      "source": "speciesLink",
+      "species": "Parmotrema",
+      "lat": -20.4213889,
+      "lng": -41.8041667,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 59563--41.8255556_-20.4847222",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4847222,
+      "lng": -41.8255556,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59570--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59574--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59557--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Leptogium",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59578--41.8255556_-20.4847222",
+      "source": "speciesLink",
+      "species": "Dictyonema",
+      "lat": -20.4847222,
+      "lng": -41.8255556,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59579--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59580--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59588--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Peltigera",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59590--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Leptogium",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59591--41.8372222_-20.4069444",
+      "source": "speciesLink",
+      "species": "Ephebe brasiliensis",
+      "lat": -20.4069444,
+      "lng": -41.8372222,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59592--41.8088889_-20.4577778",
+      "source": "speciesLink",
+      "species": "Heterodermia",
+      "lat": -20.4577778,
+      "lng": -41.8088889,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59600--41.8280556_-20.4719445",
+      "source": "speciesLink",
+      "species": "Dictyonema",
+      "lat": -20.4719445,
+      "lng": -41.8280556,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59604--41.8280556_-20.4719445",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4719445,
+      "lng": -41.8280556,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 59605--41.8255556_-20.4847222",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4847222,
+      "lng": -41.8255556,
+      "municipality": "Pedra Menina",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61159--41.8222223_-20.4902777",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4902777,
+      "lng": -41.8222223,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61160--41.8225_-20.4875",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4875,
+      "lng": -41.8225,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61166--41.8094444_-20.4658333",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4658333,
+      "lng": -41.8094444,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61168--41.8069444_-20.4625",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4625,
+      "lng": -41.8069444,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61169--41.8069444_-20.4625",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4625,
+      "lng": -41.8069444,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61171--41.8091667_-20.4580556",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4580556,
+      "lng": -41.8091667,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61174--41.81_-20.4597222",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4597222,
+      "lng": -41.81,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61175--41.81_-20.4597222",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4597222,
+      "lng": -41.81,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61179--41.8216667_-20.4891666",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4891666,
+      "lng": -41.8216667,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 61180--41.8216667_-20.4891666",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4891666,
+      "lng": -41.8216667,
+      "municipality": "Dores do Rio Preto",
+      "date": "2016"
+    },
+    {
+      "id": "splink-CGMS_Liq 67177--41.7958333_-20.4347222",
+      "source": "speciesLink",
+      "species": "Fungi sp.",
+      "lat": -20.4347222,
+      "lng": -41.7958333,
+      "municipality": "de Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 67170--41.7983333_-20.4330556",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.4330556,
+      "lng": -41.7983333,
+      "municipality": "de Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 67173--41.8011111_-20.4297223",
+      "source": "speciesLink",
+      "species": "Heterodermia",
+      "lat": -20.4297223,
+      "lng": -41.8011111,
+      "municipality": "de Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 68584--41.8011111_-20.4297223",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.4297223,
+      "lng": -41.8011111,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 68586--41.8011111_-20.4297223",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.4297223,
+      "lng": -41.8011111,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 68592--41.8011111_-20.4297223",
+      "source": "speciesLink",
+      "species": "Parmeliaceae",
+      "lat": -20.4297223,
+      "lng": -41.8011111,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 68598--41.7958333_-20.4347222",
+      "source": "speciesLink",
+      "species": "Umbilicaria",
+      "lat": -20.4347222,
+      "lng": -41.7958333,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 68600--41.8011111_-20.4297223",
+      "source": "speciesLink",
+      "species": "Hypotrachyna",
+      "lat": -20.4297223,
+      "lng": -41.8011111,
+      "municipality": "Ibitirama",
+      "date": "2012"
+    },
+    {
+      "id": "splink-CGMS_Liq 82687--41.0166667_-20.4",
+      "source": "speciesLink",
+      "species": "Stereocaulon ramulosum",
+      "lat": -20.4,
+      "lng": -41.0166667,
+      "municipality": "Domingos Martins",
+      "date": "2022"
+    },
+    {
+      "id": "splink-147--29.4166667_-20.8833334",
+      "source": "speciesLink",
+      "species": "Physcia",
+      "lat": -20.8833334,
+      "lng": -29.4166667,
+      "municipality": "Espírito Santo",
+      "date": "2016"
+    },
+    {
+      "id": "splink-148--29.3166667_-20.5",
+      "source": "speciesLink",
+      "species": "Usnea",
+      "lat": -20.5,
+      "lng": -29.3166667,
+      "municipality": "Ilha da Trindade",
+      "date": "2012"
+    },
+    {
+      "id": "splink-51469--40.600625_-19.936035",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.936035,
+      "lng": -40.600625,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51472--40.603611_-19.948611",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.948611,
+      "lng": -40.603611,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51473--40.635556_-19.925556",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.925556,
+      "lng": -40.635556,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51474--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51477--40.568611_-19.903056",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.903056,
+      "lng": -40.568611,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51479--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "Marasmius",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51480--40.600625_-19.936035",
+      "source": "speciesLink",
+      "species": "CORTINARIACEAE",
+      "lat": -19.936035,
+      "lng": -40.600625,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51481--40.635556_-19.925556",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.925556,
+      "lng": -40.635556,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51482--40.683333_-19.931111",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931111,
+      "lng": -40.683333,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51485--40.583333_-19.948333",
+      "source": "speciesLink",
+      "species": "Pycnoporus sanguineus",
+      "lat": -19.948333,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51486--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51487--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51488--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51490--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51494--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51495--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51496--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51500--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "Aff. Phellinus",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51501--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51502--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "SCLERODERMATACEAE",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51503--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "Geastrum triplex",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51505--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "Marasmiellus volvatus",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51508--40.6_-19.935833",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.935833,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51522--40.703611_-19.806389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.806389,
+      "lng": -40.703611,
+      "municipality": "Santa Teresa",
+      "date": "2016"
+    },
+    {
+      "id": "splink-51524--40.703611_-19.806389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.806389,
+      "lng": -40.703611,
+      "municipality": "Santa Teresa",
+      "date": "2016"
+    },
+    {
+      "id": "splink-51525--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "Daedaleopsis",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51526--42.232778_-19.806389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.806389,
+      "lng": -42.232778,
+      "municipality": "Santa Teresa",
+      "date": "2016"
+    },
+    {
+      "id": "splink-51527--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51531--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51537--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "Coenogonium",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51540--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51541--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51543--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51545--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51547--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51555--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51556--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51558--39.803889_-18.263889",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -18.263889,
+      "lng": -39.803889,
+      "municipality": "Conceição da Barra",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51560--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51564--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51567--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51569--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "Coenogonium",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51573--40.273677_-19.820757",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.820757,
+      "lng": -40.273677,
+      "municipality": "Aracruz",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51574--40.273677_-19.820757",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.820757,
+      "lng": -40.273677,
+      "municipality": "Aracruz",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51578--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51579--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Parmelia",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51580--39.803889_-18.263889",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -18.263889,
+      "lng": -39.803889,
+      "municipality": "Conceição da Barra",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51582--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51584--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51586--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51589--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51591--40.635556_-19.925556",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.925556,
+      "lng": -40.635556,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51592--40.338124_-20.319925",
+      "source": "speciesLink",
+      "species": "Usnea barbata",
+      "lat": -20.319925,
+      "lng": -40.338124,
+      "municipality": "Vitória",
+      "date": "1952"
+    },
+    {
+      "id": "splink-51594--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51595--39.803889_-18.263889",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -18.263889,
+      "lng": -39.803889,
+      "municipality": "Conceição da Barra",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51596--40.635556_-19.925556",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.925556,
+      "lng": -40.635556,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51598--40.635556_-19.925556",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.925556,
+      "lng": -40.635556,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51600--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51601--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51606--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51607--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51609--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Usnea",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51610--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51611--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51612--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51614--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51615--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51617--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51620--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Sticta",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51621--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51623--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51624--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51626--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "Usnea",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51627--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51629--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51630--40.013333_-19.017778",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.017778,
+      "lng": -40.013333,
+      "municipality": "Linhares",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51631--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51635--39.803889_-18.263889",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -18.263889,
+      "lng": -39.803889,
+      "municipality": "Conceição da Barra",
+      "date": "1976"
+    },
+    {
+      "id": "splink-51637--40.6075_-19.931389",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.931389,
+      "lng": -40.6075,
+      "municipality": "Santa Teresa",
+      "date": "1985"
+    },
+    {
+      "id": "splink-51641--40.553056_-19.9075",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.9075,
+      "lng": -40.553056,
+      "municipality": "Santa Teresa",
+      "date": "2002"
+    },
+    {
+      "id": "splink-51930--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51931--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51934--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-51935--40.583333_-19.935833",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.935833,
+      "lng": -40.583333,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-52239--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "indet LÍQUEN",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2017"
+    },
+    {
+      "id": "splink-53048--40.649444_-19.981111",
+      "source": "speciesLink",
+      "species": "Rigidoporus",
+      "lat": -19.981111,
+      "lng": -40.649444,
+      "municipality": "Santa Maria de Jetibá",
+      "date": "2018"
+    },
+    {
+      "id": "splink-53050--40.6_-19.935833",
+      "source": "speciesLink",
+      "species": "Auricularia",
+      "lat": -19.935833,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-53051--40.6_-19.935833",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.935833,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-53052--40.6_-19.935833",
+      "source": "speciesLink",
+      "species": "Calvatia",
+      "lat": -19.935833,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2018"
+    },
+    {
+      "id": "splink-53053--40.600625_-19.936035",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.936035,
+      "lng": -40.600625,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-53055--40.6_-19.935833",
+      "source": "speciesLink",
+      "species": "XYLARIACEAE",
+      "lat": -19.935833,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2017"
+    },
+    {
+      "id": "splink-57318--40.5375_-19.966111",
+      "source": "speciesLink",
+      "species": "Marasmius haematocephallus",
+      "lat": -19.966111,
+      "lng": -40.5375,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57319--40.537222_-19.983056",
+      "source": "speciesLink",
+      "species": "Filoboletus",
+      "lat": -19.983056,
+      "lng": -40.537222,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57321--40.536944_-19.966389",
+      "source": "speciesLink",
+      "species": "Hymenochaetaceae",
+      "lat": -19.966389,
+      "lng": -40.536944,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57322--40.536944_-19.966389",
+      "source": "speciesLink",
+      "species": "Geastrum",
+      "lat": -19.966389,
+      "lng": -40.536944,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57323--40.536667_-19.966667",
+      "source": "speciesLink",
+      "species": "Cf. Phellinus",
+      "lat": -19.966667,
+      "lng": -40.536667,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57324--40.536667_-19.966667",
+      "source": "speciesLink",
+      "species": "Trametes",
+      "lat": -19.966667,
+      "lng": -40.536667,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57327--40.533611_-19.9675",
+      "source": "speciesLink",
+      "species": "Hygrophoraceae",
+      "lat": -19.9675,
+      "lng": -40.533611,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57330--40.533611_-19.967778",
+      "source": "speciesLink",
+      "species": "Pterulicium",
+      "lat": -19.967778,
+      "lng": -40.533611,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57333--40.531111_-19.970278",
+      "source": "speciesLink",
+      "species": "Hygrophoraceae",
+      "lat": -19.970278,
+      "lng": -40.531111,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57335--40.528611_-19.973056",
+      "source": "speciesLink",
+      "species": "Stereum",
+      "lat": -19.973056,
+      "lng": -40.528611,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57338--40.528889_-19.973889",
+      "source": "speciesLink",
+      "species": "Ganoderma",
+      "lat": -19.973889,
+      "lng": -40.528889,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57339--40.528889_-19.974167",
+      "source": "speciesLink",
+      "species": "Amauroderma",
+      "lat": -19.974167,
+      "lng": -40.528889,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57340--40.528889_-19.973889",
+      "source": "speciesLink",
+      "species": "Lactarius",
+      "lat": -19.973889,
+      "lng": -40.528889,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57341--40.530278_-19.971389",
+      "source": "speciesLink",
+      "species": "Cf. Clavulina",
+      "lat": -19.971389,
+      "lng": -40.530278,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57344--40.5325_-19.968611",
+      "source": "speciesLink",
+      "species": "Russula puigarii",
+      "lat": -19.968611,
+      "lng": -40.5325,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57345--40.533056_-19.968889",
+      "source": "speciesLink",
+      "species": "Cf. Leucoagaricus",
+      "lat": -19.968889,
+      "lng": -40.533056,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57347--40.532778_-19.968611",
+      "source": "speciesLink",
+      "species": "Cf. Neofavolus",
+      "lat": -19.968611,
+      "lng": -40.532778,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57348--40.532778_-19.968889",
+      "source": "speciesLink",
+      "species": "Cf. Daedalea",
+      "lat": -19.968889,
+      "lng": -40.532778,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57349--40.532778_-19.968889",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.968889,
+      "lng": -40.532778,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57351--40.5325_-19.969167",
+      "source": "speciesLink",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.969167,
+      "lng": -40.5325,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57352--40.5325_-19.969167",
+      "source": "speciesLink",
+      "species": "Cf. Gymnopilus",
+      "lat": -19.969167,
+      "lng": -40.5325,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57353--40.5325_-19.969167",
+      "source": "speciesLink",
+      "species": "Ascopolyporus philodendrus",
+      "lat": -19.969167,
+      "lng": -40.5325,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57358--40.529444_-19.9725",
+      "source": "speciesLink",
+      "species": "Ganoderma",
+      "lat": -19.9725,
+      "lng": -40.529444,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57363--40.529167_-19.972778",
+      "source": "speciesLink",
+      "species": "Xylaria",
+      "lat": -19.972778,
+      "lng": -40.529167,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57366--40.529167_-19.972778",
+      "source": "speciesLink",
+      "species": "Mycena",
+      "lat": -19.972778,
+      "lng": -40.529167,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57367--40.529167_-19.972778",
+      "source": "speciesLink",
+      "species": "Hymenochaete",
+      "lat": -19.972778,
+      "lng": -40.529167,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57369--40.536667_-19.966667",
+      "source": "speciesLink",
+      "species": "Ophiocordyceps",
+      "lat": -19.966667,
+      "lng": -40.536667,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57371--40.531944_-19.968056",
+      "source": "speciesLink",
+      "species": "Favolaschia",
+      "lat": -19.968056,
+      "lng": -40.531944,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57377--40.5475_-19.957222",
+      "source": "speciesLink",
+      "species": "Gibellula",
+      "lat": -19.957222,
+      "lng": -40.5475,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57379--40.533889_-19.973056",
+      "source": "speciesLink",
+      "species": "Gibellula aurea",
+      "lat": -19.973056,
+      "lng": -40.533889,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57382--40.535833_-19.973889",
+      "source": "speciesLink",
+      "species": "Rigidoporus",
+      "lat": -19.973889,
+      "lng": -40.535833,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57383--40.539722_-19.981944",
+      "source": "speciesLink",
+      "species": "Irpex rossetiformis",
+      "lat": -19.981944,
+      "lng": -40.539722,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57386--40.528889_-19.972778",
+      "source": "speciesLink",
+      "species": "Favolus",
+      "lat": -19.972778,
+      "lng": -40.528889,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57390--40.529167_-19.974167",
+      "source": "speciesLink",
+      "species": "Ganoderma",
+      "lat": -19.974167,
+      "lng": -40.529167,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57391--40.529167_-19.974167",
+      "source": "speciesLink",
+      "species": "Irpex rossetiformis",
+      "lat": -19.974167,
+      "lng": -40.529167,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57395--40.531944_-19.971111",
+      "source": "speciesLink",
+      "species": "Hygrocybe",
+      "lat": -19.971111,
+      "lng": -40.531944,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57396--40.5325_-19.970556",
+      "source": "speciesLink",
+      "species": "Cf. Fuscoporia",
+      "lat": -19.970556,
+      "lng": -40.5325,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57399--40.532222_-19.970833",
+      "source": "speciesLink",
+      "species": "Lentinus",
+      "lat": -19.970833,
+      "lng": -40.532222,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57400--40.532222_-19.970833",
+      "source": "speciesLink",
+      "species": "Agaricaceae",
+      "lat": -19.970833,
+      "lng": -40.532222,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57403--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Trametes coccinea",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57404--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Marasmius haematocephallus",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57409--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Cf Trogia",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57410--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Cf Lepista",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57413--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Oudemansiella radicata",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57414--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Hygrophoraceae",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57415--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Irpex",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57416--40.600556_-19.9375",
+      "source": "speciesLink",
+      "species": "Hygrocybe conica",
+      "lat": -19.9375,
+      "lng": -40.600556,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57418--40.545833_-19.892778",
+      "source": "speciesLink",
+      "species": "Scleroderma",
+      "lat": -19.892778,
+      "lng": -40.545833,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57423--40.6_-19.937222",
+      "source": "speciesLink",
+      "species": "Irpex rossetiformis",
+      "lat": -19.937222,
+      "lng": -40.6,
+      "municipality": "Santa Teresa",
+      "date": "2023"
+    },
+    {
+      "id": "splink-57551--40.520278_-19.953333",
+      "source": "speciesLink",
+      "species": "indet FUNGI",
+      "lat": -19.953333,
+      "lng": -40.520278,
+      "municipality": "Santa Teresa",
+      "date": "2022"
+    },
+    {
+      "id": "splink-290--29.3166667_-20.5",
+      "source": "speciesLink",
+      "species": "Cora glabrata",
+      "lat": -20.5,
+      "lng": -29.3166667,
+      "municipality": "Ilha da Trindade",
+      "date": "2012"
+    },
+    {
+      "id": "splink-291--29.3166667_-20.5",
+      "source": "speciesLink",
+      "species": "Usnea",
+      "lat": -20.5,
+      "lng": -29.3166667,
+      "municipality": "Ilha da Trindade",
+      "date": "2012"
+    },
+    {
+      "id": "splink-292--29.3166667_-20.5",
+      "source": "speciesLink",
+      "species": "Usnea",
+      "lat": -20.5,
+      "lng": -29.3166667,
+      "municipality": "Ilha da Trindade",
+      "date": "2012"
+    },
+    {
+      "id": "splink-293--29.4166667_-20.8833334",
+      "source": "speciesLink",
+      "species": "Caloplaca",
+      "lat": -20.8833334,
+      "lng": -29.4166667,
+      "municipality": "Espírito Santo",
+      "date": "2016"
+    },
+    {
+      "id": "splink-294--41.0166667_-20.3833334",
+      "source": "speciesLink",
+      "species": "Cladonia confusa",
+      "lat": -20.3833334,
+      "lng": -41.0166667,
+      "municipality": "Domingos Martins",
+      "date": "2016"
+    },
+    {
+      "id": "splink-170210--40.55_-20.1380555",
+      "source": "speciesLink",
+      "species": "Cladonia confusa",
+      "lat": -20.1380555,
+      "lng": -40.55,
+      "municipality": "Santa Leopoldina",
+      "date": "2011"
+    },
+    {
+      "id": "splink-170209--40.55_-20.1380555",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -20.1380555,
+      "lng": -40.55,
+      "municipality": "Santa Leopoldina",
+      "date": "2011"
+    },
+    {
+      "id": "splink-297--29.3166667_-20.5",
+      "source": "speciesLink",
+      "species": "Cladonia",
+      "lat": -20.5,
+      "lng": -29.3166667,
+      "municipality": "Ilha da Trindade",
+      "date": "2012"
+    },
+    {
+      "id": "splink-298--29.5541667_-20.8697223",
+      "source": "speciesLink",
+      "species": "Physcia",
+      "lat": -20.8697223,
+      "lng": -29.5541667,
+      "municipality": "Espírito Santo",
+      "date": "2016"
+    },
+    {
+      "id": "splink--Fungos 44301--40.600625_-19.936035",
+      "source": "speciesLink",
+      "species": "Aschersonia marginata",
+      "lat": -19.936035,
+      "lng": -40.600625,
+      "municipality": "Santa Teresa",
+      "date": "1978"
     }
   ]
 }

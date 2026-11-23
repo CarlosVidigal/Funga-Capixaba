@@ -86,7 +86,7 @@ async function buscarSpeciesLink() {
     return [];
   }
 
-  const url = `https://specieslink.net/ws/1.0/search?kingdom=Fungi&stateprovince=Esp%C3%ADrito%20Santo&Coordinates=Yes&limit=300&apikey=${encodeURIComponent(apiKey)}`;
+  const url = `https://specieslink.net/ws/1.0/search?kingdom=Fungi&stateprovince=Esp%C3%ADrito%20Santo&Coordinates=Yes&limit=300&apikey=${encodeURIComponent(SPLINK_API_KEY)}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`speciesLink HTTP ${res.status}`);
   const data = await res.json();

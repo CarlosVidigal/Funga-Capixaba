@@ -160,7 +160,6 @@
 </header>
 
 <main>
-  <!-- Abas com caixa evidente -->
   <div class="tabs" role="tablist">
     <button class="tab-btn active" onclick="abrirAba('aba-mapa', this)">Mapa de Ocorrências</button>
     <button class="tab-btn" onclick="abrirAba('aba-tabela', this)">Registros</button>
@@ -211,7 +210,6 @@
   let baseDados = { version: 0, lastUpdated: null, syncHistory: [], records: [] };
   let map, markersLayer, syncChartInstance;
 
-  // Navegação entre abas
   function abrirAba(id, btn) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -223,7 +221,6 @@
     }
   }
 
-  // Inicializa o mapa Leaflet
   function iniciarMapa() {
     map = L.map('map').setView([-19.6, -40.5], 8);
 
@@ -237,7 +234,6 @@
 
     markersLayer = L.layerGroup().addTo(map);
 
-    // No celular (< 768px) a caixa de camadas inicia recolhida para não cobrir os pontos
     const isMobile = window.innerWidth < 768;
     L.control.layers(
       { 'Mapa Padrão': osm, 'Satélite': satelite },
@@ -246,7 +242,6 @@
     ).addTo(map);
   }
 
-  // Filtra registros locais conforme caixas marcadas
   function aplicarFiltros() {
     const selecionadas = new Set(
       Array.from(document.querySelectorAll('.sources-group input:checked')).map(cb => cb.value)
@@ -254,7 +249,6 @@
 
     const filtrados = baseDados.records.filter(r => selecionadas.has(r.source));
 
-    // Atualiza marcadores no mapa
     markersLayer.clearLayers();
     filtrados.forEach(r => {
       L.circleMarker([r.lat, r.lng], {
@@ -270,7 +264,6 @@
 
     document.getElementById('contador-mapa').textContent = `${filtrados.length} registros exibidos`;
 
-    // Atualiza tabela (limitado aos primeiros 200 para manter fluidez)
     const tbody = document.getElementById('tabela-body');
     tbody.innerHTML = filtrados.slice(0, 200).map(r => `
       <tr>
@@ -282,7 +275,6 @@
     `).join('');
   }
 
-  // Renderiza gráfico apenas com as mudanças de versão
   function renderizarGraficoSync() {
     const ctx = document.getElementById('syncChart').getContext('2d');
     if (syncChartInstance) syncChartInstance.destroy();
@@ -312,7 +304,6 @@
     });
   }
 
-  // Carrega data/funga-es.json ao abrir a página
   async function carregarDados() {
     try {
       const res = await fetch('./data/funga-es.json', { cache: 'no-store' });

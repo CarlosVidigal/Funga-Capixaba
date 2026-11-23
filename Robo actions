@@ -1,0 +1,39 @@
+name: Atualizar Base Funga Capixaba
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # Todo domingo às 03:00 UTC
+  workflow_dispatch:    # Permite rodar manualmente pelo botão no GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Executar script de coleta incremental
+        env:
+          # Opcional: cadastre sua chave do speciesLink em Settings > Secrets > Actions
+          SPLINK_API_KEY: ${{ secrets.SPLINK_API_KEY }}
+        run: node scripts/atualizar-dados.mjs
+
+      - name: Salvar alterações se houver novos dados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/funga-es.json
+          if git diff --staged --quiet; then
+            echo "Nenhum registro novo encontrado. Versão mantida."
+          else
+            git commit -m "chore(data): atualização incremental da base funga-es.json"
+            git push
+          fi

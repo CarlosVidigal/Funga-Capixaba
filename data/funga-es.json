@@ -1,6 +1,2714 @@
 {
-  "version": 0,
-  "lastUpdated": null,
-  "syncHistory": [],
-  "records": []
+  "version": 1,
+  "lastUpdated": "2026-11-23T21:08:37.408Z",
+  "syncHistory": [
+    {
+      "version": "v1",
+      "label": "v1 (23/11/2026)",
+      "total": 300,
+      "added": 300
+    }
+  ],
+  "records": [
+    {
+      "id": "gbif-6130119895",
+      "source": "GBIF",
+      "species": "Cladonia furfuracea",
+      "lat": -20.455253,
+      "lng": -40.992017,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-14"
+    },
+    {
+      "id": "gbif-6130380418",
+      "source": "GBIF",
+      "species": "Leucocoprinus fragilissimus",
+      "lat": -20.401433,
+      "lng": -40.326576,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-11"
+    },
+    {
+      "id": "gbif-6130433863",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -20.074725,
+      "lng": -40.775495,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-15"
+    },
+    {
+      "id": "gbif-6130925566",
+      "source": "GBIF",
+      "species": "Aseroe rubra",
+      "lat": -20.499557,
+      "lng": -41.035838,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-10"
+    },
+    {
+      "id": "gbif-6131571905",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.803532,
+      "lng": -40.857228,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-08"
+    },
+    {
+      "id": "gbif-6131597100",
+      "source": "GBIF",
+      "species": "Cladonia calycanthoides",
+      "lat": -20.455314,
+      "lng": -40.991836,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-14"
+    },
+    {
+      "id": "gbif-6133415339",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -19.050539,
+      "lng": -40.145566,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6159503271",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -19.845206,
+      "lng": -40.402567,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-18"
+    },
+    {
+      "id": "gbif-6167882361",
+      "source": "GBIF",
+      "species": "Dacrymyces spathularius",
+      "lat": -20.406944,
+      "lng": -41.720556,
+      "municipality": "Ibitirama",
+      "date": "2026-01-21"
+    },
+    {
+      "id": "gbif-6167882362",
+      "source": "GBIF",
+      "species": "Gloeophyllum striatum",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882364",
+      "source": "GBIF",
+      "species": "Trametes Fr., 1836",
+      "lat": -20.406944,
+      "lng": -41.720556,
+      "municipality": "Ibitirama",
+      "date": "2026-01-21"
+    },
+    {
+      "id": "gbif-6167882365",
+      "source": "GBIF",
+      "species": "Ganodermataceae",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882367",
+      "source": "GBIF",
+      "species": "Favolaschia (Pat.) Pat., 1892",
+      "lat": -20.406944,
+      "lng": -41.720556,
+      "municipality": "Ibitirama",
+      "date": "2026-01-21"
+    },
+    {
+      "id": "gbif-6167882368",
+      "source": "GBIF",
+      "species": "Dacryopinax G.W.Martin",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882371",
+      "source": "GBIF",
+      "species": "Fabisporus sanguineus",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882373",
+      "source": "GBIF",
+      "species": "Thelephoraceae",
+      "lat": -20.373056,
+      "lng": -40.340278,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882376",
+      "source": "GBIF",
+      "species": "Auricularia Bull., 1780",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882379",
+      "source": "GBIF",
+      "species": "Lentinus crinitus",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6167882382",
+      "source": "GBIF",
+      "species": "Cerrena hydnoides",
+      "lat": -20.375,
+      "lng": -40.341111,
+      "municipality": "Vila Velha",
+      "date": "2026-01-30"
+    },
+    {
+      "id": "gbif-6171124253",
+      "source": "GBIF",
+      "species": "Leucocoprinus birnbaumii",
+      "lat": -20.364628,
+      "lng": -40.335371,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-25"
+    },
+    {
+      "id": "gbif-6171154480",
+      "source": "GBIF",
+      "species": "Lentinus crinitus",
+      "lat": -20.364327,
+      "lng": -40.337335,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-26"
+    },
+    {
+      "id": "gbif-6171259738",
+      "source": "GBIF",
+      "species": "Tremella fuciformis",
+      "lat": -20.275033,
+      "lng": -40.304913,
+      "municipality": "Espírito Santo",
+      "date": "2026-01-22"
+    },
+    {
+      "id": "gbif-6133401863",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.055877,
+      "lng": -40.147287,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-01"
+    },
+    {
+      "id": "gbif-6147389426",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -18.846639,
+      "lng": -40.044706,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-01"
+    },
+    {
+      "id": "gbif-6147514237",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.430661,
+      "lng": -41.093082,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-03"
+    },
+    {
+      "id": "gbif-6171315759",
+      "source": "GBIF",
+      "species": "Psilocybe cubensis",
+      "lat": -19.342162,
+      "lng": -40.854686,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-25"
+    },
+    {
+      "id": "gbif-6171320753",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.502085,
+      "lng": -41.042599,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-05"
+    },
+    {
+      "id": "gbif-6252304311",
+      "source": "GBIF",
+      "species": "Entoloma virescens",
+      "lat": -19.803569,
+      "lng": -40.747664,
+      "municipality": "Espírito Santo",
+      "date": "2026-02-01"
+    },
+    {
+      "id": "gbif-6425346303",
+      "source": "GBIF",
+      "species": "Agaricales",
+      "lat": -20.361111,
+      "lng": -40.343333,
+      "municipality": "Vila Velha",
+      "date": "2026-02-07"
+    },
+    {
+      "id": "gbif-6179028552",
+      "source": "GBIF",
+      "species": "Hymenochaete damicornis",
+      "lat": -20.506409,
+      "lng": -41.034374,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-12"
+    },
+    {
+      "id": "gbif-6179096805",
+      "source": "GBIF",
+      "species": "Hymenochaete damicornis",
+      "lat": -20.506442,
+      "lng": -41.034344,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-12"
+    },
+    {
+      "id": "gbif-6185206631",
+      "source": "GBIF",
+      "species": "Macrolepiota capelariae",
+      "lat": -20.282892,
+      "lng": -40.48512,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-25"
+    },
+    {
+      "id": "gbif-6185281481",
+      "source": "GBIF",
+      "species": "Leucocoprinus birnbaumii",
+      "lat": -20.277073,
+      "lng": -40.257253,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-21"
+    },
+    {
+      "id": "gbif-6185362133",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -19.869822,
+      "lng": -40.559678,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-17"
+    },
+    {
+      "id": "gbif-6186052304",
+      "source": "GBIF",
+      "species": "Favolus pseudoprinceps",
+      "lat": -20.631224,
+      "lng": -41.325877,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-26"
+    },
+    {
+      "id": "gbif-6188002832",
+      "source": "GBIF",
+      "species": "Abrachium floriforme",
+      "lat": -20.60798,
+      "lng": -40.416804,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-31"
+    },
+    {
+      "id": "gbif-6273680532",
+      "source": "GBIF",
+      "species": "Tremella fuciformis",
+      "lat": -20.337375,
+      "lng": -41.120453,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-20"
+    },
+    {
+      "id": "gbif-6320662651",
+      "source": "GBIF",
+      "species": "Abrachium floriforme",
+      "lat": -20.607994,
+      "lng": -40.416808,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-28"
+    },
+    {
+      "id": "gbif-6333977952",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.603577,
+      "lng": -41.203562,
+      "municipality": "Espírito Santo",
+      "date": "2026-03-28"
+    },
+    {
+      "id": "gbif-6425346301",
+      "source": "GBIF",
+      "species": "Coprinus comatus",
+      "lat": -20.275556,
+      "lng": -40.305833,
+      "municipality": "Vitória",
+      "date": "2026-03-20"
+    },
+    {
+      "id": "gbif-6188001749",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.176075,
+      "lng": -40.311924,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "gbif-6188218670",
+      "source": "GBIF",
+      "species": "Cerrena caperata",
+      "lat": -20.385549,
+      "lng": -40.796622,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-04"
+    },
+    {
+      "id": "gbif-6188462615",
+      "source": "GBIF",
+      "species": "Phillipsia domingensis",
+      "lat": -20.187688,
+      "lng": -40.304186,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "gbif-6188465058",
+      "source": "GBIF",
+      "species": "Teloschistes exilis",
+      "lat": -20.270147,
+      "lng": -40.307033,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-02"
+    },
+    {
+      "id": "gbif-6195284356",
+      "source": "GBIF",
+      "species": "Scleroderma areolatum",
+      "lat": -20.341854,
+      "lng": -40.365297,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-08"
+    },
+    {
+      "id": "gbif-6195317073",
+      "source": "GBIF",
+      "species": "Cerrena hydnoides",
+      "lat": -20.762608,
+      "lng": -41.462337,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-09"
+    },
+    {
+      "id": "gbif-6234193685",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.43234,
+      "lng": -41.050303,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-23"
+    },
+    {
+      "id": "gbif-6234997439",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -19.944088,
+      "lng": -40.582663,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6235067697",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.90798,
+      "lng": -40.547775,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6235132992",
+      "source": "GBIF",
+      "species": "Trametes variegata",
+      "lat": -19.805068,
+      "lng": -40.674981,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6235171753",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.939631,
+      "lng": -40.596124,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6236460903",
+      "source": "GBIF",
+      "species": "Cymatoderma dendriticum",
+      "lat": -20.496112,
+      "lng": -41.046764,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-24"
+    },
+    {
+      "id": "gbif-6251523463",
+      "source": "GBIF",
+      "species": "Coenogonium implexum",
+      "lat": -19.965254,
+      "lng": -40.540488,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6251670229",
+      "source": "GBIF",
+      "species": "Clitocybe puiggarii",
+      "lat": -19.910544,
+      "lng": -40.542005,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6252126088",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.965347,
+      "lng": -40.539945,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6252251213",
+      "source": "GBIF",
+      "species": "Phillipsia domingensis",
+      "lat": -20.195314,
+      "lng": -40.720335,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-20"
+    },
+    {
+      "id": "gbif-6252498921",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -20.525822,
+      "lng": -41.059877,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-28"
+    },
+    {
+      "id": "gbif-6252507504",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.965503,
+      "lng": -40.540012,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6252603221",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.969667,
+      "lng": -40.529525,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6253098744",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -19.926216,
+      "lng": -40.636325,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6253116447",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.926216,
+      "lng": -40.636325,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6253284968",
+      "source": "GBIF",
+      "species": "Ganoderma australe",
+      "lat": -19.926216,
+      "lng": -40.636325,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6273256585",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.937331,
+      "lng": -40.600341,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6273426812",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.924945,
+      "lng": -40.668287,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6273455336",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.937241,
+      "lng": -40.600003,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6273816644",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.923025,
+      "lng": -40.638252,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6273830345",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.917976,
+      "lng": -40.644362,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6273844738",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.917033,
+      "lng": -40.642863,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6274100716",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.93145,
+      "lng": -40.611609,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6274168820",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.930137,
+      "lng": -40.621198,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6320164121",
+      "source": "GBIF",
+      "species": "Cladonia crispatula",
+      "lat": -20.600028,
+      "lng": -40.411117,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-28"
+    },
+    {
+      "id": "gbif-6320184062",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.599875,
+      "lng": -40.410908,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-28"
+    },
+    {
+      "id": "gbif-6320368670",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -19.936591,
+      "lng": -40.600451,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6321147787",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -19.936567,
+      "lng": -40.60061,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6321190553",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -19.936609,
+      "lng": -40.600305,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6334665982",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.965254,
+      "lng": -40.540488,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "gbif-6334795994",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.936386,
+      "lng": -40.600053,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-26"
+    },
+    {
+      "id": "gbif-6353409400",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.444323,
+      "lng": -40.85802,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-12"
+    },
+    {
+      "id": "gbif-6430905351",
+      "source": "GBIF",
+      "species": "Pleurotus albidus",
+      "lat": -20.552832,
+      "lng": -41.010669,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-29"
+    },
+    {
+      "id": "gbif-6906803396",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.917221,
+      "lng": -40.642862,
+      "municipality": "Espírito Santo",
+      "date": "2026-04-25"
+    },
+    {
+      "id": "gbif-6273298154",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -20.265134,
+      "lng": -40.258375,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-06"
+    },
+    {
+      "id": "gbif-6273531917",
+      "source": "GBIF",
+      "species": "Chlorophyllum molybdites",
+      "lat": -21.07557,
+      "lng": -41.237097,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-03"
+    },
+    {
+      "id": "gbif-6273689511",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -20.265031,
+      "lng": -40.259617,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-06"
+    },
+    {
+      "id": "gbif-6320969897",
+      "source": "GBIF",
+      "species": "Gymnopus montagnei",
+      "lat": -19.054726,
+      "lng": -40.148393,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-09"
+    },
+    {
+      "id": "gbif-6321055431",
+      "source": "GBIF",
+      "species": "Laetiporus gilbertsonii",
+      "lat": -19.959588,
+      "lng": -40.603561,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-15"
+    },
+    {
+      "id": "gbif-6321060648",
+      "source": "GBIF",
+      "species": "Irpex rosettiformis",
+      "lat": -20.599915,
+      "lng": -41.05533,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-13"
+    },
+    {
+      "id": "gbif-6333886462",
+      "source": "GBIF",
+      "species": "Cladonia polyscypha",
+      "lat": -20.369975,
+      "lng": -40.336772,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-23"
+    },
+    {
+      "id": "gbif-6334096670",
+      "source": "GBIF",
+      "species": "Cladonia polyscypha",
+      "lat": -20.516647,
+      "lng": -41.084051,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-15"
+    },
+    {
+      "id": "gbif-6334176342",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -20.084474,
+      "lng": -40.815839,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-24"
+    },
+    {
+      "id": "gbif-6334258371",
+      "source": "GBIF",
+      "species": "Dirinaria applanata",
+      "lat": -20.370092,
+      "lng": -40.336522,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-23"
+    },
+    {
+      "id": "gbif-6334436971",
+      "source": "GBIF",
+      "species": "Cerrena hydnoides",
+      "lat": -20.365839,
+      "lng": -40.339074,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-23"
+    },
+    {
+      "id": "gbif-6335036826",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.606866,
+      "lng": -40.41936,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-17"
+    },
+    {
+      "id": "gbif-6352511486",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.258303,
+      "lng": -40.260215,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-20"
+    },
+    {
+      "id": "gbif-6352600351",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.258207,
+      "lng": -40.260161,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-16"
+    },
+    {
+      "id": "gbif-6352616993",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -20.264955,
+      "lng": -40.259493,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "gbif-6352801924",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.586873,
+      "lng": -41.045892,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-23"
+    },
+    {
+      "id": "gbif-6353009838",
+      "source": "GBIF",
+      "species": "Dirinaria applanata",
+      "lat": -20.257534,
+      "lng": -40.259132,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "gbif-6353115849",
+      "source": "GBIF",
+      "species": "Cladonia confusa",
+      "lat": -20.455289,
+      "lng": -40.996329,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-27"
+    },
+    {
+      "id": "gbif-6353230721",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -20.264942,
+      "lng": -40.25951,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-30"
+    },
+    {
+      "id": "gbif-6399158001",
+      "source": "GBIF",
+      "species": "Laetiporus gilbertsonii",
+      "lat": -19.956968,
+      "lng": -40.604373,
+      "municipality": "Espírito Santo",
+      "date": "2026-05-15"
+    },
+    {
+      "id": "gbif-6399113426",
+      "source": "GBIF",
+      "species": "Sagenidiopsis undulata",
+      "lat": -20.109866,
+      "lng": -41.008472,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-07"
+    },
+    {
+      "id": "gbif-6399537618",
+      "source": "GBIF",
+      "species": "Hymenochaete damicornis",
+      "lat": -20.503449,
+      "lng": -41.038401,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-02"
+    },
+    {
+      "id": "gbif-6400698305",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.360875,
+      "lng": -40.524047,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-07"
+    },
+    {
+      "id": "gbif-6413592771",
+      "source": "GBIF",
+      "species": "Teloschistes exilis",
+      "lat": -20.270339,
+      "lng": -40.307014,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-16"
+    },
+    {
+      "id": "gbif-6422974384",
+      "source": "GBIF",
+      "species": "Ramalina complanata",
+      "lat": -19.937674,
+      "lng": -40.258184,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-24"
+    },
+    {
+      "id": "gbif-6430755876",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.455156,
+      "lng": -40.991272,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-06"
+    },
+    {
+      "id": "gbif-6431397987",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.918098,
+      "lng": -40.643506,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-28"
+    },
+    {
+      "id": "gbif-6431453313",
+      "source": "GBIF",
+      "species": "Pseudocyphellaria aurata",
+      "lat": -20.455156,
+      "lng": -40.991281,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-07"
+    },
+    {
+      "id": "gbif-6431574510",
+      "source": "GBIF",
+      "species": "Cladonia verticillaris",
+      "lat": -20.455189,
+      "lng": -40.991322,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-06"
+    },
+    {
+      "id": "gbif-6431777908",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.455483,
+      "lng": -40.992561,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-27"
+    },
+    {
+      "id": "gbif-6431836049",
+      "source": "GBIF",
+      "species": "Cladia aggregata",
+      "lat": -20.455186,
+      "lng": -40.991275,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-06"
+    },
+    {
+      "id": "gbif-6469909381",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -20.165011,
+      "lng": -40.322492,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-21"
+    },
+    {
+      "id": "gbif-6470600957",
+      "source": "GBIF",
+      "species": "Trogia cantharelloides",
+      "lat": -18.854988,
+      "lng": -40.988441,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-13"
+    },
+    {
+      "id": "gbif-6869807671",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.109845,
+      "lng": -41.008201,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-07"
+    },
+    {
+      "id": "gbif-6870139623",
+      "source": "GBIF",
+      "species": "Pyrenula cerina",
+      "lat": -19.918098,
+      "lng": -40.643506,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-28"
+    },
+    {
+      "id": "gbif-6907323348",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.169983,
+      "lng": -40.326908,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-21"
+    },
+    {
+      "id": "gbif-6907628560",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.668386,
+      "lng": -41.002378,
+      "municipality": "Espírito Santo",
+      "date": "2026-06-27"
+    },
+    {
+      "id": "gbif-6431524958",
+      "source": "GBIF",
+      "species": "Pleurotus albidus",
+      "lat": -20.453411,
+      "lng": -41.120869,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-02"
+    },
+    {
+      "id": "gbif-6440932454",
+      "source": "GBIF",
+      "species": "Pleurotus djamor",
+      "lat": -19.148586,
+      "lng": -40.073883,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-01"
+    },
+    {
+      "id": "gbif-6441205794",
+      "source": "GBIF",
+      "species": "Pleurotus rickii",
+      "lat": -20.502513,
+      "lng": -41.048286,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-08"
+    },
+    {
+      "id": "gbif-6452503740",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -18.36716,
+      "lng": -40.141479,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-17"
+    },
+    {
+      "id": "gbif-6479544789",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.564044,
+      "lng": -41.018875,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-29"
+    },
+    {
+      "id": "gbif-6479965482",
+      "source": "GBIF",
+      "species": "Chlorociboria aeruginascens",
+      "lat": -19.907103,
+      "lng": -40.553372,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-20"
+    },
+    {
+      "id": "gbif-6480286358",
+      "source": "GBIF",
+      "species": "Clathrus chrysomycelinus",
+      "lat": -18.34306,
+      "lng": -40.146964,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-18"
+    },
+    {
+      "id": "gbif-6481219452",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.00755,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-16"
+    },
+    {
+      "id": "gbif-6481348703",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.00755,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-15"
+    },
+    {
+      "id": "gbif-6869175746",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.922586,
+      "lng": -40.641859,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-19"
+    },
+    {
+      "id": "gbif-6869435800",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.915628,
+      "lng": -40.63294,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-19"
+    },
+    {
+      "id": "gbif-6870907924",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.919301,
+      "lng": -40.643948,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-19"
+    },
+    {
+      "id": "gbif-6871771925",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.915628,
+      "lng": -40.63294,
+      "municipality": "Espírito Santo",
+      "date": "2026-07-19"
+    },
+    {
+      "id": "gbif-6479293306",
+      "source": "GBIF",
+      "species": "Pyxine cocoes",
+      "lat": -20.292992,
+      "lng": -40.288675,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "gbif-6480450427",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.355833,
+      "lng": -40.192131,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-02"
+    },
+    {
+      "id": "gbif-6498350453",
+      "source": "GBIF",
+      "species": "Cladonia didyma",
+      "lat": -20.510003,
+      "lng": -29.327263,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-19"
+    },
+    {
+      "id": "gbif-6498742445",
+      "source": "GBIF",
+      "species": "Panus strigellus",
+      "lat": -19.152136,
+      "lng": -40.068454,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-12"
+    },
+    {
+      "id": "gbif-6499390662",
+      "source": "GBIF",
+      "species": "Panus strigellus",
+      "lat": -19.135206,
+      "lng": -40.055727,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-19"
+    },
+    {
+      "id": "gbif-6499979830",
+      "source": "GBIF",
+      "species": "Abrachium floriforme",
+      "lat": -19.125167,
+      "lng": -39.918062,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-19"
+    },
+    {
+      "id": "gbif-6500002872",
+      "source": "GBIF",
+      "species": "Cladonia confusa",
+      "lat": -20.21173,
+      "lng": -40.57138,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-14"
+    },
+    {
+      "id": "gbif-6500110118",
+      "source": "GBIF",
+      "species": "Chlorociboria aeruginascens",
+      "lat": -19.967772,
+      "lng": -40.533445,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-15"
+    },
+    {
+      "id": "gbif-6500270665",
+      "source": "GBIF",
+      "species": "Gymnopilus palmicola",
+      "lat": -20.363804,
+      "lng": -40.335511,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-23"
+    },
+    {
+      "id": "gbif-6519783930",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.348775,
+      "lng": -40.67653,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "gbif-6550974216",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -18.676056,
+      "lng": -39.859405,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-27"
+    },
+    {
+      "id": "gbif-6551914492",
+      "source": "GBIF",
+      "species": "Panus strigellus",
+      "lat": -18.676331,
+      "lng": -39.859556,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-27"
+    },
+    {
+      "id": "gbif-6552577563",
+      "source": "GBIF",
+      "species": "Lentinus velutinus",
+      "lat": -20.396947,
+      "lng": -41.735355,
+      "municipality": "Espírito Santo",
+      "date": "2026-08-06"
+    },
+    {
+      "id": "gbif-6552124388",
+      "source": "GBIF",
+      "species": "Clathrus chrysomycelinus",
+      "lat": -20.569003,
+      "lng": -40.537922,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-13"
+    },
+    {
+      "id": "gbif-6552600115",
+      "source": "GBIF",
+      "species": "Collybia (Fr.) Staude",
+      "lat": -19.94267,
+      "lng": -40.585955,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-11"
+    },
+    {
+      "id": "gbif-6552607140",
+      "source": "GBIF",
+      "species": "Fomitiporia hippophaicola",
+      "lat": -20.116814,
+      "lng": -40.279987,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-13"
+    },
+    {
+      "id": "gbif-6552654405",
+      "source": "GBIF",
+      "species": "Chlorociboria aeruginascens",
+      "lat": -20.477526,
+      "lng": -41.17674,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-08"
+    },
+    {
+      "id": "gbif-6552685752",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.411301,
+      "lng": -41.108917,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-19"
+    },
+    {
+      "id": "gbif-6566703758",
+      "source": "GBIF",
+      "species": "Auricularia fuscosuccinea",
+      "lat": -20.271283,
+      "lng": -40.482192,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-19"
+    },
+    {
+      "id": "gbif-6566816444",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -18.827762,
+      "lng": -40.745251,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "gbif-6566970781",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.361692,
+      "lng": -40.365495,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-27"
+    },
+    {
+      "id": "gbif-6567103742",
+      "source": "GBIF",
+      "species": "Cerrena hydnoides",
+      "lat": -20.757888,
+      "lng": -41.452022,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-14"
+    },
+    {
+      "id": "gbif-6567162464",
+      "source": "GBIF",
+      "species": "Macrolepiota pulchella",
+      "lat": -20.55134,
+      "lng": -41.161093,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "gbif-6567311860",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -18.886267,
+      "lng": -40.846711,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-26"
+    },
+    {
+      "id": "gbif-6578854897",
+      "source": "GBIF",
+      "species": "Chlorophyllum molybdites",
+      "lat": -20.317512,
+      "lng": -40.293795,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "gbif-6579050717",
+      "source": "GBIF",
+      "species": "Macrolepiota pulchella",
+      "lat": -20.58256,
+      "lng": -41.063489,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "gbif-6579136331",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -20.505809,
+      "lng": -41.076629,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-30"
+    },
+    {
+      "id": "gbif-6907787523",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.585408,
+      "lng": -40.546047,
+      "municipality": "Espírito Santo",
+      "date": "2026-09-05"
+    },
+    {
+      "id": "gbif-6871119313",
+      "source": "GBIF",
+      "species": "Macrolepiota pulchella",
+      "lat": -20.459879,
+      "lng": -41.181199,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-08"
+    },
+    {
+      "id": "gbif-6871172445",
+      "source": "GBIF",
+      "species": "Pleurotus djamor",
+      "lat": -19.056327,
+      "lng": -40.147243,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-05"
+    },
+    {
+      "id": "gbif-6871422381",
+      "source": "GBIF",
+      "species": "Auricularia fuscosuccinea",
+      "lat": -20.474986,
+      "lng": -41.126483,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-05"
+    },
+    {
+      "id": "gbif-6885200408",
+      "source": "GBIF",
+      "species": "Phlebopus beniensis",
+      "lat": -20.274785,
+      "lng": -40.304593,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-29"
+    },
+    {
+      "id": "gbif-6885204906",
+      "source": "GBIF",
+      "species": "Marasmius amazonicus",
+      "lat": -18.953389,
+      "lng": -40.226828,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-30"
+    },
+    {
+      "id": "gbif-6885422868",
+      "source": "GBIF",
+      "species": "Hymenochaete damicornis",
+      "lat": -20.455916,
+      "lng": -41.106602,
+      "municipality": "Espírito Santo",
+      "date": "2026-10-30"
+    },
+    {
+      "id": "gbif-6885313563",
+      "source": "GBIF",
+      "species": "Dacrymyces spathularius",
+      "lat": -20.354442,
+      "lng": -40.539578,
+      "municipality": "Espírito Santo",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "gbif-6907020380",
+      "source": "GBIF",
+      "species": "Abrachium floriforme",
+      "lat": -20.560323,
+      "lng": -41.323058,
+      "municipality": "Espírito Santo",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "gbif-6907202688",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.00755,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2026-11-01"
+    },
+    {
+      "id": "gbif-6907587429",
+      "source": "GBIF",
+      "species": "Agaricus subrufescens",
+      "lat": -19.055867,
+      "lng": -40.148039,
+      "municipality": "Espírito Santo",
+      "date": "2026-11-05"
+    },
+    {
+      "id": "gbif-5006842234",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.151747,
+      "lng": -40.069558,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-02"
+    },
+    {
+      "id": "gbif-5006926004",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.437114,
+      "lng": -41.785229,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-06"
+    },
+    {
+      "id": "gbif-5007073566",
+      "source": "GBIF",
+      "species": "Leucopaxillus gracillimus",
+      "lat": -20.437114,
+      "lng": -41.785229,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-06"
+    },
+    {
+      "id": "gbif-5036693025",
+      "source": "GBIF",
+      "species": "Chlorophyllum molybdites",
+      "lat": -18.725689,
+      "lng": -39.854858,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-13"
+    },
+    {
+      "id": "gbif-5037039949",
+      "source": "GBIF",
+      "species": "Cookeina venezuelae",
+      "lat": -20.437114,
+      "lng": -41.785229,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-06"
+    },
+    {
+      "id": "gbif-5037280562",
+      "source": "GBIF",
+      "species": "Fomitiporia robusta",
+      "lat": -20.437114,
+      "lng": -41.785229,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-06"
+    },
+    {
+      "id": "gbif-5062951831",
+      "source": "GBIF",
+      "species": "Tremella wrightii",
+      "lat": -20.172226,
+      "lng": -40.316428,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-12"
+    },
+    {
+      "id": "gbif-5062968609",
+      "source": "GBIF",
+      "species": "Cyathus striatus",
+      "lat": -20.437114,
+      "lng": -41.785229,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-06"
+    },
+    {
+      "id": "gbif-5063058028",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -19.932035,
+      "lng": -40.599911,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-15"
+    },
+    {
+      "id": "gbif-5063196248",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -20.328944,
+      "lng": -40.28701,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-19"
+    },
+    {
+      "id": "gbif-5063386127",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.358773,
+      "lng": -39.927352,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-25"
+    },
+    {
+      "id": "gbif-5063491463",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -19.975866,
+      "lng": -40.140499,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-26"
+    },
+    {
+      "id": "gbif-5077044611",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.607342,
+      "lng": -40.418142,
+      "municipality": "Espírito Santo",
+      "date": "2025-01-19"
+    },
+    {
+      "id": "gbif-6186958336",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -20.279722,
+      "lng": -40.306667,
+      "municipality": "Vitória",
+      "date": "2025-01-13"
+    },
+    {
+      "id": "gbif-5064063046",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -19.975043,
+      "lng": -40.139525,
+      "municipality": "Espírito Santo",
+      "date": "2025-02-11"
+    },
+    {
+      "id": "gbif-5064097864",
+      "source": "GBIF",
+      "species": "Schizophyllum commune",
+      "lat": -20.035973,
+      "lng": -40.159318,
+      "municipality": "Espírito Santo",
+      "date": "2025-02-11"
+    },
+    {
+      "id": "gbif-6274073384",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.084474,
+      "lng": -40.815839,
+      "municipality": "Espírito Santo",
+      "date": "2025-02-22"
+    },
+    {
+      "id": "gbif-5087871392",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.399325,
+      "lng": -41.021,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "gbif-5088007786",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.400355,
+      "lng": -41.018611,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "gbif-5104696230",
+      "source": "GBIF",
+      "species": "Agrocybe retigera",
+      "lat": -19.99951,
+      "lng": -40.588729,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-23"
+    },
+    {
+      "id": "gbif-5108093135",
+      "source": "GBIF",
+      "species": "Cerrena caperata",
+      "lat": -19.151444,
+      "lng": -40.070575,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-25"
+    },
+    {
+      "id": "gbif-5108110592",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.401792,
+      "lng": -41.025019,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "gbif-5108214578",
+      "source": "GBIF",
+      "species": "Echinoporia aculeifera",
+      "lat": -20.562727,
+      "lng": -41.001291,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-26"
+    },
+    {
+      "id": "gbif-5108497316",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -20.741233,
+      "lng": -41.293946,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-29"
+    },
+    {
+      "id": "gbif-5292949907",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.398231,
+      "lng": -41.024166,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "gbif-5828865004",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -20.588012,
+      "lng": -40.555708,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-28"
+    },
+    {
+      "id": "gbif-6235094488",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.108162,
+      "lng": -40.562706,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-23"
+    },
+    {
+      "id": "gbif-6520223052",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -20.461468,
+      "lng": -41.003551,
+      "municipality": "Espírito Santo",
+      "date": "2025-03-28"
+    },
+    {
+      "id": "gbif-5133473651",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -18.662094,
+      "lng": -40.564263,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-12"
+    },
+    {
+      "id": "gbif-5133839177",
+      "source": "GBIF",
+      "species": "Cladonia confusa",
+      "lat": -20.483167,
+      "lng": -41.050798,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-01"
+    },
+    {
+      "id": "gbif-5134139228",
+      "source": "GBIF",
+      "species": "Clitocybula azurea",
+      "lat": -20.435411,
+      "lng": -41.172383,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-03"
+    },
+    {
+      "id": "gbif-5134226717",
+      "source": "GBIF",
+      "species": "Trogia cantharelloides",
+      "lat": -19.148748,
+      "lng": -40.068557,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-13"
+    },
+    {
+      "id": "gbif-5134558522",
+      "source": "GBIF",
+      "species": "Cladonia confusa",
+      "lat": -20.291205,
+      "lng": -41.131336,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-21"
+    },
+    {
+      "id": "gbif-5140297543",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.937442,
+      "lng": -40.600495,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5140345877",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.935994,
+      "lng": -40.599301,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5140374407",
+      "source": "GBIF",
+      "species": "Cerrena hydnoides",
+      "lat": -19.923365,
+      "lng": -40.585269,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5140389471",
+      "source": "GBIF",
+      "species": "Collybia (Fr.) Staude",
+      "lat": -19.915126,
+      "lng": -40.647608,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5140401822",
+      "source": "GBIF",
+      "species": "Myrmecopterula moniliformis",
+      "lat": -19.924647,
+      "lng": -40.623222,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-26"
+    },
+    {
+      "id": "gbif-5140418579",
+      "source": "GBIF",
+      "species": "Leucocoprinus fragilissimus",
+      "lat": -19.936774,
+      "lng": -40.600147,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-26"
+    },
+    {
+      "id": "gbif-5140808014",
+      "source": "GBIF",
+      "species": "Scleroderma cepa",
+      "lat": -19.881512,
+      "lng": -40.584205,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-5140892079",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -19.982461,
+      "lng": -40.568969,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-5140952045",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5141002531",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.908903,
+      "lng": -40.66175,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-5141044477",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-5141085882",
+      "source": "GBIF",
+      "species": "Marasmius haematocephalus",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5141119370",
+      "source": "GBIF",
+      "species": "Psilocybe cubensis",
+      "lat": -19.951397,
+      "lng": -40.556522,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5141127074",
+      "source": "GBIF",
+      "species": "Microporellus obovatus",
+      "lat": -19.949925,
+      "lng": -40.556105,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5153217622",
+      "source": "GBIF",
+      "species": "Amanita viscidolutea",
+      "lat": -20.608095,
+      "lng": -40.414662,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5153274053",
+      "source": "GBIF",
+      "species": "Pyxine cocoes",
+      "lat": -20.292596,
+      "lng": -40.287791,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5153450132",
+      "source": "GBIF",
+      "species": "Myrmecopterula velohortorum",
+      "lat": -19.936769,
+      "lng": -40.599751,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-25"
+    },
+    {
+      "id": "gbif-5154190380",
+      "source": "GBIF",
+      "species": "Ganoderma lobatum",
+      "lat": -19.951507,
+      "lng": -40.556553,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5176385486",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5176440676",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5177016627",
+      "source": "GBIF",
+      "species": "Trametes cinnabarina",
+      "lat": -19.930853,
+      "lng": -40.591311,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5177178436",
+      "source": "GBIF",
+      "species": "Usnea cornuta",
+      "lat": -19.88803,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-6167882336",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -20.268056,
+      "lng": -40.307778,
+      "municipality": "Vitória",
+      "date": "2025-04-15"
+    },
+    {
+      "id": "gbif-6273325135",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.94197,
+      "lng": -40.587912,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-6273573749",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.932035,
+      "lng": -40.599911,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-6273658658",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.943136,
+      "lng": -40.588924,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-27"
+    },
+    {
+      "id": "gbif-6273711460",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.888034,
+      "lng": -40.547734,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-6274102807",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -19.967747,
+      "lng": -40.595016,
+      "municipality": "Espírito Santo",
+      "date": "2025-04-28"
+    },
+    {
+      "id": "gbif-5153279476",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -20.308921,
+      "lng": -40.344016,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-02"
+    },
+    {
+      "id": "gbif-5153769192",
+      "source": "GBIF",
+      "species": "Auricularia fuscosuccinea",
+      "lat": -20.580937,
+      "lng": -41.263628,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-02"
+    },
+    {
+      "id": "gbif-5153850976",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.607937,
+      "lng": -40.575257,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-04"
+    },
+    {
+      "id": "gbif-5154100991",
+      "source": "GBIF",
+      "species": "Leucopaxillus gracillimus",
+      "lat": -20.308034,
+      "lng": -40.341001,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-02"
+    },
+    {
+      "id": "gbif-5154516649",
+      "source": "GBIF",
+      "species": "Macrolepiota pulchella",
+      "lat": -20.266653,
+      "lng": -40.486953,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-09"
+    },
+    {
+      "id": "gbif-5154912409",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -20.353747,
+      "lng": -40.598758,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-03"
+    },
+    {
+      "id": "gbif-5154941546",
+      "source": "GBIF",
+      "species": "Phillipsia domingensis",
+      "lat": -20.267478,
+      "lng": -40.485353,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-09"
+    },
+    {
+      "id": "gbif-5166925329",
+      "source": "GBIF",
+      "species": "Favolus tenuiculus",
+      "lat": -19.053147,
+      "lng": -40.147711,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-10"
+    },
+    {
+      "id": "gbif-5167201203",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -19.151639,
+      "lng": -40.069992,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-21"
+    },
+    {
+      "id": "gbif-5167367210",
+      "source": "GBIF",
+      "species": "Dacrymyces spathularius",
+      "lat": -19.151444,
+      "lng": -40.070575,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-19"
+    },
+    {
+      "id": "gbif-5167571856",
+      "source": "GBIF",
+      "species": "Gymnopus montagnei",
+      "lat": -19.007663,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-02"
+    },
+    {
+      "id": "gbif-5167802313",
+      "source": "GBIF",
+      "species": "Leucocoprinus cretaceus",
+      "lat": -19.007663,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-03"
+    },
+    {
+      "id": "gbif-5167991567",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -19.869513,
+      "lng": -40.811958,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-27"
+    },
+    {
+      "id": "gbif-5168004167",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -21.077643,
+      "lng": -41.352462,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-15"
+    },
+    {
+      "id": "gbif-5168226979",
+      "source": "GBIF",
+      "species": "Entoloma dragonosporum",
+      "lat": -19.856236,
+      "lng": -40.535498,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-20"
+    },
+    {
+      "id": "gbif-5168275363",
+      "source": "GBIF",
+      "species": "Macrolepiota capelariae",
+      "lat": -19.150333,
+      "lng": -40.0708,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-22"
+    },
+    {
+      "id": "gbif-5176546446",
+      "source": "GBIF",
+      "species": "Leucopaxillus gracillimus",
+      "lat": -19.150522,
+      "lng": -40.069592,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-29"
+    },
+    {
+      "id": "gbif-5176590857",
+      "source": "GBIF",
+      "species": "Nectria pseudotrichia",
+      "lat": -19.941847,
+      "lng": -40.581595,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-28"
+    },
+    {
+      "id": "gbif-5176795193",
+      "source": "GBIF",
+      "species": "Teloschistes flavicans",
+      "lat": -20.46529,
+      "lng": -41.005768,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-29"
+    },
+    {
+      "id": "gbif-5176853594",
+      "source": "GBIF",
+      "species": "Lentinus velutinus",
+      "lat": -20.556296,
+      "lng": -41.044916,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-31"
+    },
+    {
+      "id": "gbif-5187890711",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -19.129132,
+      "lng": -40.026634,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-24"
+    },
+    {
+      "id": "gbif-5187900573",
+      "source": "GBIF",
+      "species": "Phallus indusiatus",
+      "lat": -20.259242,
+      "lng": -40.488828,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-09"
+    },
+    {
+      "id": "gbif-5187932798",
+      "source": "GBIF",
+      "species": "Hygrocybe helobia",
+      "lat": -19.957476,
+      "lng": -40.58513,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-31"
+    },
+    {
+      "id": "gbif-5216442817",
+      "source": "GBIF",
+      "species": "Ramalina intermedia",
+      "lat": -19.007544,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-30"
+    },
+    {
+      "id": "gbif-5231426953",
+      "source": "GBIF",
+      "species": "Phillipsia domingensis",
+      "lat": -20.271437,
+      "lng": -40.495899,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-09"
+    },
+    {
+      "id": "gbif-5759691063",
+      "source": "GBIF",
+      "species": "Marasmius haematocephalus",
+      "lat": -19.021861,
+      "lng": -40.435633,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-31"
+    },
+    {
+      "id": "gbif-5827626454",
+      "source": "GBIF",
+      "species": "Usnea barbata",
+      "lat": -20.591958,
+      "lng": -41.767853,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-30"
+    },
+    {
+      "id": "gbif-5827643912",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.591914,
+      "lng": -41.768514,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-30"
+    },
+    {
+      "id": "gbif-5828153667",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.592286,
+      "lng": -41.769078,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-30"
+    },
+    {
+      "id": "gbif-5897628529",
+      "source": "GBIF",
+      "species": "Cookeina tricholoma",
+      "lat": -19.007544,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-30"
+    },
+    {
+      "id": "gbif-5908744774",
+      "source": "GBIF",
+      "species": "Leucopaxillus gracillimus",
+      "lat": -18.662147,
+      "lng": -39.784502,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-5938510332",
+      "source": "GBIF",
+      "species": "Leucocoprinus brunneoluteus",
+      "lat": -19.033094,
+      "lng": -39.967667,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-27"
+    },
+    {
+      "id": "gbif-6133097154",
+      "source": "GBIF",
+      "species": "Macrolepiota capelariae",
+      "lat": -19.150125,
+      "lng": -40.071167,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-22"
+    },
+    {
+      "id": "gbif-6133531040",
+      "source": "GBIF",
+      "species": "Macrolepiota capelariae",
+      "lat": -19.150433,
+      "lng": -40.070808,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-21"
+    },
+    {
+      "id": "gbif-6133850302",
+      "source": "GBIF",
+      "species": "Gloeophyllum striatum",
+      "lat": -20.275556,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850305",
+      "source": "GBIF",
+      "species": "Geastrum Pers., 1794",
+      "lat": -20.275556,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850308",
+      "source": "GBIF",
+      "species": "Pterula Fr.",
+      "lat": -20.275556,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850314",
+      "source": "GBIF",
+      "species": "Omphalotaceae",
+      "lat": -20.275556,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850327",
+      "source": "GBIF",
+      "species": "Scleroderma polyrhizum",
+      "lat": -20.272778,
+      "lng": -40.306667,
+      "municipality": "Vitória",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-6133850329",
+      "source": "GBIF",
+      "species": "Geastrum Pers., 1794",
+      "lat": -20.273333,
+      "lng": -40.306389,
+      "municipality": "Vitória",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-6133850333",
+      "source": "GBIF",
+      "species": "Phillipsia domingensis",
+      "lat": -20.279444,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850337",
+      "source": "GBIF",
+      "species": "Fungi",
+      "lat": -20.275278,
+      "lng": -40.305556,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850338",
+      "source": "GBIF",
+      "species": "Marasmius Fr., 1836",
+      "lat": -20.275278,
+      "lng": -40.305556,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850340",
+      "source": "GBIF",
+      "species": "Trametes variegata",
+      "lat": -20.278889,
+      "lng": -40.305278,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850342",
+      "source": "GBIF",
+      "species": "Daldinia Ces. & De Not., 1863",
+      "lat": -20.279444,
+      "lng": -40.306111,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850344",
+      "source": "GBIF",
+      "species": "Lycoperdon perlatum",
+      "lat": -20.2775,
+      "lng": -40.306389,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6133850346",
+      "source": "GBIF",
+      "species": "Marasmius Fr., 1836",
+      "lat": -20.2775,
+      "lng": -40.306389,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6167882311",
+      "source": "GBIF",
+      "species": "Hygrocybe (Fr.) P.Kumm., 1871",
+      "lat": -20.274722,
+      "lng": -40.304444,
+      "municipality": "Vitória",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-6167882312",
+      "source": "GBIF",
+      "species": "Schizophyllum Fr., 1815",
+      "lat": -20.274722,
+      "lng": -40.304444,
+      "municipality": "Vitória",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-6167882333",
+      "source": "GBIF",
+      "species": "Inocybe (Fr.) Fr., 1863",
+      "lat": -20.278333,
+      "lng": -40.305833,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6185709008",
+      "source": "GBIF",
+      "species": "Chlorophyllum molybdites",
+      "lat": -18.289837,
+      "lng": -39.955028,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-09"
+    },
+    {
+      "id": "gbif-6186958379",
+      "source": "GBIF",
+      "species": "Sebacina Tul. & C.Tul.",
+      "lat": -20.274722,
+      "lng": -40.305,
+      "municipality": "Vitória",
+      "date": "2025-05-13"
+    },
+    {
+      "id": "gbif-6186958384",
+      "source": "GBIF",
+      "species": "Dacryopinax elegans",
+      "lat": -20.274722,
+      "lng": -40.304444,
+      "municipality": "Vitória",
+      "date": "2025-05-14"
+    },
+    {
+      "id": "gbif-6273937908",
+      "source": "GBIF",
+      "species": "Herpothallon rubrocinctum",
+      "lat": -20.483212,
+      "lng": -40.996614,
+      "municipality": "Espírito Santo",
+      "date": "2025-05-29"
+    },
+    {
+      "id": "gbif-5176732943",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.921172,
+      "lng": -40.709433,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-01"
+    },
+    {
+      "id": "gbif-5187542518",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.870457,
+      "lng": -40.812567,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-05"
+    },
+    {
+      "id": "gbif-5187606979",
+      "source": "GBIF",
+      "species": "Ophiocordyceps neonutans",
+      "lat": -18.355948,
+      "lng": -39.847584,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-06"
+    },
+    {
+      "id": "gbif-5188084893",
+      "source": "GBIF",
+      "species": "Cerrena caperata",
+      "lat": -20.766091,
+      "lng": -41.467132,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-06"
+    },
+    {
+      "id": "gbif-5198325684",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -18.859522,
+      "lng": -40.025483,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-08"
+    },
+    {
+      "id": "gbif-5198425627",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.932035,
+      "lng": -40.599911,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-16"
+    },
+    {
+      "id": "gbif-5198460635",
+      "source": "GBIF",
+      "species": "Diploschistes hypoleucus",
+      "lat": -20.659138,
+      "lng": -40.468378,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-16"
+    },
+    {
+      "id": "gbif-5198567430",
+      "source": "GBIF",
+      "species": "Coprinellus disseminatus",
+      "lat": -19.942525,
+      "lng": -40.585716,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-15"
+    },
+    {
+      "id": "gbif-5205994695",
+      "source": "GBIF",
+      "species": "Trogia cantharelloides",
+      "lat": -19.007663,
+      "lng": -40.116567,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-14"
+    },
+    {
+      "id": "gbif-5206298622",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.872623,
+      "lng": -40.875266,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-07"
+    },
+    {
+      "id": "gbif-5206522776",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.932035,
+      "lng": -40.599911,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-22"
+    },
+    {
+      "id": "gbif-5215773427",
+      "source": "GBIF",
+      "species": "Lentinus velutinus",
+      "lat": -20.499752,
+      "lng": -41.062516,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-25"
+    },
+    {
+      "id": "gbif-5215922706",
+      "source": "GBIF",
+      "species": "Oudemansiella cubensis",
+      "lat": -20.894445,
+      "lng": -41.1942,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-03"
+    },
+    {
+      "id": "gbif-5216120700",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.885042,
+      "lng": -40.088294,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-28"
+    },
+    {
+      "id": "gbif-5216798925",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.751185,
+      "lng": -40.310139,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-21"
+    },
+    {
+      "id": "gbif-5216834027",
+      "source": "GBIF",
+      "species": "Lentinus velutinus",
+      "lat": -20.548492,
+      "lng": -41.17774,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-30"
+    },
+    {
+      "id": "gbif-5230293227",
+      "source": "GBIF",
+      "species": "Polyporaceae",
+      "lat": -19.757323,
+      "lng": -40.310446,
+      "municipality": "Espírito Santo",
+      "date": "2025-06-21"
+    }
+  ]
 }

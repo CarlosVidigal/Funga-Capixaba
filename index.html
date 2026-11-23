@@ -1603,6 +1603,7 @@ renderAbout();renderCite();
 /* --- Sincronização, Transparência e Gráfico --- */
 let incrementChart;
 let lastTot = 0;
+let syncHistory = ls.get('funga-sync-hist', []);
 
 function initChart() {
     const ctx = document.getElementById('incrementChart');
@@ -1610,10 +1611,10 @@ function initChart() {
     incrementChart = new Chart(ctx.getContext('2d'), {
         type: 'bar',
         data: {
-            labels: [],
+            labels: syncHistory.map(h => h.date),
             datasets: [{
-                label: 'Novos Registros Inseridos no Ciclo',
-                data: [],
+                label: 'Novos Registros (Incremento da Atualização)',
+                data: syncHistory.map(h => h.inc),
                 backgroundColor: 'rgba(37, 99, 173, 0.6)',
                 borderColor: 'rgba(37, 99, 173, 1)',
                 borderWidth: 1
@@ -1627,42 +1628,55 @@ function initChart() {
 }
 initChart();
 
-function updateChartData(newRecordsCount) {
+function updateChartData(newRecordsCount, totalRecords) {
     if(!incrementChart) return;
-    const timeStr = new Date().toLocaleTimeString('pt-BR');
-    incrementChart.data.labels.push(timeStr);
-    incrementChart.data.datasets[0].data.push(newRecordsCount);
-    if(incrementChart.data.labels.length > 15) {
+    const dateStr = new Date().toLocaleDateString('pt-BR');
+    
+    const lastEntry = syncHistory[syncHistory.length - 1];
+    if (lastEntry && lastEntry.date === dateStr) {
+        lastEntry.inc += newRecordsCount;
+        lastEntry.total = totalRecords;
+        incrementChart.data.datasets[0].data[incrementChart.data.datasets[0].data.length - 1] = lastEntry.inc;
+    } else {
+        syncHistory.push({ date: dateStr, inc: newRecordsCount, total: totalRecords });
+        incrementChart.data.labels.push(dateStr);
+        incrementChart.data.datasets[0].data.push(newRecordsCount);
+    }
+    
+    if(syncHistory.length > 15) {
+        syncHistory.shift();
         incrementChart.data.labels.shift();
         incrementChart.data.datasets[0].data.shift();
     }
+    ls.set('funga-sync-hist', syncHistory);
     incrementChart.update();
-    
-    const tot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
-    document.getElementById('syncTotalRecords').innerText = fmt(tot);
 }
 
-// Interceptar o renderSrc para capturar os lotes sendo inseridos pelas requisições
 const origRs = renderSrc;
 renderSrc = function() {
     origRs();
+    const busy = Object.values(st).includes('load');
     const currTot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
-    const diff = currTot - lastTot;
-    if (diff > 0) {
-        updateChartData(diff);
-        lastTot = currTot;
+    
+    document.getElementById('syncTotalRecords').innerText = fmt(currTot);
+
+    // Só computa o incremento quando a sincronização total terminar (!busy)
+    if (!busy) {
+        if (lastTot === 0) {
+            lastTot = currTot; // Primeira carga
+        } else {
+            const diff = currTot - lastTot;
+            if (diff > 0) {
+                updateChartData(diff, currTot);
+            }
+            lastTot = currTot;
+        }
     }
 };
 
 $('#forceSyncBtn').onclick = () => {
     $('#status').textContent = 'Sincronização forçada iniciada...';
     CACHE_TS = 0;
-    lastTot = 0;
-    if(incrementChart) {
-        incrementChart.data.labels = [];
-        incrementChart.data.datasets[0].data = [];
-        incrementChart.update();
-    }
     run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
 };
 
@@ -1677,10 +1691,20 @@ loadHash();fillSelects();
   if(!hasCache || (now - CACHE_TS) > oneDay) {
       run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
   } else {
+      // CORREÇÃO: Avisa ao sistema que as fontes já estão prontas
+      st.inat = 'ok'; st.gbif = 'ok'; st.sibbr = 'ok'; st.splink = 'ok'; st.jabot = 'ok';
+      
+      // Dispara o render final para liberar o processamento da Flora e Funga do Brasil
+      renderSrc();
+      
       const hrs = Math.floor((oneDay - (now - CACHE_TS)) / 3600000);
       const mins = Math.floor(((oneDay - (now - CACHE_TS)) % 3600000) / 60000);
-      $('#status').textContent = `Dados locais em cache (Última atualização: ${new Date(CACHE_TS).toLocaleString('pt-BR')}). Próxima consulta em ${hrs}h ${mins}m.`;
-      $('#prog').style.width = '100%';
+      
+      setTimeout(() => {
+          $('#status').textContent = `Dados locais em cache (Última atualização: ${new Date(CACHE_TS).toLocaleString('pt-BR')}). Próxima consulta em ${hrs}h ${mins}m.`;
+          $('#prog').style.width = '100%';
+      }, 1000);
+      
       lastTot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
       document.getElementById('syncTotalRecords').innerText = fmt(lastTot);
   }

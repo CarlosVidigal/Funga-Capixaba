@@ -8,9 +8,15 @@ on:
 permissions:
   contents: write
 
+# Impede duas coletas simultâneas (e conflitos de push)
+concurrency:
+  group: atualizar-base
+  cancel-in-progress: false
+
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
@@ -18,22 +24,26 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Executar script de coleta incremental
+      - name: Coletar iNaturalist, GBIF, SiBBr e speciesLink
         env:
-          # Opcional: cadastre sua chave do speciesLink em Settings > Secrets > Actions
+          # Opcional: cadastre sua chave do speciesLink em Settings > Secrets and variables > Actions
           SPLINK_API_KEY: ${{ secrets.SPLINK_API_KEY }}
         run: node scripts/atualizar-dados.mjs
 
-      - name: Salvar alterações se houver novos dados
+      - name: Salvar alterações
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/funga-es.json
+          # data/status.json muda toda semana (data da última verificação): isso conta como
+          # atividade e evita que o GitHub desative o agendamento após 60 dias sem commits.
+          git add data/
           if git diff --staged --quiet; then
-            echo "Nenhum registro novo encontrado. Versão mantida."
+            echo "Nada a salvar."
           else
-            git commit -m "chore(data): atualização incremental da base funga-es.json"
-            git push
+            V=$(node -p "require('./data/status.json').version")
+            git commit -m "chore(data): atualização semanal da base (v${V})"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

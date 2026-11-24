@@ -320,16 +320,17 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
   <section id="t-sync" hidden>
     <div class="card" style="margin-bottom: 16px;">
         <h3>Transparência e Aquisição de Dados</h3>
-        <p>O <b>Funga Capixaba</b> consulta bases públicas abertas (iNaturalist, JABOT, GBIF e SiBBr) diretamente do seu navegador. O sistema está em constante aprimoramento para garantir a melhor qualidade e integração dos registros e da taxonomia.</p>
-        <p>Para evitar sobrecarga nos servidores dessas instituições e otimizar sua navegação, o sistema realiza as requisições com um <b>intervalo de segurança de 24 horas (intervalo diário)</b>. Durante esse período, os dados ficam armazenados localmente na memória (cache) do seu dispositivo.</p>
+        <p>O <b>Funga Capixaba</b> reúne registros de bases públicas abertas (iNaturalist, JABOT, GBIF, SiBBr e speciesLink). Uma rotina automática no GitHub, executada toda semana, baixa as bases, atualiza o arquivo <code>data/funga-capixaba-dados.json</code> e registra o histórico de versões, exibido no gráfico abaixo. O sistema está em constante aprimoramento para garantir a melhor qualidade e integração dos registros e da taxonomia.</p>
+        <p>Ao abrir a página, o painel carrega essa base do repositório e a guarda no cache do seu navegador, sem sobrecarregar os servidores das instituições. Se a base não estiver disponível (por exemplo, ao abrir o arquivo direto do computador sem o JSON ao lado) ou tiver mais de 30 dias, a página consulta as fontes diretamente, no máximo uma vez a cada 24 horas. O botão abaixo força uma nova consulta direta.</p>
     </div>
     <div class="card" style="margin-bottom: 16px;">
-        <h3>Gráfico de Incremento e Sincronização</h3>
+        <h3>Histórico de atualizações da base</h3>
         <div style="margin-bottom: 12px;">
             <button id="forceSyncBtn" type="button" style="background:var(--brand);color:#fff;border-color:var(--brand-d);">Forçar Atualização Agora</button>
-            <span style="font-size: 13px; color: var(--mute); margin-left: 10px;">Baixa os dados novamente das bases externas.</span>
+            <span style="font-size: 13px; color: var(--mute); margin-left: 10px;">Ignora a base do repositório e baixa tudo de novo das bases externas (pode levar alguns minutos).</span>
         </div>
         <p><strong>Total de Registros Brutos na Base Local:</strong> <span id="syncTotalRecords">0</span></p>
+        <p id="syncInfo" style="font-size:13px;color:var(--mute)"></p>
         <div style="width: 100%; max-width: 900px; margin-top: 20px;">
             <canvas id="incrementChart"></canvas>
         </div>
@@ -344,7 +345,7 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
 <aside id="dw" class="dw" hidden aria-label="Ficha"><div class="dwh"><b id="dwt"></b><button id="dwx" type="button" aria-label="Fechar">✕</button></div><div id="dwb"></div></aside>
 <div id="toast" class="toast" hidden></div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
 <script>
@@ -361,7 +362,7 @@ let all=[],view=[],selK=null,sort={k:'n',d:-1},shown=false;
 
 /* ---------- dados ---------- */
 const SRC={inat:{n:'iNaturalist',c:'#e8508a'},jabot:{n:'JABOT',c:'#1d4f9c'},gbif:{n:'GBIF',c:'#27b3e6'},sibbr:{n:'SiBBr',c:'#8e5bd1'},splink:{n:'speciesLink',c:'#f2a900'}};
-const raw={inat:[],jabot:[],gbif:[],sibbr:[],splink:[]},st={inat:'load',jabot:'load',gbif:'load',sibbr:'load',splink:'load'},tot={inat:0,jabot:0,gbif:0,sibbr:0,splink:0};
+const raw={inat:[],jabot:[],gbif:[],sibbr:[],splink:[]},st={inat:'load',jabot:'load',gbif:'load',sibbr:'load',splink:'ok'},tot={inat:0,jabot:0,gbif:0,sibbr:0,splink:0};
 const INAT_DS='50c9509d-22c7-4a22-a47d-8c48425ef4a7',RB_DS='4300f8d5-1ae5-49e5-a101-63894b005868'; // RB = herbário do JBRJ, coleção do JABOT
 const JB={pub:''};                 // organização publicadora do JBRJ (descoberta ao carregar o GBIF)
 const JABOT_HERB=['RB','VIES','CAP','CEUNES','MBML','CVRD','UFES','SRVD'];           // códigos de herbários tratados como JABOT (edite para incluir outros)
@@ -387,16 +388,15 @@ function slimGbif(o){
   if (ic === 'SAMES') ic = 'CEUNES';
   if (ic === 'UFES') ic = 'VIES';
   if (ic === 'SRVD' || ic === 'VALE') ic = 'CVRD';
-  o.institutionCode = ic;
 
   const sci=o.species||o.genus||o.family||o.order||o.scientificName||'';
-  const jb=o.datasetKey===RB_DS||JABOT_HERB.includes(o.institutionCode)||(JB.pub&&o.publishingOrgKey===JB.pub)||/jabot|jbrj/i.test([o.references,o.occurrenceID,o.datasetName].filter(Boolean).join(' ')),tr=(o.taxonRank||'').toLowerCase();
+  const jb=o.datasetKey===RB_DS||JABOT_HERB.includes(ic)||(JB.pub&&o.publishingOrgKey===JB.pub)||/jabot|jbrj/i.test([o.references,o.occurrenceID,o.datasetName].filter(Boolean).join(' ')),tr=(o.taxonRank||'').toLowerCase();
   const img=(o.media||[]).find(m=>m.type==='StillImage'&&m.identifier);
   const m=String(o.occurrenceID||'').match(/inaturalist\.org\/observations\/(\d+)/);
-  return{src:jb?'jabot':'gbif',via:'gbif',id:'g'+o.key,inatDs:o.datasetKey===INAT_DS,rec:o.recordedBy||'',uf:o.stateProvince||'',cty:o.county||o.municipality||'',inst:o.institutionCode||'',alt:num(o.elevation??o.minimumElevationInMeters),jflag:jb,k:keyOf(sci),sci,com:o.vernacularName||'',rank:LOW.includes(tr)?tr:(rk(o)||tr),tph:'',ph:img?img.identifier:'',
+  return{src:jb?'jabot':'gbif',via:'gbif',id:'g'+o.key,inatDs:o.datasetKey===INAT_DS,rec:o.recordedBy||'',uf:o.stateProvince||'',cty:o.county||o.municipality||'',inst:ic||'',alt:num(o.elevation??o.minimumElevationInMeters),jflag:jb,k:keyOf(sci),sci,com:o.vernacularName||'',rank:LOW.includes(tr)?tr:(rk(o)||tr),tph:'',ph:img?img.identifier:'',
     lat:o.decimalLatitude??null,lng:o.decimalLongitude??null,date:isoDate(o.eventDate),grade:o.datasetKey===INAT_DS?'research':'',
-    user:o.recordedBy||o.institutionCode||'',place:[o.locality,o.county,o.stateProvince].filter(Boolean).join(', '),acc:o.coordinateUncertaintyInMeters,obs:false,
-    uri:'https://www.gbif.org/occurrence/'+o.key,ds:(jb?'JABOT (herbário RB) · ':'')+[o.institutionCode,o.collectionCode,o.basisOfRecord].filter(Boolean).join(' · '),inatId:m?+m[1]:0};
+    user:o.recordedBy||ic||'',place:[o.locality,o.county,o.stateProvince].filter(Boolean).join(', '),acc:o.coordinateUncertaintyInMeters,obs:false,
+    uri:'https://www.gbif.org/occurrence/'+o.key,ds:(jb?'JABOT (herbário RB) · ':'')+[ic,o.collectionCode,o.basisOfRecord].filter(Boolean).join(' · '),inatId:m?+m[1]:0};
 }
 function slimSibbr(o){
   
@@ -404,15 +404,13 @@ function slimSibbr(o){
   if (ic.includes('SAMES')) ic = 'CEUNES';
   if (ic === 'UFES' || ic.includes('UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO')) ic = 'VIES';
   if (ic === 'SRVD' || ic.includes('RESERVA NATURAL VALE')) ic = 'CVRD';
-  o.institutionCode = ic;
-  o.institutionName = ic;
 
   const sci=o.species||o.genus||o.family||o.scientificName||'';
-  const jb=/Jardim Bot[aâ]nico do Rio de Janeiro|\bRB\b|jabot|jbrj/i.test([o.dataResourceName,o.institutionName,o.institutionCode].filter(Boolean).join(' '));
-  return{src:jb?'jabot':'sibbr',via:'sibbr',id:'s'+o.uuid,rec:o.recordedBy||'',uf:o.stateProvince||o.state||'',cty:o.municipality||o.county||'',inst:o.institutionCode||o.institutionName||'',alt:num(o.minimumElevationInMeters??o.elevation??o.verbatimElevation),jflag:jb,k:keyOf(sci),sci,com:o.vernacularName||'',rank:rk(o),tph:'',ph:o.image||'',
+  const jb=/Jardim Bot[aâ]nico do Rio de Janeiro|\bRB\b|jabot|jbrj/i.test([o.dataResourceName,ic,ic].filter(Boolean).join(' '));
+  return{src:jb?'jabot':'sibbr',via:'sibbr',id:'s'+o.uuid,rec:o.recordedBy||'',uf:o.stateProvince||o.state||'',cty:o.municipality||o.county||'',inst:ic||ic||'',alt:num(o.minimumElevationInMeters??o.elevation??o.verbatimElevation),jflag:jb,k:keyOf(sci),sci,com:o.vernacularName||'',rank:rk(o),tph:'',ph:o.image||'',
     lat:o.decimalLatitude??null,lng:o.decimalLongitude??null,date:isoDate(o.eventDate),grade:'',
-    user:o.recordedBy||o.institutionName||'',place:[o.locality,o.municipality||o.county,o.stateProvince||o.state].filter(Boolean).join(', '),
-    acc:o.coordinateUncertaintyInMeters,obs:false,uri:'https://ala-hub.sibbr.gov.br/ala-hub/occurrences/'+o.uuid,ds:o.dataResourceName||o.institutionName||''};
+    user:o.recordedBy||ic||'',place:[o.locality,o.municipality||o.county,o.stateProvince||o.state].filter(Boolean).join(', '),
+    acc:o.coordinateUncertaintyInMeters,obs:false,uri:'https://ala-hub.sibbr.gov.br/ala-hub/occurrences/'+o.uuid,ds:o.dataResourceName||ic||''};
 }
 
 /* consolida as fontes ativas, removendo duplicados (prioridade: iNaturalist > GBIF > SiBBr) */
@@ -445,7 +443,7 @@ function renderSrc(){
   st.jabot=(st.gbif==='load'||st.sibbr==='load')?'load':(st.gbif==='err'&&st.sibbr==='err')?'err':'ok';
   for(const s in raw)$('#c'+s).textContent=st[s]==='err'?'erro':fmt(raw[s].length)+(st[s]==='load'?'…':'');
   const busy=Object.values(st).includes('load'),T=tot.inat+tot.gbif+tot.sibbr+tot.splink,L=raw.inat.length+raw.jabot.length+raw.gbif.length+raw.sibbr.length+raw.splink.length;
-  $('#status').textContent=busy?`Carregando fontes… ${fmt(L)} registros baixados`:`${fmt(all.length)} registros · atualizado ${new Date().toLocaleString('pt-BR')}${dropped?` · ${fmt(dropped)} fora do limite do ES ignorados`:''}`;
+  $('#status').textContent=busy?`Carregando fontes… ${fmt(L)} registros baixados`:`${fmt(all.length)} registros · dados de ${new Date(DATA_TS||Date.now()).toLocaleString('pt-BR')}${BASE&&!LIVE?' · base v'+BASE.version:''}${dropped?` · ${fmt(dropped)} fora do limite do ES ignorados`:''}`;
   $('#prog').style.width=busy?Math.min(95,T?L/T*100:5)+'%':'100%';
   fillSelects();
 }
@@ -459,7 +457,7 @@ async function run(s,fn){
 }
 
 /* ---------- cache local (IndexedDB) e armazenamento simples ---------- */
-let CACHE_TS=0,DONE=0;
+let CACHE_TS=0,DONE=0,BASE=null,DATA_TS=0,LIVE=false;   /* BASE: base do repositório; DATA_TS: data dos dados exibidos; LIVE: houve consulta direta às fontes */
 const FR={};
 function fresh(s){   /* na primeira página nova de uma fonte, descarta a cópia antiga (cache) dessa fonte */
   if(FR[s])return;FR[s]=1;
@@ -469,7 +467,7 @@ function idb(){return new Promise((res,rej)=>{if(typeof indexedDB==='undefined')
 async function kvGet(k){const db=await idb();return new Promise((res,rej)=>{const q=db.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}
 async function kvSet(k,v){const db=await idb();return new Promise((res,rej)=>{const t=db.transaction('kv','readwrite');t.objectStore('kv').put(v,k);t.oncomplete=()=>res();t.onerror=()=>rej(t.error)})}
 async function cacheLoad(){try{const c=await kvGet('raw3');if(c&&c.raw){for(const k in raw)raw[k]=c.raw[k]||[];CACHE_TS=c.ts||0;return true}}catch(e){}return false}
-function cacheSave(){try{kvSet('raw3',{ts:Date.now(),raw}).catch(()=>{})}catch(e){}}
+function cacheSave(){try{if(LIVE)DATA_TS=Date.now();kvSet('raw3',{ts:Date.now(),raw}).catch(()=>{})}catch(e){}}
 const ls={get:(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
 /* ---------- nomes aceitos (GBIF Backbone) ---------- */
@@ -1187,7 +1185,7 @@ let spPage=0;let PS=100;
 $('#pageSize')?.addEventListener('change', e => { PS = parseInt(e.target.value); spPage = 0; DIRTY.sp = 1; drawTab('sp'); });
 function renderSpecies(sp){
   const cols=[['','ph'],['Nome científico','sci'],['Nome popular','com'],['Nível','rank'],['Obs.','n'],['Registrantes','u'],['Fontes','src'],['Última obs.','last'],['Referência','ref'],['Funga do Brasil','ffb'],['Funga Capixaba','funga'],['','']];
-  const isFunga2023 = (s) => '<span class="bdg warn" title="Em breve: cruzamento com Fraga Jr et al 2023">A conferir</span>';
+  const isFunga2023 = (s) => '<span title="Cruzamento com Fraga Jr et al. 2023 ainda não implementado">–</span>';
   $('#spHead').innerHTML=cols.map(([t,k])=>`<th data-k="${k}" class="${k==='n'||k==='u'?'num':''}">${t}${sort.k===k?(sort.d>0?' ▲':' ▼'):''}</th>`).join('');
   $('#spHead').querySelectorAll('th').forEach(th=>th.onclick=()=>{
     const k=th.dataset.k;if(!k||k==='ph'||k==='ref'||k==='ffb')return;
@@ -1600,90 +1598,57 @@ if(window.self!==window.top||!/^(https?:|file:)$/.test(location.protocol))
   $('#err').insertAdjacentHTML('beforeend','<div class="err"><b>Aviso:</b> esta página parece estar aberta dentro de um visualizador (pré-visualização) que costuma bloquear conexões externas. Se as fontes falharem, baixe o arquivo e abra-o com duplo clique no Chrome, Edge ou Firefox.</div>');
 renderAbout();renderCite();
 
-/* --- Sincronização, Transparência e Gráfico --- */
+/* --- Base do repositório, histórico de versões e inicialização --- */
+const BASE_URLS=['data/funga-capixaba-dados.json','funga-capixaba-dados.json'];   // gerada pelo GitHub Actions (scripts/atualizar-dados.mjs)
+const BASE_STALE=30*864e5, CACHE_MAX=864e5;   // base considerada velha após 30 dias; consulta direta no máximo 1x por dia
+const totalRaw=()=>Object.values(raw).reduce((n,a)=>n+a.length,0);
+const dBR=t=>new Date(t).toLocaleDateString('pt-BR');
 let incrementChart;
-let lastTot = 0;
 
-function initChart() {
-    const ctx = document.getElementById('incrementChart');
-    if(!ctx) return;
-    incrementChart = new Chart(ctx.getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'Novos Registros Inseridos no Ciclo',
-                data: [],
-                backgroundColor: 'rgba(37, 99, 173, 0.6)',
-                borderColor: 'rgba(37, 99, 173, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: { y: { beginAtZero: true, title: { display: true, text: 'Qtd. Incrementada' } } }
-        }
-    });
+function initChart(){
+  const ctx=$('#incrementChart');
+  if(!ctx||typeof Chart==='undefined')return;
+  incrementChart=new Chart(ctx.getContext('2d'),{type:'bar',
+    data:{labels:[],datasets:[{label:'Registros novos por atualização',data:[],backgroundColor:'rgba(37,99,173,.6)',borderColor:'rgba(37,99,173,1)',borderWidth:1}]},
+    options:{responsive:true,scales:{y:{beginAtZero:true,title:{display:true,text:'Registros novos'}}}}});
 }
+function drawHistory(){
+  const h=(BASE&&BASE.syncHistory)||[],u=h[h.length-1];
+  if(incrementChart){const r=h.slice(-26);incrementChart.data.labels=r.map(x=>x.label);incrementChart.data.datasets[0].data=r.map(x=>x.added||0);incrementChart.update()}
+  $('#syncInfo').textContent=BASE
+    ?`Base do repositório: v${BASE.version}, atualizada em ${dBR(BASE.lastUpdated)}${u?` · última atualização: +${fmt(u.added||0)} novos, ${fmt(u.changed||0)} alterados, ${fmt(u.removed||0)} removidos`:''}.`
+    :'Base do repositório indisponível: os dados são consultados direto nas fontes.';
+}
+async function loadBase(){
+  for(const u of BASE_URLS){
+    try{const r=await fetch(u,{cache:'no-cache'});if(!r.ok)continue;const j=await r.json();if(j&&j.funga&&j.raw)return j}catch(e){}
+  }
+  return null;
+}
+const rs2=renderSrc;
+renderSrc=function(){rs2();$('#syncTotalRecords').textContent=fmt(totalRaw())};
+
+function liveAll(){
+  LIVE=true;CACHE_TS=0;DONE=0;FR.inat=FR.gbif=FR.sibbr=0;tot.inat=tot.gbif=tot.sibbr=0;
+  run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
+}
+$('#forceSyncBtn').onclick=()=>{$('#status').textContent='Sincronização forçada iniciada...';liveAll()};
+
 initChart();
-
-function updateChartData(newRecordsCount) {
-    if(!incrementChart) return;
-    const timeStr = new Date().toLocaleTimeString('pt-BR');
-    incrementChart.data.labels.push(timeStr);
-    incrementChart.data.datasets[0].data.push(newRecordsCount);
-    if(incrementChart.data.labels.length > 15) {
-        incrementChart.data.labels.shift();
-        incrementChart.data.datasets[0].data.shift();
-    }
-    incrementChart.update();
-    
-    const tot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
-    document.getElementById('syncTotalRecords').innerText = fmt(tot);
-}
-
-// Interceptar o renderSrc para capturar os lotes sendo inseridos pelas requisições
-const origRs = renderSrc;
-renderSrc = function() {
-    origRs();
-    const currTot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
-    const diff = currTot - lastTot;
-    if (diff > 0) {
-        updateChartData(diff);
-        lastTot = currTot;
-    }
-};
-
-$('#forceSyncBtn').onclick = () => {
-    $('#status').textContent = 'Sincronização forçada iniciada...';
-    CACHE_TS = 0;
-    lastTot = 0;
-    if(incrementChart) {
-        incrementChart.data.labels = [];
-        incrementChart.data.datasets[0].data = [];
-        incrementChart.update();
-    }
-    run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
-};
-
 loadHash();fillSelects();
 (async()=>{
-  const hasCache = await cacheLoad();
-  if(hasCache) { reclass(); refresh(true); }
-  
-  const now = Date.now();
-  const oneDay = 24 * 60 * 60 * 1000; // 24 horas
-  
-  if(!hasCache || (now - CACHE_TS) > oneDay) {
-      run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
-  } else {
-      const hrs = Math.floor((oneDay - (now - CACHE_TS)) / 3600000);
-      const mins = Math.floor(((oneDay - (now - CACHE_TS)) % 3600000) / 60000);
-      $('#status').textContent = `Dados locais em cache (Última atualização: ${new Date(CACHE_TS).toLocaleString('pt-BR')}). Próxima consulta em ${hrs}h ${mins}m.`;
-      $('#prog').style.width = '100%';
-      lastTot = (raw.inat?.length||0) + (raw.gbif?.length||0) + (raw.sibbr?.length||0) + (raw.splink?.length||0) + (raw.jabot?.length||0);
-      document.getElementById('syncTotalRecords').innerText = fmt(lastTot);
-  }
+  const [base,hasCache]=await Promise.all([loadBase(),cacheLoad()]);
+  const now=Date.now(),baseTs=base?(Date.parse(base.lastUpdated)||0):0;
+  let mode='';
+  if(base&&(!hasCache||baseTs>CACHE_TS)){            // base do repositório mais nova que o cache local (ou sem cache)
+    for(const s in raw)raw[s]=base.raw[s]||[];
+    CACHE_TS=DATA_TS=baseTs||now;mode='base';
+  }else if(hasCache){DATA_TS=CACHE_TS;mode='cache'}
+  BASE=base;drawHistory();
+  if(mode){reclass();refresh(true)}
+  const stale=mode==='base'?(now-baseTs)>BASE_STALE:mode==='cache'?(now-CACHE_TS)>CACHE_MAX:true;
+  if(stale)liveAll();
+  else{for(const s in st)st[s]='ok';$('#prog').style.width='100%';renderSrc()}
 })();
 </script>
 </body>

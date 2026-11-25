@@ -62,10 +62,17 @@ button:hover{border-color:var(--brand);color:var(--brand-d)}
 .kpi:nth-child(odd){border-top-color:var(--brand)}.kpi:nth-child(even){border-top-color:var(--pink)}
 .kpi b{display:block;font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--brand-d);overflow:hidden;text-overflow:ellipsis}
 .kpi span{display:block;color:var(--mute);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:14px;overflow-x:auto}
-.tabs button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;padding:10px 16px;font-weight:600;color:var(--mute);white-space:nowrap}
-.tabs button:hover{color:var(--ink);border-color:transparent}
-.tabs button[aria-selected=true]{color:var(--brand-d);border-bottom-color:var(--pink)}
+.tabs{display:flex;gap:8px;align-items:center;padding:6px;margin-bottom:14px;overflow-x:auto;background:var(--panel);border:1.5px solid var(--brand);border-radius:14px;scrollbar-width:thin}
+.tabs button{--tc:var(--brand);--tt:var(--brand-d);--th:var(--tint);flex:none;border:1.5px solid var(--tc);border-radius:10px;background:#fff;padding:8px 16px;font-weight:700;font-size:14px;color:var(--tt);white-space:nowrap}
+.tabs button:nth-child(even){--tc:var(--pink);--tt:#b5124f;--th:var(--pink-t)}
+.tabs button:hover{background:var(--th);color:var(--tt);border-color:var(--tc)}
+.tabs button[aria-selected=true]{background:var(--tc);border-color:var(--tc);color:#fff;box-shadow:0 2px 8px rgba(20,36,59,.22)}
+.tabs button:nth-child(even)[aria-selected=true]{background:#d63d7a;border-color:#d63d7a}
+.selbar{padding:8px 10px;margin-bottom:10px;background:var(--tint);border:1px solid var(--line);border-radius:10px}
+.selbar b{color:var(--ink)}
+.selbar button:disabled{opacity:.45;cursor:not-allowed}
+td.chk,th.chk{width:34px;text-align:center}
+input.selSp,#selPage{width:17px;height:17px;accent-color:var(--brand);cursor:pointer}
 section[hidden]{display:none}
 #map{height:min(70vh,700px);min-height:400px;border:1px solid var(--line);border-radius:var(--r);background:#1d2b3a}
 .legend{display:flex;gap:8px 18px;flex-wrap:wrap;margin:10px 2px;color:var(--mute);font-size:13px;align-items:center}
@@ -75,6 +82,9 @@ section[hidden]{display:none}
 .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background-color:rgba(37,99,173,.25)}
 .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background-color:rgba(37,99,173,.9);color:#fff;font-weight:600}
 .leaflet-control-layers{font-size:12.5px}
+.leaflet-control-layers-list{max-height:min(60vh,420px);overflow:auto}
+.lst>div[data-sp]{cursor:pointer}.lst>div[data-sp]:hover{background:var(--tint)}
+@media(max-width:700px){#map{height:min(78vh,700px);min-height:360px}.leaflet-control-layers{max-width:72vw;font-size:12px}.leaflet-control-layers-list{max-height:50vh}}
 .leaflet-popup-content{margin:12px 14px}
 .pop{width:min(220px,60vw);overflow-wrap:anywhere;font-size:13px}
 .pop img{width:100%;height:130px;object-fit:cover;border-radius:8px;margin-bottom:6px}
@@ -187,7 +197,7 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
       <div class="logo"><img id="logoImg" hidden alt="Logo do projeto Funga Capixaba" onerror="this.hidden=true;document.getElementById('logoSvg').hidden=false"><svg id="logoSvg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 8 0 0 1 18 0z"/><path d="M9.5 12v4.5a2.5 2.5 0 0 0 5 0V12"/></svg></div>
       <div style="min-width:0">
         <h1>Funga Capixaba</h1>
-        <p>Sistema de integração de registros e monitoramento da Funga Capixaba · iNaturalist - Projeto Funga Capixaba + JABOT, GBIF e SiBBr</p>
+        <p>Sistema de integração de registros e monitoramento da Funga Capixaba · Bases: iNaturalist (Projeto Funga Capixaba), JABOT, GBIF, SiBBr, speciesLink, Flora e Funga do Brasil, Funga Capixaba (Fraga Jr. et al., 2023) e IBGE (limites municipais)</p>
         <p class="by">Autor: <b>Dr. Carlos Augusto Vidigal Fraga Jr.</b></p>
       </div>
     </div>
@@ -294,9 +304,11 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
   </section>
 
   <section id="t-sp" hidden>
-    <div class="tools"><span id="spCount"></span><label style="margin-left:auto;margin-right:15px;font-size:13px">Registros por página: <select id="pageSize" style="padding:4px;border:1px solid var(--line);border-radius:6px"><option value="20">20</option><option value="50">50</option><option value="100" selected>100</option></select></label><button id="dlSp" type="button">Baixar lista de espécies (CSV)</button></div>
+    <div class="tools"><span id="spCount"></span><label style="margin-left:auto;margin-right:15px;font-size:13px">Registros por página: <select id="pageSize" style="padding:4px;border:1px solid var(--line);border-radius:6px"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100" selected>100</option></select></label><button id="dlSp" type="button">Baixar lista de espécies (CSV)</button></div>
+    <div class="tools selbar" id="selBar"><b id="selCount">0 espécies selecionadas</b><button type="button" id="selAll" title="Marca todas as espécies do filtro atual, em todas as páginas">Selecionar todas as filtradas</button><button type="button" id="selClear">Limpar seleção</button><span style="flex:1"></span><button type="button" id="dlSelSp" disabled>Baixar espécies selecionadas (CSV)</button><button type="button" id="dlSelRec" disabled>Baixar registros das selecionadas (CSV)</button><button type="button" id="dlSelGeo" disabled>Registros georreferenciados (GeoJSON)</button></div>
     <div class="tbl"><table><thead><tr id="spHead"></tr></thead><tbody id="spBody"></tbody></table></div>
     <div class="pager" id="spPager"></div>
+    <div class="tools" style="justify-content:flex-end"><label style="font-size:13px">Registros por página: <select id="pageSize2" style="padding:4px;border:1px solid var(--line);border-radius:6px"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100" selected>100</option></select></label></div>
   </section>
 
   <section id="t-geo" hidden>
@@ -320,7 +332,7 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
   <section id="t-sync" hidden>
     <div class="card" style="margin-bottom: 16px;">
         <h3>Transparência e Aquisição de Dados</h3>
-        <p>O <b>Funga Capixaba</b> reúne registros de bases públicas abertas (iNaturalist, JABOT, GBIF, SiBBr e speciesLink). Uma rotina automática no GitHub, executada toda semana, baixa as bases, atualiza o arquivo <code>data/funga-capixaba-dados.json</code> e registra o histórico de versões, exibido no gráfico abaixo. O sistema está em constante aprimoramento para garantir a melhor qualidade e integração dos registros e da taxonomia.</p>
+        <p>O <b>Funga Capixaba</b> reúne registros de bases públicas abertas (iNaturalist, JABOT, GBIF, SiBBr e speciesLink). Uma rotina automática no GitHub, executada toda semana, baixa as bases, atualiza o arquivo <code>data/funga-capixaba-dados.json</code> e registra o histórico de versões, exibido no gráfico abaixo. A mesma rotina baixa a lista oficial da Flora e Funga do Brasil (JBRJ), usada para conferir nomes, sinônimos e a ocorrência no Espírito Santo. O sistema está em constante aprimoramento para garantir a melhor qualidade e integração dos registros e da taxonomia.</p>
         <p>Ao abrir a página, o painel carrega essa base do repositório e a guarda no cache do seu navegador, sem sobrecarregar os servidores das instituições. Se a base não estiver disponível (por exemplo, ao abrir o arquivo direto do computador sem o JSON ao lado) ou tiver mais de 30 dias, a página consulta as fontes diretamente, no máximo uma vez a cada 24 horas. O botão abaixo força uma nova consulta direta.</p>
     </div>
     <div class="card" style="margin-bottom: 16px;">
@@ -981,7 +993,7 @@ const HeatCanvas=L.Layer.extend({
   }
 });
 const heatLayer=new HeatCanvas();
-const ctl=L.control.layers(null,{'Registros (locais)':cluster,'Limite do estado':stateLayer,'Limites municipais':munLayer,'Nomes dos municípios':nameLayer,'Mapa de calor':heatLayer,'Coroplético por município':choroLayer,'Lacunas (sem registros)':gapLayer},{collapsed:false}).addTo(map);
+const ctl=L.control.layers(null,{'Registros (locais)':cluster,'Limite do estado':stateLayer,'Limites municipais':munLayer,'Nomes dos municípios':nameLayer,'Mapa de calor':heatLayer,'Coroplético por município':choroLayer,'Lacunas (sem registros)':gapLayer},{collapsed:matchMedia('(max-width:700px)').matches}).addTo(map);
 
 /* coroplético por município */
 const CH_COL=['#cfe0f5','#8fb7e6','#f7b6cf','#ea6a9a','#b5124f'],CH={br:[]};
@@ -1182,29 +1194,45 @@ function render(){
 
 const refLinks=s=>Object.keys(SRC).filter(k=>s.refs[k]).map(k=>`<a class="rf" href="${esc(s.refs[k].uri)}" target="_blank" rel="noopener" title="Abrir o registro mais recente no ${SRC[k].n}${s.refs[k].date?' ('+esc(s.refs[k].date)+')':''}" style="--c:${SRC[k].c}">${SRC[k].n}</a>`).join('')||'–';
 let spPage=0;let PS=100;
-$('#pageSize')?.addEventListener('change', e => { PS = parseInt(e.target.value); spPage = 0; DIRTY.sp = 1; drawTab('sp'); });
+['#pageSize','#pageSize2'].forEach(id=>$(id).addEventListener('change',e=>{PS=parseInt(e.target.value);$('#pageSize').value=$('#pageSize2').value=String(PS);spPage=0;DIRTY.sp=1;drawTab('sp')}));
 function renderSpecies(sp){
-  const cols=[['','ph'],['Nome científico','sci'],['Nome popular','com'],['Nível','rank'],['Obs.','n'],['Registrantes','u'],['Fontes','src'],['Última obs.','last'],['Referência','ref'],['Funga do Brasil','ffb'],['Funga Capixaba','funga'],['','']];
-  const isFunga2023 = (s) => '<span title="Cruzamento com Fraga Jr et al. 2023 ainda não implementado">–</span>';
+  const cols=[['<input type="checkbox" id="selPage" title="Marcar ou desmarcar as espécies desta página" aria-label="Selecionar a página">','sel'],['','ph'],['Nome científico','sci'],['Nome popular','com'],['Nível','rank'],['Obs.','n'],['Registrantes','u'],['Fontes','src'],['Última obs.','last'],['Referência','ref'],['Funga do Brasil','ffb'],['Funga Capixaba (2023)','funga'],['','']];
+  const isFunga2023 = fcapBadge;
   $('#spHead').innerHTML=cols.map(([t,k])=>`<th data-k="${k}" class="${k==='n'||k==='u'?'num':''}">${t}${sort.k===k?(sort.d>0?' ▲':' ▼'):''}</th>`).join('');
   $('#spHead').querySelectorAll('th').forEach(th=>th.onclick=()=>{
-    const k=th.dataset.k;if(!k||k==='ph'||k==='ref'||k==='ffb')return;
+    const k=th.dataset.k;if(!k||k==='ph'||k==='ref'||k==='ffb'||k==='sel'||k==='funga')return;
     sort=sort.k===k?{k,d:-sort.d}:{k,d:k==='n'||k==='u'||k==='last'?-1:1};spPage=0;DIRTY.sp=1;drawTab('sp');
   });
   const val=s=>sort.k==='u'?s.users.size:sort.k==='src'?s.srcs.size:s[sort.k];
   sp.sort((a,b)=>{const x=val(a),y=val(b);return(x>y?1:x<y?-1:0)*sort.d});
   const pages=Math.max(1,Math.ceil(sp.length/PS));spPage=Math.min(spPage,pages-1);
-  const rows=sp.slice(spPage*PS,(spPage+1)*PS);
+  const rows=sp.slice(spPage*PS,(spPage+1)*PS);PAGE_ROWS=rows;
   $('#spCount').textContent=`${fmt(sp.length)} táxons${useTax?' · nomes aceitos pelo GBIF (sinônimos unidos)':''} · clique no nome para abrir a ficha`;
-  $('#spBody').innerHTML=rows.length?rows.map(s=>`<tr><td>${s.ph?`<img loading="lazy" src="${esc(s.ph)}" alt="">`:''}</td>
+  $('#spBody').innerHTML=rows.length?rows.map(s=>`<tr><td class="chk"><input type="checkbox" class="selSp" data-sk="${esc(s.k)}" ${SEL.has(s.k)?'checked':''} aria-label="Selecionar ${esc(s.sci)}"></td><td>${s.ph?`<img loading="lazy" src="${esc(s.ph)}" alt="">`:''}</td>
     <td class="ell" title="${esc(s.sci)}"><button class="link sp" data-sp="${esc(s.k)}"><em class="sci">${esc(s.sci)}</em></button>${s.syn.size>1?` <small title="Nomes unidos: ${esc([...s.syn].join('; '))}">+${s.syn.size-1} sin.</small>`:''}</td><td class="ell" title="${esc(s.com)}">${esc(s.com)}</td><td>${esc(RANK[s.rank]||s.rank)}</td>
     <td class="num">${fmt(s.n)}</td><td class="num">${s.users.size}</td><td>${[...s.srcs].map(x=>`<i class="dot" title="${SRC[x].n}" style="background:${SRC[x].c}"></i>`).join('')}</td><td>${esc(s.last)}</td><td>${refLinks(s)}</td><td>${ffbBadge(s)}</td><td>${isFunga2023(s)}</td>
-    <td><button class="link" data-k="${esc(s.k)}">Ver no mapa</button></td></tr>`).join(''):'<tr><td colspan="12" class="empty">Nenhuma espécie com esses filtros.</td></tr>';
+    <td><button class="link" data-k="${esc(s.k)}">Ver no mapa</button></td></tr>`).join(''):'<tr><td colspan="13" class="empty">Nenhuma espécie com esses filtros.</td></tr>';
   $('#spBody').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{selK=b.dataset.k;shown=false;apply();go('map')});
   $('#spPager').innerHTML=pages>1?`<button type="button" data-p="-1" ${spPage?'':'disabled'}>‹ Anterior</button><span>Página ${spPage+1} de ${pages}</span><button type="button" data-p="1" ${spPage<pages-1?'':'disabled'}>Próxima ›</button>`:'';
+  updSel();
 }
 $('#spPager').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(!b)return;spPage+=+b.dataset.p;DIRTY.sp=1;drawTab('sp')});
 $('#spBody').addEventListener('click',e=>{const b=e.target.closest('[data-sp]');if(b)openSpecies(b.dataset.sp)});
+
+/* seleção de espécies para download */
+const SEL=new Set();let PAGE_ROWS=[];
+const selIn=()=>SP.filter(s=>SEL.has(s.k));
+function updSel(){
+  const n=selIn().length,fora=SEL.size-n;
+  $('#selCount').textContent=`${fmt(n)} espécie${n===1?'':'s'} selecionada${n===1?'':'s'}${fora>0?` (+${fmt(fora)} fora do filtro atual)`:''}`;
+  ['dlSelSp','dlSelRec','dlSelGeo'].forEach(id=>{$('#'+id).disabled=!n});
+  const cp=$('#selPage');
+  if(cp){const on=PAGE_ROWS.filter(s=>SEL.has(s.k)).length;cp.checked=PAGE_ROWS.length>0&&on===PAGE_ROWS.length;cp.indeterminate=on>0&&on<PAGE_ROWS.length}
+}
+$('#spBody').addEventListener('change',e=>{const c=e.target.closest('.selSp');if(!c)return;c.checked?SEL.add(c.dataset.sk):SEL.delete(c.dataset.sk);updSel()});
+$('#spHead').addEventListener('change',e=>{if(e.target.id!=='selPage')return;PAGE_ROWS.forEach(s=>e.target.checked?SEL.add(s.k):SEL.delete(s.k));$('#spBody').querySelectorAll('.selSp').forEach(c=>c.checked=e.target.checked);updSel()});
+$('#selAll').onclick=()=>{SP.forEach(s=>SEL.add(s.k));$('#spBody').querySelectorAll('.selSp').forEach(c=>c.checked=true);updSel()};
+$('#selClear').onclick=()=>{SEL.clear();$('#spBody').querySelectorAll('.selSp').forEach(c=>c.checked=false);updSel()};
 
 function renderGeo(){
   const rows=view.filter(o=>o.lat!==null);
@@ -1316,7 +1344,7 @@ $('#dlJson').onclick=()=>{
 
 /* ---------- Flora e Funga do Brasil (checklist oficial, publicado no GBIF) ---------- */
 const FFB_DS='aacd816d-662c-49d2-ad1a-97e66e2a2908';
-const FFB=ls.get('funga-ffb1',{});let useFfb=true,FFBMSG='',FFBRUN=false;
+const FFB=ls.get('funga-ffb1',{});let useFfb=true,FFBMSG='',FFBRUN=false,FFB_FILE=false,FFB_INFO=null;
 async function ffbLookup(name){
   const r=await fx(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(name)}&datasetKey=${FFB_DS}&rank=SPECIES&limit=10`);
   if(!r.ok)throw new Error('HTTP '+r.status);
@@ -1327,7 +1355,7 @@ async function ffbLookup(name){
   return{s:ok?'A':'S',a:acc,es};
 }
 async function resolveFfb(){
-  if(FFBRUN)return;
+  if(FFBRUN||FFB_FILE)return;
   const names=new Map();
   all.forEach(o=>{if(o.k&&o.sci&&o.sci.includes(' ')&&(o.rank==='species'||LOW.includes(o.rank))&&!(o.k in FFB)&&!names.has(o.k))names.set(o.k,o.sci.split(' ').slice(0,2).join(' '))});
   const list=[...names];if(!list.length)return;
@@ -1343,7 +1371,7 @@ async function resolveFfb(){
   ls.set('funga-ffb1',FFB);FFBRUN=false;FFBMSG='';refresh(true);
 }
 const FFB_PR={A:0,S:1,N:2};
-function ffbForNames(names){let best=null;names.forEach(n=>{const e=FFB[keyOf(String(n).split(' ').slice(0,2).join(' '))];if(e&&(!best||FFB_PR[e.s]<FFB_PR[best.s]))best=e});return best}
+function ffbForNames(names){let best=null;names.forEach(n=>{const kk=keyOf(String(n).split(' ').slice(0,2).join(' ')),e=FFB[kk]||(FFB_FILE?{s:'N'}:undefined);if(e&&(!best||FFB_PR[e.s]<FFB_PR[best.s]))best=e});return best}
 function ffbBadge(s){
   if(!useFfb)return '–';
   const e=ffbForNames(s.syn);
@@ -1354,16 +1382,95 @@ function ffbBadge(s){
 }
 function ffbCols(s){const e=ffbForNames(s.syn);return e?[{A:'aceito',S:'sinonimo',N:'nao_consta'}[e.s],e.a||'',e.es===1?'sim':e.es===0?'nao':'sem_dado']:['','','']}
 function ffbStats(sp){const o={A:0,S:0,N:0,pend:0};sp.forEach(s=>{const e=ffbForNames(s.syn);if(e)o[e.s]++;else o.pend++});return o}
-function ffbCards(sp){
-  if(!useFfb)return '';
-  const st={A:0,S:0,N:0,pend:0},novos=[],nc=[],sin=[];
-  sp.forEach(s=>{const e=ffbForNames(s.syn);if(!e){st.pend++;return}st[e.s]++;if(e.s==='N')nc.push([s.sci,fmt(s.n)]);if(e.s==='S')sin.push([s.sci,'→ '+e.a]);if(e.s!=='N'&&e.es===0)novos.push([s.sci,fmt(s.n)])});
-  return card('Flora e Funga do Brasil: conferência de nomes',`Checklist oficial (JBRJ) via GBIF · ${fmt(sp.length-st.pend)} de ${fmt(sp.length)} espécies conferidas`,hbars([['Nome aceito',st.A],['Sinônimo',st.S],['Não consta',st.N],['Aguardando',st.pend]],'var(--c-jabot)'))
-    +card('Possíveis novos registros para o ES','Espécie existe na Funga do Brasil, mas o ES não consta na distribuição',lstRows(novos.slice(0,300)))
-    +card('Sinônimos na Funga do Brasil','Nome registrado → nome aceito',lstRows(sin.slice(0,300)))
-    +card('Não constam na Funga do Brasil','Conferir a grafia ou táxon fora da lista',lstRows(nc.slice(0,300)));
+let FFBL={novos:[],sin:[],nc:[]};
+function ffbStatus(){
+  if(FFB_FILE)return `arquivo da Flora e Funga do Brasil (IPT do JBRJ) de ${String(FFB_INFO.generated||'').slice(0,10)} · ${fmt((FFB_INFO.counts&&FFB_INFO.counts.names)||Object.keys(FFB).length)} nomes de fungos`;
+  if(FFBRUN)return 'consultando a Flora e Funga do Brasil pelo GBIF; os resultados aparecem conforme a consulta avança';
+  return 'consulta ao GBIF (cópia antiga da Flora do Brasil)';
 }
+function ffbCards(sp){
+  if(!useFfb)return card('Flora e Funga do Brasil: conferência de nomes','Fonte desativada','<p style="font-size:13px">Marque “Flora e Funga do Brasil” na barra de fontes para ativar a conferência de nomes, sinônimos e ocorrência no Espírito Santo.</p>');
+  if(!FFB_FILE&&!Object.keys(FFB).length&&!FFBRUN)return card('Flora e Funga do Brasil: conferência de nomes','Lista ainda não carregada',`<p style="font-size:13px">A lista oficial é gerada pela rotina semanal do GitHub (arquivo <code>data/funga-ffb.json</code>). Em <b>Actions → Atualizar Base Funga Capixaba → Run workflow</b>, rode a atualização e recarregue a página (Ctrl+F5). A conferência de sinônimos, nomes ausentes e possíveis novos registros para o ES aparece aqui em seguida.</p>`);
+  const st={A:0,S:0,N:0,pend:0,es0:0,es1:0,esn:0},novos=[],sin=[],nc=[];
+  sp.forEach(s=>{
+    const e=ffbForNames(s.syn);if(!e){st.pend++;return}
+    st[e.s]++;
+    if(e.s==='N'){nc.push({s,e});return}
+    if(e.s==='S')sin.push({s,e});
+    if(e.es===0){st.es0++;novos.push({s,e})}else if(e.es===1)st.es1++;else st.esn++;
+  });
+  novos.sort((a,b)=>b.s.n-a.s.n);nc.sort((a,b)=>b.s.n-a.s.n);sin.sort((a,b)=>a.s.sci<b.s.sci?-1:1);
+  FFBL={novos,sin,nc};
+  const nreg=n=>`${fmt(n)} registro${n===1?'':'s'}`,
+    row=(x,det)=>`<div data-sp="${esc(x.s.k)}" role="button" tabindex="0" title="Abrir a ficha da espécie"><span><em>${esc(x.s.sci)}</em></span><span>${esc(det)}</span></div>`,
+    list=(arr,det)=>`<div class="lst">${arr.map(x=>row(x,det(x))).join('')||'<div><span>Nenhuma espécie nos filtros atuais</span></div>'}</div>`,
+    dlb=(k,n)=>n?`<button type="button" data-dl="${k}">Baixar lista (CSV)</button>`:'';
+  return card('Flora e Funga do Brasil: conferência de nomes',`${ffbStatus()} · ${fmt(sp.length-st.pend)} de ${fmt(sp.length)} espécies conferidas`,
+      hbars([['Nome aceito',st.A],['Sinônimo',st.S],['Não consta',st.N],['Aguardando',st.pend]],'var(--c-jabot)')
+      +`<p class="sub" style="margin-top:10px">Ocorrência no Espírito Santo segundo a Funga do Brasil (espécies encontradas na lista)</p>`
+      +hbars([['ES consta',st.es1],['ES não consta',st.es0],['Sem dados de distribuição',st.esn]],'var(--c-gbif)'))
+    +card('Possíveis novos registros para o ES',`${fmt(novos.length)} espécies com registro no painel que existem na Funga do Brasil, mas sem o ES na distribuição`,
+      `<p style="font-size:12.5px;color:var(--mute);margin:4px 0 0">Para sinônimos vale a distribuição do nome aceito. Clique numa espécie para abrir a ficha.</p>${dlb('novos',novos.length)}${list(novos,x=>nreg(x.s.n))}`)
+    +card('Sinônimos na Funga do Brasil',`${fmt(sin.length)} espécies registradas com nome que é sinônimo · nome registrado → nome aceito`,
+      `${dlb('sin',sin.length)}${list(sin,x=>'→ '+x.e.a)}`)
+    +card('Não constam na Funga do Brasil',`${fmt(nc.length)} espécies · conferir a grafia ou táxon fora da lista`,
+      `${dlb('nc',nc.length)}${list(nc,x=>nreg(x.s.n))}`);
+}
+$('#anBody').addEventListener('click',e=>{
+  const d=e.target.closest('[data-dl]');
+  if(d){
+    const k=d.dataset.dl,L=FFBL[k]||[],nm={novos:'possiveis-novos-registros-ES',sin:'sinonimos',nc:'nao-constam'}[k];
+    dl(`funga-capixaba-ffb-${nm}.csv`,'\ufeff'+'nome,nome_aceito_ffb,registros,primeira_data,ultima_data,ffb_ocorre_ES\n'+L.map(x=>[x.s.sci,x.e.a||'',x.s.n,x.s.first,x.s.last,x.e.es===1?'sim':x.e.es===0?'nao':'sem_dado'].map(qv).join(',')).join('\n'),'text/csv');
+    toast(`${fmt(L.length)} espécies exportadas`);return;
+  }
+  const b=e.target.closest('[data-sp]');if(b)openSpecies(b.dataset.sp);
+});
+$('#anBody').addEventListener('keydown',e=>{if(e.key!=='Enter')return;const b=e.target.closest('[data-sp]');if(b)openSpecies(b.dataset.sp)});
 $('#uffb').addEventListener('change',e=>{useFfb=e.target.checked;if(useFfb)resolveFfb();refresh(true)});
+
+/* checklist da Flora e Funga do Brasil gerado pelo GitHub Actions (data/funga-ffb.json): substitui as consultas ao GBIF */
+async function loadFfbFile(){
+  try{
+    const r=await fetch('data/funga-ffb.json',{cache:'no-cache'});if(!r.ok)return false;
+    const j=await r.json();if(!j||!j.names)return false;
+    for(const k in FFB)delete FFB[k];
+    for(const [k,v] of Object.entries(j.names))FFB[k]={s:v[0],a:v[1]||'',es:v[2]};
+    FFB_FILE=true;FFB_INFO=j;return true;
+  }catch(e){return false}
+}
+
+/* lista de espécies de Fraga Jr et al. (2023), Rodriguésia 74: Funga Capixaba (Ascomycota e fungos liquenizados) */
+const FCAP_URLS=['data/funga-capixaba-lista.csv'];let FCAP=null;
+function parseFcap(txt){
+  const lines=txt.replace(/^\ufeff/,'').split(/\r?\n/).filter(l=>l.trim()&&!l.trim().startsWith('#'));
+  const out=new Set();if(!lines.length)return out;
+  const dl=[';','\t',','].find(d=>lines[0].includes(d))||',';
+  const split=l=>{const o=[];let c='',q=false;for(let i=0;i<l.length;i++){const ch=l[i];if(ch==='"'){if(q&&l[i+1]==='"'){c+='"';i++}else q=!q}else if(ch===dl&&!q){o.push(c);c=''}else c+=ch}o.push(c);return o.map(x=>x.trim())};
+  const names=['especie','species','nomecientifico','scientificname','nome','taxon','name'];
+  const head=split(lines[0]).map(h=>norm(h).replace(/[^a-z]/g,''));
+  let col=head.findIndex(h=>names.includes(h)),start=1;
+  if(col<0){col=0;start=/^[A-Z][a-z-]+\s+[a-z-]+/.test(split(lines[0])[0]||'')?0:1}
+  for(let i=start;i<lines.length;i++){
+    const w=(split(lines[i])[col]||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/^["']|["']$/g,'').replace(/\b(cf|aff)\.?\s/gi,'').trim().split(/\s+/);
+    if(w.length>=2&&/^[A-Za-z-]+$/.test(w[0])&&/^[a-z-]+$/.test(w[1]))out.add(keyOf(w[0]+' '+w[1]));
+  }
+  return out;
+}
+async function loadFcap(){
+  for(const u of FCAP_URLS){
+    try{const r=await fetch(u,{cache:'no-cache'});if(!r.ok)continue;const set=parseFcap(await r.text());if(set.size){FCAP=set;return true}}catch(e){}
+  }
+  return false;
+}
+const fcapHas=s=>[...s.syn,s.sci].some(n=>FCAP.has(keyOf(String(n).split(' ').slice(0,2).join(' '))));
+const fcapCol=s=>!FCAP?'sem_lista':!isSpR(s.rank)?'':fcapHas(s)?'sim':'nao';
+function fcapBadge(s){
+  if(!FCAP)return '<span title="Lista de Fraga Jr et al. (2023) ainda não carregada (arquivo data/funga-capixaba-lista.csv)">–</span>';
+  if(!isSpR(s.rank))return '–';
+  return fcapHas(s)
+    ?'<span class="bdg ok" title="A espécie consta na lista de Fraga Jr et al. (2023)">consta</span>'
+    :'<span class="bdg" title="Não consta na lista de Fraga Jr et al. (2023), que cobre Ascomycota e fungos liquenizados. Em outros grupos a ausência pode refletir só o escopo da lista; em Ascomycota, pode ser um acréscimo à lista.">não consta</span>';
+}
 
 /* ================= CONFIGURAÇÃO DA FERRAMENTA (edite aqui) ================= */
 const APP={nome:'Funga Capixaba',sub:'Sistema de integração de registros e monitoramento da Funga Capixaba',versao:'1.0.0',ano:2026,
@@ -1586,10 +1693,21 @@ function openPerson(t,key,label){
 }
 $('#charts').addEventListener('dblclick',e=>{const t=e.target.closest('[data-f]');if(!t)return;const f=t.dataset.f;if(f==='tax')openSpecies(t.dataset.v);else if(f==='obs'||f==='col')openPerson(f,t.dataset.v,t.dataset.l||t.dataset.v)});
 $('#charts').addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const t=e.target.closest('[data-f]');if(!t)return;e.preventDefault();t.dispatchEvent(new MouseEvent('click',{bubbles:true,ctrlKey:e.ctrlKey,shiftKey:e.shiftKey,metaKey:e.metaKey}))});
-$('#dlSp').onclick=()=>{
-  const h=['nome_aceito','nomes_registrados','nome_popular','nivel','registros','observadores_coletores','fontes','primeira_data','ultima_data','link_iNaturalist','link_JABOT','link_GBIF','link_SiBBr','ffb_situacao','ffb_nome_aceito','ffb_ocorre_ES'];
-  const q=v=>`"${String(v??'').replace(/"/g,'""')}"`;
-  dl('funga-capixaba-especies.csv','\ufeff'+h.join(',')+'\n'+SP.map(s=>[s.sci,[...s.syn].join('; '),s.com,RANK[s.rank]||s.rank,s.n,s.users.size,[...s.srcs].map(x=>SRC[x].n).join('; '),s.first,s.last,...['inat','jabot','gbif','sibbr'].map(k=>s.refs[k]?s.refs[k].uri:''),...ffbCols(s)].map(q).join(',')).join('\n'),'text/csv');
+const qv=v=>`"${String(v??'').replace(/"/g,'""')}"`;
+const SP_HEAD=['nome_aceito','nomes_registrados','nome_popular','nivel','registros','observadores_coletores','fontes','primeira_data','ultima_data','link_iNaturalist','link_JABOT','link_GBIF','link_SiBBr','ffb_situacao','ffb_nome_aceito','ffb_ocorre_ES','funga_capixaba_2023'];
+const spCsv=(list,nome)=>dl(nome,'\ufeff'+SP_HEAD.join(',')+'\n'+list.map(s=>[s.sci,[...s.syn].join('; '),s.com,RANK[s.rank]||s.rank,s.n,s.users.size,[...s.srcs].map(x=>SRC[x].n).join('; '),s.first,s.last,...['inat','jabot','gbif','sibbr'].map(k=>s.refs[k]?s.refs[k].uri:''),...ffbCols(s),fcapCol(s)].map(qv).join(',')).join('\n'),'text/csv');
+$('#dlSp').onclick=()=>spCsv(SP,'funga-capixaba-especies.csv');
+$('#dlSelSp').onclick=()=>{const l=selIn();spCsv(l,'funga-capixaba-especies-selecionadas.csv');toast(`${fmt(l.length)} espécies exportadas`)};
+const selRecs=()=>{const ks=new Set(selIn().map(s=>s.k));return view.filter(o=>ks.has(skey(o)))};
+$('#dlSelRec').onclick=()=>{
+  const R=selRecs(),h=['fonte','id','especie','nome_popular','latitude','longitude','altitude_m','precisao_m','obscurecida','municipio','local','data','observador','grau','url'];
+  dl('funga-capixaba-registros-selecionados.csv','\ufeff'+h.join(',')+'\n'+R.map(o=>[SRC[o.src].n,o.id,o.sci,o.com,o.lat,o.lng,o.alt,o.acc,o.obs,o.mun,o.place,o.date,o.user,o.grade,o.uri].map(qv).join(',')).join('\n'),'text/csv');
+  toast(`${fmt(R.length)} registros exportados`);
+};
+$('#dlSelGeo').onclick=()=>{
+  const f=selRecs().filter(o=>o.lat!==null).map(o=>({type:'Feature',geometry:{type:'Point',coordinates:[o.lng,o.lat]},properties:{fonte:SRC[o.src].n,id:o.id,especie:o.sci,nome_popular:o.com,data:o.date,observador:o.user,grau:o.grade,altitude_m:o.alt,precisao_m:o.acc,obscurecida:o.obs,municipio:o.mun,local:o.place,url:o.uri}}));
+  dl('funga-capixaba-selecionadas.geojson',JSON.stringify({type:'FeatureCollection',features:f}),'application/geo+json');
+  toast(`${fmt(f.length)} registros georreferenciados exportados`);
 };
 
 fetch(`${API}/projects/${SLUG}`).then(r=>r.json()).then(j=>{const p=j.results&&j.results[0];if(p&&p.icon){const im=$('#logoImg');im.src=p.icon;im.hidden=false;$('#logoSvg').hidden=true;const ab=document.getElementById('logoAbout');if(ab){ab.src=p.icon;ab.hidden=false}}}).catch(()=>{});
@@ -1615,9 +1733,10 @@ function initChart(){
 function drawHistory(){
   const h=(BASE&&BASE.syncHistory)||[],u=h[h.length-1];
   if(incrementChart){const r=h.slice(-26);incrementChart.data.labels=r.map(x=>x.label);incrementChart.data.datasets[0].data=r.map(x=>x.added||0);incrementChart.update()}
-  $('#syncInfo').textContent=BASE
+  const extra=()=>` · Flora e Funga do Brasil: ${FFB_FILE?fmt(FFB_INFO.counts.names)+' nomes (versão de '+dBR(FFB_INFO.generated)+')':'arquivo não carregado (consulta ao GBIF)'} · lista Funga Capixaba 2023: ${FCAP?fmt(FCAP.size)+' espécies':'não carregada'}`;
+  $('#syncInfo').textContent=(BASE
     ?`Base do repositório: v${BASE.version}, atualizada em ${dBR(BASE.lastUpdated)}${u?` · última atualização: +${fmt(u.added||0)} novos, ${fmt(u.changed||0)} alterados, ${fmt(u.removed||0)} removidos`:''}.`
-    :'Base do repositório indisponível: os dados são consultados direto nas fontes.';
+    :'Base do repositório indisponível: os dados são consultados direto nas fontes.')+extra();
 }
 async function loadBase(){
   for(const u of BASE_URLS){
@@ -1634,10 +1753,26 @@ function liveAll(){
 }
 $('#forceSyncBtn').onclick=()=>{$('#status').textContent='Sincronização forçada iniciada...';liveAll()};
 
+/* zoom e camadas do mapa ficam sempre na parte visível do mapa, mesmo com a página rolada */
+(function(){
+  const mapEl=$('#map'),tops=[...mapEl.querySelectorAll('.leaflet-top')];let raf=0;
+  function place(){
+    raf=0;
+    const r=mapEl.getBoundingClientRect(),full=document.body.classList.contains('mapfull'),stk=document.querySelector('.stk');
+    const lim=full?0:(stk?stk.getBoundingClientRect().bottom:0),shift=Math.max(0,lim+6-r.top);
+    tops.forEach(t=>{const max=Math.max(0,r.height-(t.offsetHeight||0)-20);t.style.transform=shift?`translateY(${Math.min(shift,max)}px)`:''});
+  }
+  const req=()=>{if(!raf)raf=requestAnimationFrame(place)};
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',req);
+  $('#t-map').addEventListener('scroll',req,{passive:true});
+  if(window.ResizeObserver){const ro=new ResizeObserver(req);ro.observe(mapEl);tops.forEach(t=>ro.observe(t))}
+  req();
+})();
+
 initChart();
 loadHash();fillSelects();
 (async()=>{
-  const [base,hasCache]=await Promise.all([loadBase(),cacheLoad()]);
+  const [base,hasCache]=await Promise.all([loadBase(),cacheLoad(),loadFfbFile(),loadFcap()]);
   const now=Date.now(),baseTs=base?(Date.parse(base.lastUpdated)||0):0;
   let mode='';
   if(base&&(!hasCache||baseTs>CACHE_TS)){            // base do repositório mais nova que o cache local (ou sem cache)

@@ -68,6 +68,19 @@ button:hover{border-color:var(--brand);color:var(--brand-d)}
 .tabs button:hover{background:var(--th);color:var(--tt);border-color:var(--tc)}
 .tabs button[aria-selected=true]{background:var(--tc);border-color:var(--tc);color:#fff;box-shadow:0 2px 8px rgba(20,36,59,.22)}
 .tabs button:nth-child(even)[aria-selected=true]{background:#d63d7a;border-color:#d63d7a}
+.hlp{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:6px;padding:0;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--mute);font:700 11px/1 Inter,sans-serif;cursor:pointer;vertical-align:middle;opacity:.7}
+.hlp:hover,.hlp:focus-visible{opacity:1;color:var(--brand-d);border-color:var(--brand)}
+.kpi{position:relative}.kpi .hlp{position:absolute;top:8px;right:8px;margin:0}.kpi:has(.hlp) b{padding-right:20px}
+.hmodal{position:fixed;inset:0;z-index:4000;background:rgba(20,36,59,.45);display:flex;align-items:center;justify-content:center;padding:16px}
+.hmodal[hidden]{display:none}
+.hmodal .hp{background:#fff;border-radius:14px;max-width:580px;width:100%;max-height:86vh;overflow:auto;padding:18px 22px;box-shadow:0 12px 40px rgba(0,0,0,.3);border-top:4px solid var(--pink)}
+.hp h3{margin:0 24px 6px 0;color:var(--brand-d);font-size:17px}
+.hp h4{margin:14px 0 4px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.hp p{font-size:13.5px;line-height:1.55;margin:4px 0}
+.hp .ex{background:var(--tint);border-radius:8px;padding:9px 12px;font-size:13px;line-height:1.55}
+.hp code{background:var(--tint);padding:1px 5px;border-radius:4px;font-size:12.5px}
+.hp .x{position:sticky;float:right;top:0;border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--mute);padding:0 2px}
+.hp ul{margin:4px 0;padding-left:20px;font-size:13.5px;line-height:1.55}
 .selbar{padding:8px 10px;margin-bottom:10px;background:var(--tint);border:1px solid var(--line);border-radius:10px}
 .selbar b{color:var(--ink)}
 .selbar button:disabled{opacity:.45;cursor:not-allowed}
@@ -1186,7 +1199,7 @@ function render(){
   $('#kpis').innerHTML=[
     [fmt(view.length),'registros'],[fmt(nSp),'espécies identificadas'],[fmt(sp.length),'táxons distintos'],
     [fmt(nObs),'observadores (iNat)'],[fmt(nCol),'coletores (herbários)'],[fmt(geo),'georreferenciados'],[(gN=>gN?Math.round(res/gN*100)+'%':'–')(view.filter(o=>o.grade).length),'grau de pesquisa (iNat)']
-  ].map(([a,b])=>`<div class="kpi"><b>${a}</b><span>${b}</span></div>`).join('');
+  ].map(([a,b])=>`<div class="kpi">${hbtn(KPK[b])}<b>${a}</b><span>${b}</span></div>`).join('');
   renderActive();
   ['map','sp','geo','bi','an','q','sync'].forEach(t=>{DIRTY[t]=1});
   drawTab(curTab);
@@ -1196,7 +1209,7 @@ const refLinks=s=>Object.keys(SRC).filter(k=>s.refs[k]).map(k=>`<a class="rf" hr
 let spPage=0;let PS=100;
 ['#pageSize','#pageSize2'].forEach(id=>$(id).addEventListener('change',e=>{PS=parseInt(e.target.value);$('#pageSize').value=$('#pageSize2').value=String(PS);spPage=0;DIRTY.sp=1;drawTab('sp')}));
 function renderSpecies(sp){
-  const cols=[['<input type="checkbox" id="selPage" title="Marcar ou desmarcar as espécies desta página" aria-label="Selecionar a página">','sel'],['','ph'],['Nome científico','sci'],['Nome popular','com'],['Nível','rank'],['Obs.','n'],['Registrantes','u'],['Fontes','src'],['Última obs.','last'],['Referência','ref'],['Funga do Brasil','ffb'],['Funga Capixaba (2023)','funga'],['','']];
+  const cols=[['<input type="checkbox" id="selPage" title="Marcar ou desmarcar as espécies desta página" aria-label="Selecionar a página">','sel'],['','ph'],['Nome científico','sci'],['Nome popular','com'],['Nível','rank'],['Obs.','n'],['Registrantes','u'],['Fontes','src'],['Última obs.','last'],['Referência','ref'],['Funga do Brasil'+hbtn('col.ffb'),'ffb'],['Funga Capixaba (2023)'+hbtn('col.funga'),'funga'],['','']];
   const isFunga2023 = fcapBadge;
   $('#spHead').innerHTML=cols.map(([t,k])=>`<th data-k="${k}" class="${k==='n'||k==='u'?'num':''}">${t}${sort.k===k?(sort.d>0?' ▲':' ▼'):''}</th>`).join('');
   $('#spHead').querySelectorAll('th').forEach(th=>th.onclick=()=>{
@@ -1288,7 +1301,15 @@ function altCard(){   /* altitude: GBIF e SiBBr informam; iNaturalist não */
   const B=[[-1e9,50,'< 50 m'],[50,200,'50–200 m'],[200,500,'200–500 m'],[500,800,'500–800 m'],[800,1200,'800–1200 m'],[1200,1800,'1200–1800 m'],[1800,1e9,'≥ 1800 m']],v=view.filter(o=>o.alt!=null);
   return card('Altitude dos registros',`${fmt(v.length)} registros com altitude (${view.length?Math.round(v.length/view.length*100):0}%) · informada por GBIF e SiBBr; o iNaturalist não fornece`,hbars(B.map(([a,b,l])=>[l,v.filter(o=>o.alt>=a&&o.alt<b).length,l]),'var(--c-gbif)'));
 }
-function card(t,sub,body){return `<div class="card"><h3>${t}</h3>${sub?`<p class="sub">${sub}</p>`:''}${body}</div>`}
+const hbtn=k=>k?`<button type="button" class="hlp" data-h="${k}" aria-label="Como este dado é calculado" title="Como é calculado">?</button>`:'';
+const HK={'Registros por mês (sazonalidade)':'c.mes','Registros por ano':'c.ano','Nível taxonômico dos registros':'c.nivel','Táxons mais registrados':'c.taxons','Observadores (iNaturalist)':'c.obs','Coletores principais (herbários)':'c.col','Coletores adicionais':'c.add','Herbários capixabas':'c.herbes','Herbários (instituição)':'c.herb','Municípios · iNaturalist':'c.mun','Municípios · coletas em herbários':'c.mun','Grau de qualidade (iNaturalist)':'c.grau','Registros por fonte':'c.fonte','Altitude dos registros':'c.alt',
+ 'Curva de acumulação por ano':'a.curvaano','Curva de acumulação por esforço':'a.curvaesf','Fenologia':'a.feno','Municípios menos amostrados':'a.munlow','Primeiros registros mais antigos':'a.primeiros','Novas na base (últimos 5 anos)':'a.novas','Espécies com um único registro':'a.unicas',
+ 'Comparação com a lista de referência':'a.ref','Ainda sem registro':'a.ref','Registrados e ausentes da lista':'a.ref',
+ 'Flora e Funga do Brasil: conferência de nomes':'f.conf','Possíveis novos registros para o ES':'f.novos','Sinônimos na Funga do Brasil':'f.sin','Não constam na Funga do Brasil':'f.nc',
+ 'Alertas':'q.alertas','Registros com problema':'q.problemas'};
+const KPK={'registros':'k.reg','espécies identificadas':'k.esp','táxons distintos':'k.tax','observadores (iNat)':'k.obs','coletores (herbários)':'k.col','georreferenciados':'k.geo','grau de pesquisa (iNat)':'k.grau',
+ 'riqueza observada (espécies)':'a.S','riqueza estimada (Chao1)':'a.chao','completude do inventário':'a.comp','espécies com 1 registro':'a.f1','espécies com 2 registros':'a.f2'};
+function card(t,sub,body){const k=HK[t];return `<div class="card"><h3>${t}${k?hbtn(k):''}</h3>${sub?`<p class="sub">${sub}</p>`:''}${body}</div>`}
 function renderCharts(sp){
   const top=[...sp].sort((a,b)=>b.n-a.n).map(s=>[s.sci,s.n,s.k]);
   const mon=MONTHS.map((m,i)=>[m,view.filter(o=>+o.date.slice(5,7)===i+1).length,String(i+1).padStart(2,'0')]);
@@ -1590,8 +1611,8 @@ function renderQuality(){
   if(dropped)al.push(`${fmt(dropped)} registros com coordenadas fora do ES e de Trindade e Martim Vaz foram ignorados (opção “Limitar ao ES e Trindade”).`);
   {const fs=ffbStats(SP.filter(s=>isSpR(s.rank)));if(useFfb&&fs.N)al.push(`${fmt(fs.N)} espécies não constam na Flora e Funga do Brasil (grafia ou táxon fora da lista). Veja a aba Análises.`)}
   if(!al.length)al.push('Nenhum alerta com os filtros atuais.');
-  $('#qBody').innerHTML=`<div class="tip">Percentuais calculados sobre os <b>registros filtrados</b>. Verde = bom, amarelo = atenção, rosa = crítico. “Precisão ≤ 1 km” considera só quem informa a precisão da coordenada.</div>
-   <div class="tbl"><table class="qt"><thead><tr><th>Fonte</th><th class="num">Registros</th><th class="num">Com coordenadas</th><th class="num">Informa precisão</th><th class="num">Precisão ≤ 1 km</th><th class="num">ID até espécie</th><th class="num">Com data</th><th class="num">Observador/coletor</th><th class="num">Com município</th><th class="num">Com altitude</th><th class="num">Duplicados removidos</th><th class="num">Fora do limite</th></tr></thead><tbody>${tb}</tbody></table></div>
+  $('#qBody').innerHTML=`<div class="tip">Percentuais calculados sobre os <b>registros filtrados</b>. Verde = bom, amarelo = atenção, rosa = crítico. “Precisão ≤ 1 km” considera só quem informa a precisão da coordenada. ${hbtn('q.cores')}</div>
+   <div class="tbl"><table class="qt"><thead><tr><th>Fonte</th><th class="num">Registros</th><th class="num">Com coordenadas${hbtn('q.coord')}</th><th class="num">Informa precisão${hbtn('q.accinfo')}</th><th class="num">Precisão ≤ 1 km${hbtn('q.acc1k')}</th><th class="num">ID até espécie${hbtn('q.spec')}</th><th class="num">Com data${hbtn('q.date')}</th><th class="num">Observador/coletor${hbtn('q.pers')}</th><th class="num">Com município${hbtn('q.mun')}</th><th class="num">Com altitude${hbtn('q.alt')}</th><th class="num">Duplicados removidos${hbtn('q.dup')}</th><th class="num">Fora do limite${hbtn('q.fora')}</th></tr></thead><tbody>${tb}</tbody></table></div>
    <div class="grid" style="margin-top:14px">${card('Alertas','O que merece correção na origem',`<div class="lst" style="max-height:none">${al.map(a=>`<div><span style="white-space:normal">${esc(a)}</span></div>`).join('')}</div>`)}
    ${card('Registros com problema','Baixe a lista com os motivos para corrigir nas bases',`<p style="font-size:13px">${fmt(view.filter(o=>qFlags(o).length).length)} de ${fmt(view.length)} registros têm ao menos um problema.</p><button type="button" id="dlIssues">Baixar CSV de problemas</button>`)}</div>`;
   $('#dlIssues').onclick=()=>{
@@ -1637,7 +1658,7 @@ function renderAnalysis(){
       +card('Registrados e ausentes da lista','Candidatos a novos registros para o estado',lstRows(novel.slice(0,300).map(s=>[s.sci,fmt(s.n)])));
     setTimeout(()=>{const b=$('#dlMissing');if(b)b.onclick=()=>{const q=v=>`"${String(v).replace(/"/g,'""')}"`;dl('funga-capixaba-sem-registro.csv','\ufeff'+'nome,grupo\n'+miss.map(m=>[m[0],m[1]].map(q).join(',')).join('\n'),'text/csv')}},0);
   }else ref=card('Comparação com a lista de referência','Compare com uma lista de fungos do ES (por exemplo, da Funga do Brasil)','<p style="font-size:13px">Em “Ferramentas de dados”, carregue um CSV ou TXT com um nome por linha (opcionalmente a 2ª coluna com o grupo). O painel mostra o que falta registrar e o que está fora da lista.</p>');
-  $('#anBody').innerHTML=`<div class="kpis">${[[fmt(S),'riqueza observada (espécies)'],[fmt(Math.round(chao)),'riqueza estimada (Chao1)'],[cov+'%','completude do inventário'],[fmt(f1),'espécies com 1 registro'],[fmt(f2),'espécies com 2 registros']].map(([a,b])=>`<div class="kpi"><b>${a}</b><span>${b}</span></div>`).join('')}</div>
+  $('#anBody').innerHTML=`<div class="kpis">${[[fmt(S),'riqueza observada (espécies)'],[fmt(Math.round(chao)),'riqueza estimada (Chao1)'],[cov+'%','completude do inventário'],[fmt(f1),'espécies com 1 registro'],[fmt(f2),'espécies com 2 registros']].map(([a,b])=>`<div class="kpi">${hbtn(KPK[b])}<b>${a}</b><span>${b}</span></div>`).join('')}</div>
    <div class="grid">
     ${card('Curva de acumulação por ano','Espécies distintas acumuladas (registros com data)',lineChart(ypts,'ano','espécies'))}
     ${card('Curva de acumulação por esforço','Espécies acumuladas × nº de registros em ordem cronológica',lineChart(curve,'registros','espécies'))}
@@ -1752,6 +1773,88 @@ function liveAll(){
   run('inat',loadInat);run('gbif',loadGbif);run('sibbr',loadSibbr);
 }
 $('#forceSyncBtn').onclick=()=>{$('#status').textContent='Sincronização forçada iniciada...';liveAll()};
+
+/* ---------- ajuda: como cada número é calculado ---------- */
+const v_=x=>typeof x==='function'?x():x,sec_=(t,x)=>x?`<h4>${t}</h4>${x}`:'';
+const H=(t,o)=>()=>({t,h:sec_('O que mostra',o.w&&`<p>${v_(o.w)}</p>`)+sec_('Como é calculado',o.c&&(Array.isArray(o.c)?`<ul>${o.c.map(i=>`<li>${i}</li>`).join('')}</ul>`:`<p>${v_(o.c)}</p>`))+sec_('Quais dados entram',o.q&&`<p>${v_(o.q)}</p>`)+sec_('Atenção',o.a&&`<p>${v_(o.a)}</p>`)+sec_('Exemplo com os seus dados',o.e&&`<div class="ex">${v_(o.e)}</div>`)});
+const FILT='Todos os números respeitam os <b>filtros ativos</b> (as etiquetas acima do mapa) e as opções da barra de fontes: fontes marcadas, remover duplicados, limitar ao ES e Trindade e usar nomes aceitos.';
+const NSP=()=>SP.filter(s=>['species','subspecies','variety','hybrid','form'].includes(s.rank)).length;
+const dupT=()=>Object.values(dupBy).reduce((a,b)=>a+b,0);
+const pc=(a,b)=>b?Math.round(a/b*100)+'%':'–';
+const chaoCalc=()=>{const sp=SP.filter(s=>isSpR(s.rank)),S=sp.length,f1=sp.filter(s=>s.n===1).length,f2=sp.filter(s=>s.n===2).length,extra=f2>0?f1*f1/(2*f2):f1*(f1-1)/2,ch=S+extra;return{S,f1,f2,extra,ch,cov:ch?Math.round(S/ch*100):0}};
+const HELP={
+ 'k.reg':H('Registros',{w:'Quantas ocorrências (linhas) existem na base depois dos filtros.',c:['Soma dos registros de todas as fontes marcadas (iNaturalist, JABOT, GBIF, SiBBr, speciesLink).','Registros do GBIF, SiBBr e speciesLink são descartados quando repetem outro já contado: mesmo número de observação do iNaturalist, ou mesma espécie, mesma coordenada (4 casas decimais) e mesma data.','Coordenadas fora do ES e de Trindade e Martim Vaz são ignoradas (opção “Limitar ao ES e Trindade”).'],q:FILT,e:()=>`${fmt(view.length)} registros nos filtros atuais. A base montada tem ${fmt(all.length)}; ${fmt(dupT())} repetidos entre fontes foram removidos e ${fmt(dropped)} ficaram fora do ES.`}),
+ 'k.esp':H('Espécies identificadas',{w:'Quantos nomes distintos foram identificados até espécie ou abaixo.',c:'Cada nome conta uma vez, não importa quantos registros tenha. Entram espécie, subespécie, variedade, forma e híbrido. Com a opção de nomes aceitos ligada, sinônimos do GBIF são agrupados no nome aceito.',q:FILT,a:'Registros identificados só até gênero ou família não entram aqui; eles aparecem em “táxons distintos”.',e:()=>`${fmt(NSP())} espécies identificadas entre ${fmt(SP.length)} táxons distintos.`}),
+ 'k.tax':H('Táxons distintos',{w:'Todos os nomes diferentes presentes nos registros, em qualquer nível taxonômico.',c:'Um gênero sem espécie identificada conta como um táxon, assim como uma família. Por isso o número é maior que o de espécies identificadas.',q:FILT,e:()=>`${fmt(SP.length)} táxons, dos quais ${fmt(NSP())} em nível de espécie ou abaixo e ${fmt(SP.length-NSP())} só até gênero, família ou acima.`}),
+ 'k.obs':H('Observadores (iNaturalist)',{w:'Pessoas diferentes que fizeram observações no iNaturalist.',c:'Conta os usuários (login) distintos nos registros do iNaturalist, inclusive as observações do iNaturalist que chegam pelo GBIF.',q:FILT,e:()=>`${fmt(observers(view).length)} observadores nos filtros atuais.`}),
+ 'k.col':H('Coletores (herbários)',{w:'Pessoas que aparecem como coletor principal nas coleções de herbário.',c:'Usa o primeiro nome de cada coleta (JABOT, GBIF, SiBBr e speciesLink) com estado registrado igual a Espírito Santo. Grafias diferentes da mesma pessoa são unificadas. Quem acompanhou a coleta aparece em “Coletores adicionais”.',q:FILT,e:()=>`${fmt(collectors(view).length)} coletores principais nos filtros atuais.`}),
+ 'k.geo':H('Georreferenciados',{w:'Registros que têm latitude e longitude.',c:'Conta os registros com coordenadas. Só eles aparecem no mapa e na camada de calor.',q:FILT,e:()=>{const g=view.filter(o=>o.lat!==null).length;return `${fmt(g)} de ${fmt(view.length)} registros (${pc(g,view.length)}).`}}),
+ 'k.grau':H('Grau de pesquisa (iNaturalist)',{w:'Proporção das observações do iNaturalist que atingiram o “grau de pesquisa”.',c:'Divide os registros com grau “Grau de pesquisa” pelos registros que têm algum grau (Grau de pesquisa, Precisa de ID ou Casual). Registros de herbário não têm grau e ficam de fora.',a:'O GBIF só recebe as observações do iNaturalist que já são de grau de pesquisa; as que chegam por ele contam como tal.',e:()=>{const g=view.filter(o=>o.grade).length,r=view.filter(o=>o.grade==='research').length;return `${fmt(r)} de ${fmt(g)} registros com grau (${pc(r,g)}).`}}),
+
+ 'c.mes':H('Registros por mês',{w:'Em que meses do ano os registros foram feitos.',c:'Conta os registros pelo mês da data. Clique numa coluna para filtrar.',q:'Só registros com data completa o suficiente para ter mês.'}),
+ 'c.ano':H('Registros por ano',{w:'Quantos registros por ano, nos últimos 30 anos com dados.',c:'Conta os registros pelo ano da data.',q:'Registros sem data não aparecem.'}),
+ 'c.nivel':H('Nível taxonômico dos registros',{w:'Até que nível cada registro foi identificado.',c:'Cada registro entra no nível mais baixo em que tem nome: reino, filo, classe, ordem, família, gênero, espécie ou infraespécie. Sem nome, entra em “Sem identificação”.'}),
+ 'c.taxons':H('Táxons mais registrados',{w:'Os nomes com mais registros.',c:'Conta registros por táxon (com nomes aceitos agrupados, se a opção estiver ligada) e ordena do maior para o menor.',a:'Gêneros e famílias também entram, quando o registro não foi identificado até espécie.'}),
+ 'c.obs':H('Observadores (iNaturalist)',{w:'Quem mais registrou no iNaturalist.',c:'Conta registros por usuário do iNaturalist, inclusive os que chegam pelo GBIF.'}),
+ 'c.col':H('Coletores principais',{w:'Quem mais coletou para os herbários no ES.',c:'Conta cada coleta uma vez para o primeiro nome da lista de coletores. Entram JABOT, GBIF, SiBBr e speciesLink com estado registrado igual a Espírito Santo, com grafias unificadas.'}),
+ 'c.add':H('Coletores adicionais',{w:'Pessoas que acompanharam coletas sem serem o coletor principal.',c:'Conta cada coleta uma vez para cada nome da lista que não seja o primeiro.'}),
+ 'c.herbes':H('Herbários capixabas',{w:'Registros dos cinco herbários do estado.',c:'Pelo código da instituição: VIES (inclui UFES), CAP, CEUNES (inclui SAMES), MBML e CVRD (inclui SRVD e Vale). Só registros de herbário entram.'}),
+ 'c.herb':H('Herbários (instituição)',{w:'De qual coleção vêm os registros de herbário.',c:'Conta os registros pelo código da instituição informado na origem.'}),
+ 'c.mun':H('Registros por município',{w:'Em qual município cada registro cai.',c:'O município é descoberto pela coordenada do registro, comparada com os limites municipais do IBGE. Registros sem coordenada, ou fora de qualquer município, entram em “Sem município identificado”.',a:'Um registro com coordenada errada cai no município errado.'}),
+ 'c.grau':H('Grau de qualidade (iNaturalist)',{w:'Situação de cada observação no iNaturalist.',c:'Grau de pesquisa (a comunidade confirmou a identificação), Precisa de ID ou Casual. Os registros do iNaturalist que chegam pelo GBIF contam como grau de pesquisa.'}),
+ 'c.fonte':H('Registros por fonte',{w:'De qual base vem cada registro, depois de remover repetidos.',c:'O JABOT, que chega por duas vias (GBIF e SiBBr), aparece como uma fonte só. Repetições entre fontes são removidas antes da contagem.'}),
+ 'c.alt':H('Altitude dos registros',{w:'Em que faixas de altitude os registros foram feitos.',c:'Conta os registros que informam altitude, em faixas de altura.',a:'Só GBIF e SiBBr informam altitude. O iNaturalist não fornece, por isso a soma é menor que o total.'}),
+
+ 'a.S':H('Riqueza observada',{w:'Quantas espécies diferentes já foram registradas.',c:'Conta os nomes distintos identificados em nível de espécie, subespécie, variedade ou forma. Gêneros e famílias não entram.',q:FILT,a:'Pode diferir em poucas unidades de “espécies identificadas” do painel, que também conta híbridos.',e:()=>`${fmt(chaoCalc().S)} espécies nos filtros atuais.`}),
+ 'a.f1':H('Espécies com 1 registro',{w:'Quantas espécies apareceram uma única vez (em inglês, singletons).',c:'Conta as espécies que têm exatamente 1 registro nos filtros atuais.',a:'Muitas espécies assim indicam que ainda há muito a descobrir. Esse número alimenta o Chao1.',e:()=>`${fmt(chaoCalc().f1)} espécies com um único registro.`}),
+ 'a.f2':H('Espécies com 2 registros',{w:'Quantas espécies apareceram exatamente duas vezes (doubletons).',c:'Conta as espécies que têm exatamente 2 registros. Junto com as de 1 registro, serve de base para estimar quantas faltam.',e:()=>`${fmt(chaoCalc().f2)} espécies com dois registros.`}),
+ 'a.chao':H('Riqueza estimada (Chao1)',{w:'Uma estimativa de quantas espécies existem no que foi amostrado, contando as que ainda não apareceram.',c:['Seja S a riqueza observada, f1 o número de espécies com 1 registro e f2 o de espécies com 2 registros.','Se f2 &gt; 0: <code>Chao1 = S + f1² / (2 × f2)</code>.','Se f2 = 0: <code>Chao1 = S + f1 × (f1 − 1) / 2</code>.'],q:'<b>Todas as espécies</b> (espécie, subespécie, variedade e forma) que estiverem nos filtros atuais. Não há seleção de grupo: para estimar só um recorte (um município, uma fonte, um período, um gênero), use os filtros.',a:'O Chao1 clássico usa a abundância de indivíduos; aqui cada <b>registro</b> vale uma ocorrência, e os dados vêm de coletas oportunistas, sem esforço padronizado. Use como indicador de comparação, não como número exato; ele costuma ser um piso (subestima).',e:()=>{const c=chaoCalc();return `S = ${fmt(c.S)}, f1 = ${fmt(c.f1)}, f2 = ${fmt(c.f2)}.<br>${c.f2>0?`f1² / (2 × f2) = ${fmt(c.f1)}² / (2 × ${fmt(c.f2)})`:`f1 × (f1 − 1) / 2`} = ${fmt(Math.round(c.extra))} espécies ainda não vistas.<br>Chao1 = ${fmt(c.S)} + ${fmt(Math.round(c.extra))} = <b>${fmt(Math.round(c.ch))}</b>.`}}),
+ 'a.comp':H('Completude do inventário',{w:'Que fração das espécies esperadas já foi registrada.',c:'<code>completude = riqueza observada ÷ Chao1 × 100</code>, arredondada.',q:'As mesmas espécies do Chao1, nos filtros atuais.',a:'Quanto mais espécies com 1 registro, menor a completude. O valor muda quando você aplica filtros, porque muda o conjunto de espécies e de registros.',e:()=>{const c=chaoCalc();return `${fmt(c.S)} ÷ ${fmt(Math.round(c.ch))} = <b>${c.cov}%</b>. Isto quer dizer que as espécies já registradas equivalem a ${c.cov}% do que o estimador espera, e os outros ${100-c.cov}% seriam espécies prováveis ainda sem registro.`}}),
+ 'a.curvaano':H('Curva de acumulação por ano',{w:'Como o número total de espécies cresceu ao longo dos anos.',c:'Ordena por data os registros identificados até espécie e acumula as espécies já vistas. Cada ano mostra o total acumulado até o último registro daquele ano.',q:'Só registros com data e identificados até espécie. Os demais não entram.',a:'Uma curva que ainda sobe rápido indica inventário incompleto; uma curva que achata indica que os registros novos quase só repetem espécies conhecidas.'}),
+ 'a.curvaesf':H('Curva de acumulação por esforço',{w:'Quantas espécies novas aparecem à medida que os registros se acumulam.',c:'Mesma ordem cronológica, mas o eixo horizontal é o número acumulado de registros (um ponto a cada pequeno lote, até cerca de 120 pontos).',q:'Só registros com data e identificados até espécie.'}),
+ 'a.feno':H('Fenologia',{w:'Em que meses as espécies mais registradas aparecem.',c:'Pega as 15 espécies com mais registros e conta os registros de cada uma por mês. Quanto mais rosa, mais registros naquele mês, em relação à maior célula da tabela.',q:'Só registros com data que inclua o mês.',a:'Mostra quando as pessoas registram, o que também depende de quando há coletas.'}),
+ 'a.munlow':H('Municípios menos amostrados',{w:'Os 25 municípios com menos registros.',c:'Conta os registros de cada município (pela coordenada, com os limites do IBGE) e mostra os 25 menores, incluindo os que têm zero.',a:'Registros sem coordenada não contam para nenhum município.'}),
+ 'a.primeiros':H('Primeiros registros mais antigos',{w:'Quando cada espécie foi registrada pela primeira vez.',c:'Para cada espécie, pega a data mais antiga entre os registros e lista as 100 mais antigas.'}),
+ 'a.novas':H('Novas na base (últimos 5 anos)',{w:'Espécies cujo primeiro registro é recente.',c:'Espécies cujo primeiro registro caiu nos 5 últimos anos com dados da base (o ano mais recente e os quatro anteriores).'}),
+ 'a.unicas':H('Espécies com um único registro',{w:'As espécies representadas por uma só ocorrência.',c:'Lista as espécies com exatamente 1 registro. São as mais frágeis, porque dependem de uma única ocorrência.'}),
+ 'a.ref':H('Comparação com a lista de referência',{w:'Quanto da sua lista de referência já foi registrado.',c:['Compara o nome (gênero e epíteto, sem autor) de cada item da lista com as espécies registradas e seus sinônimos.','“Ainda sem registro”: itens da lista sem nenhum registro.','“Registrados e ausentes da lista”: espécies registradas que não estão na lista, candidatas a novos registros.'],q:'A lista que você carregar em “Ferramentas de dados”.'}),
+ 'f.conf':H('Conferência de nomes na Funga do Brasil',{w:'Como os nomes do painel aparecem na lista oficial Flora e Funga do Brasil.',c:['Procura o nome de cada espécie (gênero e epíteto) na lista oficial, que o GitHub baixa toda semana do JBRJ.','Aceito: é o nome vigente. Sinônimo: existe, mas o nome aceito é outro. Não consta: não foi encontrado.','Se a espécie tem vários nomes registrados, vale o melhor resultado (aceito, depois sinônimo, depois não consta).','A ocorrência no ES vem da distribuição por estado da lista; para sinônimos vale a do nome aceito.'],a:'Subespécies e variedades são comparadas pelo nome da espécie. “Aguardando” significa que a conferência ainda não terminou.'}),
+ 'f.novos':H('Possíveis novos registros para o ES',{w:'Espécies com registro no painel que a Funga do Brasil não dá como ocorrentes no ES.',c:'Espécies encontradas na lista (aceitas ou sinônimos) cuja distribuição não inclui o Espírito Santo, mas que têm registros no painel.',a:'É um indício, não uma confirmação: a distribuição da lista pode estar desatualizada, e um registro com coordenada errada também gera esse alerta. Clique na espécie para ver os registros.'}),
+ 'f.sin':H('Sinônimos na Funga do Brasil',{w:'Espécies registradas com um nome que hoje é sinônimo.',c:'Mostra o nome registrado e, depois da seta, o nome aceito na lista oficial. Vale para corrigir a identificação na origem.'}),
+ 'f.nc':H('Não constam na Funga do Brasil',{w:'Espécies cujo nome não foi encontrado na lista oficial.',c:'Pode ser erro de grafia, nome novo ainda não incluído, morfoespécie ou táxon fora do escopo da lista. Confira a grafia primeiro.',a:'A comparação usa gênero e epíteto; autores e “cf.” são ignorados.'}),
+
+ 'col.ffb':H('Coluna Funga do Brasil',{w:'A situação do nome na lista oficial Flora e Funga do Brasil.',c:['<b>aceito</b>: nome vigente.','<b>sin. → nome</b>: sinônimo; o nome aceito aparece depois da seta.','<b>não consta</b>: nome não encontrado na lista.','<b>ES ✓ / ES ✗ / ES ?</b>: o Espírito Santo consta, não consta ou não há dados na distribuição da espécie. ES ✗ é um possível novo registro para o estado.']}),
+ 'col.funga':H('Coluna Funga Capixaba (2023)',{w:'Se a espécie consta na lista de Fraga Jr. et al. (2023), Funga Capixaba: Ascomycota e fungos liquenizados.',c:'Compara gênero e epíteto da espécie, e dos sinônimos registrados, com os 525 nomes da tabela suplementar do artigo.',a:'A lista cobre só Ascomycota e fungos liquenizados. Para outros grupos, “não consta” reflete apenas o escopo da lista.'}),
+
+ 'q.cores':H('Como ler as cores',{w:'Verde, amarelo e rosa indicam se o percentual é bom, merece atenção ou é crítico.',c:['Com coordenadas: verde a partir de 80%, amarelo a partir de 50%.','Informa precisão: 70% e 30%. Precisão ≤ 1 km: 60% e 30%.','ID até espécie: 80% e 50%. Data, observador/coletor e município: 90% e 50%.','Altitude: 50% e 20%.'],q:'Os percentuais usam os registros filtrados.'}),
+ 'q.coord':H('Com coordenadas',{w:'Proporção dos registros que têm latitude e longitude.',c:'registros com coordenadas ÷ registros.',e:()=>{const g=view.filter(o=>o.lat!==null).length;return `${fmt(g)} ÷ ${fmt(view.length)} = ${pc(g,view.length)}.`}}),
+ 'q.accinfo':H('Informa precisão',{w:'Dos registros com coordenadas, quantos informam o quão precisa é a posição.',c:'registros com coordenadas e precisão ÷ registros com coordenadas.'}),
+ 'q.acc1k':H('Precisão ≤ 1 km',{w:'Dos que informam precisão, quantos têm erro de até 1 km.',c:'registros com precisão ≤ 1.000 m ÷ registros que informam precisão.',a:'Não considera quem não informa precisão; leia junto com a coluna anterior.'}),
+ 'q.spec':H('ID até espécie',{w:'Proporção dos registros identificados em nível de espécie ou abaixo.',c:'registros com nível espécie, subespécie, variedade ou forma ÷ registros.'}),
+ 'q.date':H('Com data',{w:'Proporção dos registros que têm data.',c:'registros com data ÷ registros.'}),
+ 'q.pers':H('Observador/coletor',{w:'Proporção dos registros em que se sabe quem observou ou coletou.',c:'No iNaturalist, conta quem tem usuário; nos herbários, quem tem ao menos um coletor reconhecido. Dividido pelo total de registros da fonte.'}),
+ 'q.mun':H('Com município',{w:'Proporção dos registros cujo município foi identificado.',c:'O município sai da coordenada, comparada com os limites do IBGE. Registros sem coordenada, ou fora de qualquer município, ficam de fora. O total considerado é o de todos os registros da fonte.'}),
+ 'q.alt':H('Com altitude',{w:'Proporção dos registros que informam altitude.',c:'registros com altitude ÷ registros.',a:'O iNaturalist não fornece altitude; por isso ele aparece com valor baixo.'}),
+ 'q.dup':H('Duplicados removidos',{w:'Quantos registros repetidos entre fontes foram descartados.',c:'Um registro de GBIF, SiBBr ou speciesLink é descartado se repetir uma observação do iNaturalist (mesmo número) ou outro registro com mesma espécie, mesma coordenada (4 casas) e mesma data.',a:'Só vale com a opção “Remover duplicados” ligada.'}),
+ 'q.fora':H('Fora do limite',{w:'Registros ignorados por terem coordenadas fora do ES e de Trindade e Martim Vaz.',c:'A coordenada é comparada com os limites dos municípios capixabas (com uma pequena margem) e com as ilhas de Trindade e Martim Vaz. Se a malha do IBGE ainda não carregou, usa-se uma caixa geográfica em torno do estado. Fora disso, o registro é ignorado.',a:'Só vale com a opção “Limitar ao ES e Trindade” ligada. Geralmente indica coordenada errada na origem.'}),
+ 'q.alertas':H('Alertas',{w:'Pontos que merecem correção nas bases de origem.',c:['Menos de 70% com coordenadas, ou menos de 70% identificados até espécie.','Menos de 90% com data.','Registros com coordenada obscurecida, precisão pior que 10 km, ou sem município.','Duplicados removidos e registros fora do limite.','Espécies que não constam na Funga do Brasil.']}),
+ 'q.problemas':H('Registros com problema',{w:'Quantos registros têm ao menos um defeito de dados, com a lista para baixar.',c:'Um registro entra se tiver qualquer destes motivos: sem coordenada, sem data, sem identificação até espécie, precisão pior que 10 km, coordenada obscurecida, sem município, ou sem coletor/observador.'})
+};
+let hmFocus=null;
+function openHelp(k){
+  const f=HELP[k];if(!f)return;
+  let m=$('#helpModal');
+  if(!m){m=document.createElement('div');m.id='helpModal';m.className='hmodal';m.hidden=true;m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','hmT');
+    m.innerHTML='<div class="hp"><button type="button" class="x" aria-label="Fechar">×</button><h3 id="hmT"></h3><div id="hmB"></div></div>';document.body.appendChild(m)}
+  const o=f();$('#hmT').textContent=o.t;$('#hmB').innerHTML=o.h;m.hidden=false;hmFocus=document.activeElement;m.querySelector('.x').focus();
+}
+function closeHelp(){const m=$('#helpModal');if(m&&!m.hidden){m.hidden=true;if(hmFocus&&hmFocus.focus)hmFocus.focus()}}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.hlp');
+  if(b){e.preventDefault();e.stopPropagation();openHelp(b.dataset.h);return}
+  if(e.target.id==='helpModal'||e.target.closest('#helpModal .x'))closeHelp();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeHelp()});
 
 /* zoom e camadas do mapa ficam sempre na parte visível do mapa, mesmo com a página rolada */
 (function(){

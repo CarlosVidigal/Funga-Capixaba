@@ -1578,7 +1578,7 @@ function renderCite(){
     ${box('ABNT',abnt)}${box('APA',apa)}${box('BibTeX',bib)}
     <h2>Como citar os dados</h2><p>Os dados vêm de bases abertas, cada uma com suas regras. Cite as fontes usadas e consulte a licença de cada conjunto (CC0, CC BY ou CC BY-NC). As fotos do iNaturalist têm licença definida por cada autor.</p>
     ${dados.map(([t,x])=>box(t,x)).join('')}
-    <h2>Direitos e responsabilidade</h2><p>Os números dependem da qualidade e da atualização das bases consultadas (veja a aba “Qualidade dos dados”). Nomes aceitos vêm do GBIF Backbone e podem diferir da Flora e Funga do Brasil. Algumas bases de dados podem apresentar uma sistemática inadequada (ex: Myxomycota sendo tratado como Fungi) e, portanto, uma revisão pessoal doos dados deve ser realizada.</p>`;
+    <h2>Direitos e responsabilidade</h2><p>Os números dependem da qualidade e da atualização das bases consultadas (veja a aba “Qualidade dos dados”). Nomes aceitos vêm do GBIF Backbone e podem diferir da Flora e Funga do Brasil. Algumas bases de dados podem apresentar uma sistemática inadequada (ex: Myxomycota sendo tratado como Fungi) e, portanto, uma revisão pessoal dos dados deve ser realizada.</p>`;
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b){const t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copiado'),()=>prompt('Copie:',t))}});
 

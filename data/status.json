@@ -1,17 +1,45 @@
 {
-  "lastChecked": "2026-11-25T10:40:03.791Z",
-  "version": 3,
-  "total": 26497,
-  "added": 2,
-  "changed": 6,
-  "removed": 246,
+  "lastChecked": "2026-11-25T21:07:57.271Z",
+  "version": 4,
+  "total": 26471,
+  "added": 3714,
+  "changed": 2,
+  "removed": 3740,
+  "changes": {
+    "inat": {
+      "added": 0,
+      "changed": 0,
+      "removed": 0
+    },
+    "sibbr": {
+      "added": 0,
+      "changed": 2,
+      "removed": 0
+    },
+    "splink": {
+      "added": 3714,
+      "changed": 0,
+      "removed": 3740
+    }
+  },
+  "failureReasons": {
+    "gbif": "voltou com 4453 registros contra 13191 na base (resposta parcial)"
+  },
   "sourcesOk": [
     "inat",
-    "gbif",
+    "sibbr",
     "splink"
   ],
   "sourcesFailed": [
-    "sibbr"
+    "gbif"
   ],
-  "sourcesSkipped": []
+  "sourcesSkipped": [],
+  "ffb": {
+    "ok": true,
+    "names": 9196,
+    "accepted": 8465,
+    "synonyms": 725,
+    "changed": true,
+    "lastModified": "Sun, 01 Nov 2026 15:02:40 GMT"
+  }
 }

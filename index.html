@@ -1197,7 +1197,7 @@ function render(){
   const geo=view.filter(o=>o.lat!==null).length;
   const res=view.filter(o=>o.grade==='research').length;
   $('#kpis').innerHTML=[
-    [fmt(view.length),'registros'],[fmt(nSp),'espécies identificadas'],[fmt(sp.length),'táxons distintos'],
+    [fmt(view.length),'registros'],[fmt(nSp),'espécies identificadas'],[fmt(sp.length),'Taxa distintos'],
     [fmt(nObs),'observadores (iNat)'],[fmt(nCol),'coletores (herbários)'],[fmt(geo),'georreferenciados'],[(gN=>gN?Math.round(res/gN*100)+'%':'–')(view.filter(o=>o.grade).length),'grau de pesquisa (iNat)']
   ].map(([a,b])=>`<div class="kpi">${hbtn(KPK[b])}<b>${a}</b><span>${b}</span></div>`).join('');
   renderActive();

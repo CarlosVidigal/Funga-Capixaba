@@ -60,6 +60,7 @@ const isoDate = d => {
   return String(d || '').slice(0, 10);
 };
 const rk = o => o.species ? 'species' : o.genus ? 'genus' : o.family ? 'family' : o.order ? 'order' : o.class ? 'class' : o.phylum ? 'phylum' : o.kingdom ? 'kingdom' : '';
+const fixPt = v => String(v || '').replace(/([Ll])íquens/g, '$1iquens'); // plural de líquen não leva acento
 const JB = { pub: '' }; // organização publicadora do JBRJ (descoberta ao carregar o GBIF)
 
 async function getJSON(url, tentativas = 4) {
@@ -83,7 +84,7 @@ async function getJSON(url, tentativas = 4) {
 function slimInat(o) {
   const t = o.taxon || {}, c = o.geojson?.coordinates;
   return {
-    src: 'inat', id: 'i' + o.id, oid: o.id, k: keyOf(t.name, t.rank), sci: t.name || '', com: t.preferred_common_name || '', rank: t.rank || '',
+    src: 'inat', id: 'i' + o.id, oid: o.id, k: keyOf(t.name, t.rank), sci: t.name || '', com: fixPt(t.preferred_common_name), rank: t.rank || '',
     tph: t.default_photo?.square_url || '', ph: (o.photos?.[0]?.url || '').replace('square', 'medium'),
     lat: c ? +c[1] : null, lng: c ? +c[0] : null, date: o.observed_on || '', grade: o.quality_grade, user: o.user?.login || '',
     place: o.place_guess || '', acc: o.positional_accuracy, obs: !!o.obscured, uri: o.uri, ds: 'Projeto Funga Capixaba'
@@ -104,7 +105,7 @@ function slimGbif(o) {
   return {
     src: jb ? 'jabot' : 'gbif', via: 'gbif', id: 'g' + o.key, inatDs: o.datasetKey === INAT_DS, rec: o.recordedBy || '', uf: o.stateProvince || '',
     cty: o.county || o.municipality || '', inst: ic, alt: num(o.elevation ?? o.minimumElevationInMeters), jflag: !!jb, k: keyOf(sci), sci,
-    com: o.vernacularName || '', rank: LOW.includes(tr) ? tr : (rk(o) || tr), tph: '', ph: img ? img.identifier : '',
+    com: fixPt(o.vernacularName), rank: LOW.includes(tr) ? tr : (rk(o) || tr), tph: '', ph: img ? img.identifier : '',
     lat: o.decimalLatitude ?? null, lng: o.decimalLongitude ?? null, date: isoDate(o.eventDate), grade: o.datasetKey === INAT_DS ? 'research' : '',
     user: o.recordedBy || ic || '', place: [o.locality, o.county, o.stateProvince].filter(Boolean).join(', '), acc: o.coordinateUncertaintyInMeters, obs: false,
     uri: 'https://www.gbif.org/occurrence/' + o.key,
@@ -122,7 +123,7 @@ function slimSibbr(o) {
   const jb = /Jardim Bot[aâ]nico do Rio de Janeiro|\bRB\b|jabot|jbrj/i.test([o.dataResourceName, ic, ic].filter(Boolean).join(' '));
   return {
     src: jb ? 'jabot' : 'sibbr', via: 'sibbr', id: 's' + o.uuid, rec: o.recordedBy || '', uf: o.stateProvince || o.state || '', cty: o.municipality || o.county || '',
-    inst: ic, alt: num(o.minimumElevationInMeters ?? o.elevation ?? o.verbatimElevation), jflag: jb, k: keyOf(sci), sci, com: o.vernacularName || '',
+    inst: ic, alt: num(o.minimumElevationInMeters ?? o.elevation ?? o.verbatimElevation), jflag: jb, k: keyOf(sci), sci, com: fixPt(o.vernacularName),
     rank: rk(o), tph: '', ph: o.image || '',
     lat: o.decimalLatitude ?? null, lng: o.decimalLongitude ?? null, date: isoDate(o.eventDate), grade: '',
     user: o.recordedBy || ic || '', place: [o.locality, o.municipality || o.county, o.stateProvince || o.state].filter(Boolean).join(', '),
@@ -295,7 +296,8 @@ async function atualizarFfb() {
   const taxa = new Map();
   const cab = await lerTabela(zip, 'taxon.txt', o => {
     if (!/fungi/i.test(o.kingdom || '')) return;
-    taxa.set(o.id, { g: (o.genus || '').trim(), e: (o.specificEpithet || '').trim(), r: o.taxonRank || '', st: o.taxonomicStatus || '', aid: o.acceptedNameUsageID || '', an: o.acceptedNameUsage || '' });
+    taxa.set(o.id, { g: (o.genus || '').trim(), e: (o.specificEpithet || '').trim(), r: o.taxonRank || '', st: o.taxonomicStatus || '', aid: o.acceptedNameUsageID || '', an: o.acceptedNameUsage || '',
+      hi: { genus: (o.genus || '').trim(), family: (o.family || '').trim(), order: (o.order || '').trim(), class: (o.class || '').trim(), phylum: (o.phylum || '').trim() } });
   });
   if (!cab || !['id', 'kingdom', 'genus', 'specificEpithet', 'taxonomicStatus'].every(c => cab.includes(c)))
     throw new Error(`taxon.txt com estrutura inesperada (colunas: ${(cab || []).join(', ')})`);
@@ -331,17 +333,31 @@ async function atualizarFfb() {
     if (FFB_ACEITO.test(t.st)) names[k] = ['A', '', esDe(id)];
   }
 
+  // gênero, família, ordem, classe e filo: existem na lista? Alguma espécie aceita do grupo tem o ES na distribuição? (1 sim | 0 não | -1 sem dados)
+  const higher = { genus: {}, family: {}, order: {}, class: {}, phylum: {} };
+  const junta = (a, b) => (a === 1 || b === 1 ? 1 : a === 0 || b === 0 ? 0 : -1);
+  for (const [id, t] of taxa) {
+    if (!ehEsp(t) || !FFB_ACEITO.test(t.st)) continue;
+    const es = esDe(id);
+    for (const [nivel, nome] of Object.entries(t.hi)) {
+      if (!nome) continue;
+      const k = keyOf(nome);
+      higher[nivel][k] = k in higher[nivel] ? junta(higher[nivel][k], es) : es;
+    }
+  }
   let antigos = null;
   try { antigos = JSON.parse(await fs.readFile(FFB_PATH, 'utf-8')); } catch { /* primeira vez */ }
-  const mudou = !antigos || JSON.stringify(antigos.names) !== JSON.stringify(names);
+  const mudou = !antigos || JSON.stringify(antigos.names) !== JSON.stringify(names) || JSON.stringify(antigos.higher) !== JSON.stringify(higher);
   if (mudou) {
     await fs.mkdir(path.dirname(FFB_PATH), { recursive: true });
     await fs.writeFile(FFB_PATH, JSON.stringify({
       source: 'Flora e Funga do Brasil (JBRJ, arquivo Darwin Core do IPT)', url: urlUsada.replace(/^http:/, 'https:'),
       lastModified: meta.lastModified, generated: new Date().toISOString(),
-      counts: { accepted: nA, synonyms: nS, names: Object.keys(names).length },
+      counts: { accepted: nA, synonyms: nS, names: Object.keys(names).length, families: Object.keys(higher.family).length, genera: Object.keys(higher.genus).length },
       // chave normalizada -> [situação (A aceito | S sinônimo), nome aceito (só para sinônimos), ES (1 consta | 0 não consta | -1 sem dados)]
-      names
+      names,
+      // níveis acima de espécie: chave normalizada -> ES (1 | 0 | -1)
+      higher
     }), 'utf-8');
   }
   console.log(`Flora e Funga do Brasil: ${nA} nomes aceitos, ${nS} sinônimos${mudou ? ' (arquivo atualizado)' : ' (sem mudanças)'}.`);

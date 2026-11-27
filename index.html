@@ -1,9 +1,18 @@
 <!doctype html>
+<!--
+  Funga Capixaba · Sistema de integração de registros e monitoramento da Funga Capixaba
+  © 2026 Carlos Augusto Vidigal Fraga Jr. Todos os direitos reservados.
+  Projeto individual, em constante aprimoramento. É proibida a cópia, a reprodução, a modificação
+  ou a redistribuição, total ou parcial, do código, do design e dos textos deste arquivo sem
+  autorização prévia e por escrito do autor. Os dados exibidos pertencem às suas fontes originais.
+  Veja o arquivo LICENSE do repositório.
+-->
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="author" content="Carlos Augusto Vidigal Fraga Jr, Dr.">
+<meta name="copyright" content="© 2026 Carlos Augusto Vidigal Fraga Jr. Todos os direitos reservados.">
 <title>Funga Capixaba · Sistema de integração de registros e monitoramento da Funga Capixaba</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
@@ -34,10 +43,35 @@ main{max-width:1500px;margin:0 auto;padding:20px 24px 28px}
 input,select,button{font:inherit;color:var(--ink)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
 .filters>input,.filters>button,.fx>select,.fx>button,.ms summary{height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 14px;font-size:14px;max-width:100%}
-.filters>input{flex:1 1 260px;min-width:0}
+.filters>.bxt,.filters>.qhint{flex:1 0 100%}
+.qbox{flex:1 1 100%;min-width:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:4px 10px}
+.qbox:focus-within{border-color:var(--brand);box-shadow:0 0 0 2px var(--tint)}
+.qbox input{flex:1 1 180px;min-width:140px;height:30px;border:0;outline:0;background:transparent;font-size:14px;padding:0}
+.qtags{display:contents}
+.qtag{display:inline-flex;align-items:center;gap:6px;background:var(--tint);border:1px solid var(--brand);color:var(--brand-d);border-radius:999px;padding:3px 6px 3px 11px;font-size:13px;font-weight:600}
+.qtag button{border:0;background:none;color:var(--brand-d);cursor:pointer;font-size:13px;line-height:1;padding:2px 4px;border-radius:50%}
+.qtag button:hover{background:var(--pink);color:#fff}
+.qhint{font-size:12px;color:var(--mute);margin:-2px 2px 2px}.qhint kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;font:600 11px Inter,sans-serif}
+.filters,.srcbar .bx{background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+.filters{padding:12px 14px}
+.srcbar .bx{background:#fbfdff;padding:10px 12px;margin-bottom:10px}
+.bxt{margin:0 0 8px;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-d)}
+.sc.nocb{cursor:default}
+.msa{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 6px 8px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.msa .msall{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;font-weight:600;color:var(--brand-d)}
+.msa input[type=checkbox]{accent-color:var(--brand);width:16px;height:16px;margin:0}
+.msa button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font-size:12.5px;cursor:pointer;color:var(--brand-d)}
+.msa button:hover{background:var(--tint)}
+.seal{display:flex;gap:12px;align-items:flex-start;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;line-height:1.5}
+.sealmark{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--brand-d);color:var(--brand-d);display:inline-flex;align-items:center;justify-content:center;font:700 16px/1 Inter,sans-serif}
+.rpt{display:none}
+.rnote{display:none}
+.rcut{display:none!important}
+.printinfo h1{margin:0 0 2px}
 .fx{display:contents}
 .fx>select{padding:0 8px;cursor:pointer}
 #fToggle{display:none}
+#fToggle{height:40px}
 button{cursor:pointer;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
 button:hover{border-color:var(--brand);color:var(--brand-d)}
 :focus-visible{outline:2px solid var(--pink);outline-offset:2px}
@@ -192,7 +226,41 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
 .nolabels .mlabel{display:none}
 .hb[tabindex]:focus-visible,.cols div[tabindex]:focus-visible{outline:2px solid var(--pink);outline-offset:1px}
 @media(max-width:700px){#fToggle{display:inline-flex;align-items:center}.fx{display:none;flex:1 0 100%;flex-wrap:wrap;gap:8px}.filters.open .fx{display:flex}}
-@media print{.srcbar,.filters,.stk .tabs,#err,.tip,.dw,.toast,.pager,.tools{display:none!important}.printinfo{display:block!important;margin:0 0 12px;font-size:12px}body{background:#fff}.stk{position:static}.scroll,.lst{max-height:none!important;overflow:visible!important}section[hidden]{display:none!important}.card{break-inside:avoid}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@page{size:A4 landscape;margin:10mm}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;font-size:11px}
+  .srcbar,.filters,.stk .tabs,.stk .active,#err,.tip,.dw,.toast,.pager,.tools,.selbar,.hlp,.hmodal,#fToggle,.more{display:none!important}
+  .stk{position:static}
+  .printinfo{display:block!important;margin:0 0 12px;font-size:11px;line-height:1.45}
+  .printinfo h1{font-size:21px;color:var(--brand-d)}
+  .printinfo h2{font-size:13px;margin:12px 0 4px;color:var(--brand-d);border-bottom:1px solid var(--line);padding-bottom:2px}
+  .printinfo table{width:100%;border-collapse:collapse;font-size:10px;table-layout:auto}
+  .printinfo th,.printinfo td{border:1px solid #cfd8e5;padding:3px 5px;text-align:left;vertical-align:top;white-space:normal!important;overflow-wrap:anywhere}
+  .printinfo th{background:#e8f0fa}.printinfo td.num{text-align:right}
+  .printinfo ol{margin:4px 0;padding-left:18px;font-size:10px}.printinfo li{margin:2px 0;overflow-wrap:anywhere}
+  .rpt{display:block!important;break-before:page;font-size:18px;color:var(--brand-d);margin:0 0 8px}
+  section[hidden]{display:none!important}
+  .scroll,.lst,.tbl,.pscroll,.colwrap,.card,.msl{max-height:none!important;overflow:visible!important}
+  .card{break-inside:avoid}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .card:has(table),.card:has(.colwrap){grid-column:1/-1}
+  table{font-size:9.5px}th,td{white-space:normal!important;padding:2px 4px!important}
+  td.ell{max-width:none!important;overflow:visible!important;text-overflow:clip!important}
+  .pm td,.pm th{white-space:normal!important}.pm td.n{max-width:none!important;overflow:visible!important}
+  .hb .n{white-space:normal!important;overflow:visible!important}
+  .cols{width:100%!important;min-width:0!important}.cols div{flex:1 1 0!important;min-width:0!important;font-size:8px!important}
+  .foot{break-inside:avoid}
+  .rnote{display:block!important;font-size:9.5px;color:#62748c;padding:4px 0}
+  .kpis{grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:6px!important;margin-bottom:6px!important}
+  .kpi{padding:6px 8px!important}.kpi b{font-size:17px!important}.kpi span{font-size:9.5px!important}
+  header{padding-bottom:4px!important}
+  .ib{display:none!important}
+  .card button{display:none!important}
+  .hb,.hb.o{grid-template-columns:minmax(0,42%) minmax(0,1fr) auto!important;margin:2px 0!important;font-size:10px!important;gap:6px!important}
+  .hb .t{height:7px!important}
+  .card{padding:10px 12px!important}
+}
 .bdg{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:600;background:#eef2f7;color:var(--mute);white-space:nowrap}.bdg.ok{background:#e3f4ea;color:#1c6b3b}.bdg.warn{background:#fff1d6;color:#8a5a00}.bdg.bad{background:#fde3ec;color:#a3174f}
 .err{background:var(--pink-t);border:1px solid #f4c3d6;color:#7a1f48;padding:10px 14px;border-radius:var(--r);margin-bottom:10px;overflow-wrap:anywhere;font-size:13.5px}
 .empty{padding:30px;text-align:center;color:var(--mute)}
@@ -221,18 +289,23 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
   <div class="printinfo" id="printinfo"></div>
   <div id="err"></div>
   <div class="srcbar">
+    <div class="bx"><h2 class="bxt">Bases de dados</h2>
     <div class="chips">
       <label class="sc" title="Projeto Funga Capixaba no iNaturalist"><input type="checkbox" id="uinat" checked><i class="dot" style="background:var(--c-inat)"></i>iNaturalist <b id="cinat">…</b></label>
       <label class="sc" title="Herbário RB (Jardim Botânico do Rio de Janeiro), a coleção do JABOT, publicado no GBIF e no SiBBr"><input type="checkbox" id="ujabot" checked><i class="dot" style="background:var(--c-jabot)"></i>JABOT <b id="cjabot">…</b></label>
       <label class="sc"><input type="checkbox" id="ugbif" checked><i class="dot" style="background:var(--c-gbif)"></i>GBIF <b id="cgbif">…</b></label>
       <label class="sc"><input type="checkbox" id="usibbr" checked><i class="dot" style="background:var(--c-sibbr)"></i>SiBBr <b id="csibbr">…</b></label>
       <label class="sc"><input type="checkbox" id="usplink" checked><i class="dot" style="background:var(--c-splink)"></i>speciesLink <b id="csplink">…</b></label>
+      <label class="sc" title="Checklist oficial Flora e Funga do Brasil (JBRJ), publicado no GBIF: confere o nome aceito e se o Espírito Santo consta na distribuição"><input type="checkbox" id="uffb" checked><i class="dot" style="background:#6b8f3a"></i>Flora e Funga do Brasil <b id="cffb">…</b></label>
+      <span class="sc nocb" title="Lista de espécies de Fraga Jr. et al. (2023), usada no cruzamento da coluna Funga Capixaba (2023)"><i class="dot" style="background:#c0397b"></i>Funga Capixaba (2023) <b id="cfcap">…</b></span>
+    </div></div>
+    <div class="bx"><h2 class="bxt">Tratamento dos dados</h2>
+    <div class="chips">
       <label class="sc"><input type="checkbox" id="udup" checked>Remover duplicados</label>
       <label class="sc" title="Ignora registros com coordenadas fora do estado e das ilhas de Trindade e Martim Vaz"><input type="checkbox" id="ulim" checked>Limitar ao ES e Trindade</label>
       <label class="sc" title="Usa o GBIF Backbone para juntar sinônimos e variações de grafia do mesmo nome"><input type="checkbox" id="utax" checked>Unir sinônimos (GBIF)</label>
-      <label class="sc" title="Checklist oficial Flora e Funga do Brasil (JBRJ), publicado no GBIF: confere o nome aceito e se o Espírito Santo consta na distribuição"><input type="checkbox" id="uffb" checked><i class="dot" style="background:#6b8f3a"></i>Flora e Funga do Brasil <b id="cffb">…</b></label>
       <label class="sc" title="Cores das fontes distinguíveis por quem tem daltonismo"><input type="checkbox" id="ucb">Paleta para daltonismo</label>
-    </div>
+    </div></div>
     <details class="more"><summary>Ferramentas de dados</summary>
       <div class="tools2">
         <button id="retry" type="button">Tentar novamente</button>
@@ -254,8 +327,10 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
     </details>
   </div>
   <div class="filters">
-    <input id="q" type="search" placeholder="Buscar espécie, nome popular, observador ou local" aria-label="Buscar">
-    <button id="fToggle" type="button" aria-expanded="false">Filtros</button>
+    <h2 class="bxt">Filtros</h2>
+    <div class="qbox" id="qbox"><span id="qtags" class="qtags"></span><input id="q" type="search" placeholder="Buscar espécie, nome popular, observador ou local" aria-label="Buscar"></div>
+    <div class="qhint">Para buscar vários nomes ao mesmo tempo, digite cada um e tecle <kbd>Enter</kbd> (ou vírgula): os nomes guardados aparecem como etiquetas e são procurados juntos.</div>
+    <button id="fToggle" type="button" aria-expanded="false">Mostrar filtros</button>
     <div class="fx">
     <div class="ms" id="ms-year" data-l="Ano"></div>
     <div class="ms" id="ms-mon" data-l="Mês"></div>
@@ -282,7 +357,7 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
     <div class="active" id="active"></div>
     <div class="tabs" role="tablist">
       <button role="tab" data-tab="map" aria-selected="true">Mapa</button>
-      <button role="tab" data-tab="sp" aria-selected="false">Espécies</button>
+      <button role="tab" data-tab="sp" aria-selected="false"><i>Taxa</i></button>
       <button role="tab" data-tab="geo" aria-selected="false">Georreferência</button>
       <button role="tab" data-tab="bi" aria-selected="false">Painel</button>
       <button role="tab" data-tab="an" aria-selected="false">Análises</button>
@@ -363,9 +438,11 @@ body.mapfull{overflow:hidden}body.mapfull #t-map{position:fixed;inset:0;z-index:
   </section>
 
 </main>
+<div class="printinfo" id="printtail"></div>
 <footer class="foot">
   <div>Autor: <b>Dr. Carlos Augusto Vidigal Fraga Jr.</b> · Projeto Funga Capixaba</div>
-  <div><a href="https://www.instagram.com/fungacapixaba/" target="_blank" rel="noopener">Instagram @fungacapixaba</a> · <a href="https://www.inaturalist.org/projects/funga-capixaba" target="_blank" rel="noopener">Projeto no iNaturalist</a> · Fontes: iNaturalist, JABOT, GBIF, SiBBr, Flora e Funga do Brasil e IBGE (limites municipais)</div>
+  <div><a href="https://www.instagram.com/fungacapixaba/" target="_blank" rel="noopener">Instagram @fungacapixaba</a> · <a href="https://www.inaturalist.org/projects/funga-capixaba" target="_blank" rel="noopener">Projeto no iNaturalist</a> · Fontes: iNaturalist, JABOT, GBIF, SiBBr, speciesLink, Flora e Funga do Brasil, Funga Capixaba (Fraga Jr. et al., 2023) e IBGE (limites municipais)</div>
+  <div class="seal"><span class="sealmark" aria-hidden="true">©</span><span><b>© 2026 Carlos Augusto Vidigal Fraga Jr. Todos os direitos reservados.</b> Projeto individual, em constante aprimoramento. É proibida a cópia, a reprodução, a modificação ou a redistribuição, total ou parcial, do código, do design e dos textos desta página sem autorização prévia e por escrito do autor. Os dados exibidos pertencem às suas fontes originais. <a href="https://github.com/CarlosVidigal/Funga-Capixaba/blob/main/LICENSE" target="_blank" rel="noopener">Licença</a></span></div>
 </footer>
 <aside id="dw" class="dw" hidden aria-label="Ficha"><div class="dwh"><b id="dwt"></b><button id="dwx" type="button" aria-label="Fechar">✕</button></div><div id="dwb"></div></aside>
 <div id="toast" class="toast" hidden></div>
@@ -461,6 +538,7 @@ function build(){
     add.forEach(c=>seen.add(c));
   }
   if(MUN.ready)all.forEach(o=>{if(o.mun===undefined)o.mun=munOf(o)});
+  all.forEach(o=>{if(o.com&&o.com.includes('íquens'))o.com=o.com.replace(/([Ll])íquens/g,'$1iquens')});   /* plural de líquen não leva acento */
   all.forEach(o=>{if(o.ck0===undefined)o.ck0=isColl(o)?parseCollectors(o.rec):[];if(o.ak===undefined)taxApply(o)});
   unifyKeys(all);
 }
@@ -803,7 +881,13 @@ const MS={},MFULL=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho'
 MSK.forEach(k=>MS[k]={sel:new Set(),opts:[],sig:'',l:$('#ms-'+k).dataset.l});
 function msDraw(k){   /* caixa de seleção múltipla: lista de opções com marcadores */
   const m=MS[k],el=$('#ms-'+k),open=el.querySelector&&el.querySelector('details')&&el.querySelector('details').open;
-  el.innerHTML=`<details${open?' open':''}><summary>${m.l}${m.sel.size?` <b>${m.sel.size}</b>`:''}</summary><div class="msbox"><div class="msq"><input type="search" placeholder="Buscar…" data-q><button type="button" data-clear>Limpar</button></div><div class="msl">${m.opts.map(([v,l])=>`<label><input type="checkbox" value="${esc(v)}"${m.sel.has(v)?' checked':''}>${esc(l)}</label>`).join('')||'<div class="sub">Sem opções ainda</div>'}</div></div></details>`;
+  el.innerHTML=`<details${open?' open':''}><summary>${m.l}${m.sel.size?` <b>${m.sel.size}</b>`:''}</summary><div class="msbox"><div class="msq"><input type="search" placeholder="Buscar…" data-q></div><div class="msa"><label class="msall"><input type="checkbox" data-all><span>Selecionar tudo</span></label><button type="button" data-clear>Desmarcar tudo</button></div><div class="msl">${m.opts.map(([v,l])=>`<label><input type="checkbox" value="${esc(v)}"${m.sel.has(v)?' checked':''}>${esc(l)}</label>`).join('')||'<div class="sub">Sem opções ainda</div>'}</div></div></details>`;
+  msSync(k);
+}
+function msSync(k){   /* estado da caixa “Selecionar tudo”: marcada, parcial ou vazia (considera só as opções visíveis na busca) */
+  const a=$('#ms-'+k).querySelector('[data-all]');if(!a)return;
+  const vis=[...$('#ms-'+k).querySelectorAll('.msl label:not([hidden]) input')],n=vis.filter(i=>i.checked).length;
+  a.checked=vis.length>0&&n===vis.length;a.indeterminate=n>0&&n<vis.length;
 }
 function msOpts(k,opts){const m=MS[k],sig=opts.map(o=>o[0]).join('|');if(m.sig===sig&&m.drawn)return;m.sig=sig;m.opts=opts;m.drawn=true;msDraw(k)}
 function msSet(k,vals,add){const m=MS[k];if(!add)m.sel.clear();vals.forEach(v=>{if(add&&m.sel.has(v))m.sel.delete(v);else m.sel.add(v)});msDraw(k)}
@@ -811,12 +895,16 @@ MSK.forEach(k=>{
   const el=$('#ms-'+k);
   el.addEventListener('change',e=>{
     const c=e.target;if(c.type!=='checkbox')return;
-    const m=MS[k];if(c.checked)m.sel.add(c.value);else m.sel.delete(c.value);
+    const m=MS[k];
+    if(c.dataset.all!==undefined){el.querySelectorAll('.msl label:not([hidden]) input').forEach(i=>{i.checked=c.checked;if(c.checked)m.sel.add(i.value);else m.sel.delete(i.value)})}
+    else if(c.checked)m.sel.add(c.value);else m.sel.delete(c.value);
+    msSync(k);
     el.querySelector('summary').innerHTML=m.l+(m.sel.size?` <b>${m.sel.size}</b>`:'');ua();
   });
   el.addEventListener('input',e=>{
     if(e.target.dataset.q===undefined)return;
     const q=norm(e.target.value);el.querySelectorAll('.msl label').forEach(l=>{l.hidden=!!q&&!norm(l.textContent).includes(q)});
+    msSync(k);
   });
   el.addEventListener('click',e=>{if(e.target.dataset.clear!==undefined){MS[k].sel.clear();msDraw(k);ua()}});
 });
@@ -839,9 +927,12 @@ function fillSelects(){
   msOpts('grade',Object.keys(GRADE).map(k=>[k,GRADE[k]]));
   syncRange();
 }
+const QS=[];   /* nomes guardados na busca: o registro entra se combinar com qualquer um deles */
+function qDraw(){$('#qtags').innerHTML=QS.map((t,i)=>`<span class="qtag">${esc(t)}<button type="button" data-qi="${i}" aria-label="Remover ${esc(t)}">✕</button></span>`).join('')}
+function qAdd(txt){String(txt).split(/[,;\n]+/).map(x=>x.trim()).filter(Boolean).forEach(p=>{if(!QS.some(x=>norm(x)===norm(p)))QS.push(p)});qDraw()}
 function apply(){
   spPage=0;
-  const q=norm($('#q').value),geo=$('#fGeo').value,S=k=>MS[k].sel;
+  const qts=[...QS,$('#q').value].map(x=>norm(String(x).trim())).filter(Boolean),geo=$('#fGeo').value,S=k=>MS[k].sel;
   const y=S('year'),mo=S('mon'),mu=S('mun'),lv=S('lvl'),hb=S('herb'),sf=S('src'),gr=S('grade');
   view=all.filter(o=>{
     if(selK&&skey(o)!==selK)return false;
@@ -855,14 +946,20 @@ function apply(){
     if(geo!==''&&(geo==='1')!==(o.lat!==null))return false;
     if(areaBox&&!(o.lat!==null&&o.lat>=areaBox[0]&&o.lat<=areaBox[2]&&o.lng>=areaBox[1]&&o.lng<=areaBox[3]))return false;
     if(selP&&!(selP.t==='obs'?((o.src==='inat'||o.inatDs)&&norm(o.user)===selP.key):(isColl(o)&&isES(o)&&(o.cks||[]).some(c=>c[0]===selP.key&&c[2]===(selP.t==='add'?'a':'p')))))return false;
-    if(q&&!norm(o.sci+' '+o.com+' '+o.user+' '+(o.rec||'')+' '+o.place+' '+(o.mun||'')).includes(q))return false;
+    if(qts.length){const h=norm(o.sci+' '+o.com+' '+o.user+' '+(o.rec||'')+' '+o.place+' '+(o.mun||''));if(!qts.some(t=>h.includes(t)))return false}
     return true;
   });
   render();
 }
 const ua=()=>{apply();fit();saveHash()};   /* filtro feito pelo usuário: reenquadra o mapa */
 ['#q','#fGeo'].forEach(s=>$(s).addEventListener('input',ua));
-$('#reset').onclick=()=>{$('#q').value='';$('#fGeo').value='';MSK.forEach(k=>{MS[k].sel.clear();msDraw(k)});selK=null;selP=null;clearArea();$('#views').value='';$('#delView').hidden=true;ua()};
+$('#q').addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===','||e.key===';'){const v=$('#q').value.trim();if(v){e.preventDefault();qAdd(v);$('#q').value='';ua()}else if(e.key!=='Enter')e.preventDefault()}
+  else if(e.key==='Backspace'&&!$('#q').value&&QS.length){QS.pop();qDraw();ua()}
+});
+$('#q').addEventListener('paste',e=>{const t=(e.clipboardData||window.clipboardData).getData('text');if(/[,;\n]/.test(t)){e.preventDefault();qAdd(t);$('#q').value='';ua()}});
+$('#qtags').addEventListener('click',e=>{const b=e.target.closest('[data-qi]');if(!b)return;QS.splice(+b.dataset.qi,1);qDraw();ua()});
+$('#reset').onclick=()=>{$('#q').value='';QS.length=0;qDraw();$('#fGeo').value='';MSK.forEach(k=>{MS[k].sel.clear();msDraw(k)});selK=null;selP=null;clearArea();$('#views').value='';$('#delView').hidden=true;ua()};
 ['#uinat','#ujabot','#ugbif','#usibbr','#usplink','#udup','#ulim'].forEach(s=>$(s).addEventListener('change',()=>refresh(true)));
 
 
@@ -871,6 +968,7 @@ let ACT=[];
 function renderActive(){
   ACT=[];
   MSK.forEach(k=>MS[k].sel.forEach(v=>{const lab=(MS[k].opts.find(o=>o[0]===v)||[v,v])[1];ACT.push([`${MS[k].l}: ${lab}`,()=>{MS[k].sel.delete(v);msDraw(k);ua()}])}));
+  QS.forEach(t=>ACT.push([`Busca: ${t}`,()=>{const i=QS.indexOf(t);if(i>=0)QS.splice(i,1);qDraw();ua()}]));
   const q=$('#q').value.trim();if(q)ACT.push([`Busca: ${q}`,()=>{$('#q').value='';ua()}]);
   if($('#fGeo').value)ACT.push([$('#fGeo').value==='1'?'Só com coordenadas':'Sem coordenadas',()=>{$('#fGeo').value='';ua()}]);
   if(selK){const o=all.find(o=>skey(o)===selK);ACT.push([`Espécie: ${o?sname(o):selK}`,()=>{selK=null;ua()}])}
@@ -882,13 +980,13 @@ function renderActive(){
     +(!view.length&&all.length&&!busy?`<span class="note" style="margin:0">Nenhum registro com esses filtros. Remova um filtro ou <button type="button" class="link" data-i="clear">limpe todos</button>.</span>`:'');
 }
 $('#active').addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(!b)return;if(b.dataset.i==='clear')return $('#reset').click();const c=ACT[+b.dataset.i];if(c)c[1]()});
-function stateObj(){const m={};MSK.forEach(k=>{if(MS[k].sel.size)m[k]=[...MS[k].sel]});return{q:$('#q').value,g:$('#fGeo').value,m,k:selK,p:selP,a:areaBox,t:curTab}}
+function stateObj(){const m={};MSK.forEach(k=>{if(MS[k].sel.size)m[k]=[...MS[k].sel]});return{q:$('#q').value,qs:[...QS],g:$('#fGeo').value,m,k:selK,p:selP,a:areaBox,t:curTab}}
 function applyState(x){
-  $('#q').value=x.q||'';$('#fGeo').value=x.g||'';
+  $('#q').value=x.q||'';QS.length=0;(x.qs||[]).forEach(t=>QS.push(t));qDraw();$('#fGeo').value=x.g||'';
   MSK.forEach(k=>{MS[k].sel.clear();((x.m||{})[k]||[]).forEach(v=>MS[k].sel.add(v));msDraw(k)});
   selK=x.k||null;selP=x.p||null;if(x.a)setArea(x.a);else clearArea();
 }
-function saveHash(){try{const x=stateObj(),has=x.q||x.g||Object.keys(x.m).length||x.k||x.p||x.a||x.t!=='map';history.replaceState(null,'',has?'#v='+encodeURIComponent(JSON.stringify(x)):location.pathname+location.search)}catch(e){}}
+function saveHash(){try{const x=stateObj(),has=x.q||x.qs.length||x.g||Object.keys(x.m).length||x.k||x.p||x.a||x.t!=='map';history.replaceState(null,'',has?'#v='+encodeURIComponent(JSON.stringify(x)):location.pathname+location.search)}catch(e){}}
 function loadHash(){try{const m=location.hash.match(/#v=(.+)/);if(!m)return;const x=JSON.parse(decodeURIComponent(m[1]));applyState(x);if(x.t&&x.t!=='map')setTimeout(()=>go(x.t),0)}catch(e){}}
 function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>{e.hidden=true},2600)}
 $('#copyLink').onclick=()=>{saveHash();const u=location.href;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast('Link da visão copiado'),()=>prompt('Copie o link:',u))};
@@ -897,10 +995,48 @@ $('#saveView').onclick=()=>{const n=prompt('Nome da visão:');if(!n)return;const
 $('#views').addEventListener('input',()=>{const n=$('#views').value,v=ls.get('funga-views',{});$('#delView').hidden=!n;if(n&&v[n]){applyState(v[n]);ua()}});
 $('#delView').onclick=()=>{const n=$('#views').value,v=ls.get('funga-views',{});delete v[n];ls.set('funga-views',v);viewsFill();$('#delView').hidden=true};
 viewsFill();
-$('#fToggle').onclick=()=>{const f=document.querySelector('.filters');f.classList.toggle('open');$('#fToggle').setAttribute('aria-expanded',f.classList.contains('open'))};
+$('#fToggle').onclick=()=>{const f=document.querySelector('.filters'),o=f.classList.toggle('open');$('#fToggle').setAttribute('aria-expanded',o);$('#fToggle').textContent=o?'Ocultar filtros':'Mostrar filtros'};
+/* ---------- relatório em PDF: painel, análises e qualidade, com bases consultadas e referências ---------- */
+const RPT_TABS=['bi','an','q'],RPT_TIT={bi:'Painel',an:'Análises',q:'Qualidade dos dados'};
+let rptSaved=null,rptSubs=[];
+function rptBases(){
+  const defs=[['inat','iNaturalist','Projeto Funga Capixaba (iNaturalist)','uinat'],['jabot','JABOT','Herbário RB (Jardim Botânico do Rio de Janeiro) e parceiros, via GBIF e SiBBr','ujabot'],['gbif','GBIF','Ocorrências de fungos do Espírito Santo, API do GBIF','ugbif'],['sibbr','SiBBr','Sistema de Informação sobre a Biodiversidade Brasileira','usibbr'],['splink','speciesLink','Rede speciesLink (CRIA)','usplink']];
+  const rows=defs.map(([k,n,d,u])=>`<tr><td><b>${n}</b></td><td>${esc(d)}</td><td>${$('#'+u).checked?'incluída':'desligada'}</td><td class="num">${fmt(raw[k].length)}</td><td class="num">${fmt(all.filter(o=>o.src===k).length)}</td><td class="num">${fmt(view.filter(o=>o.src===k).length)}</td></tr>`).join('');
+  const ffb=FFB_FILE?`arquivo do IPT do JBRJ de ${dBR(FFB_INFO.generated)} · ${fmt((FFB_INFO.counts&&FFB_INFO.counts.names)||Object.keys(FFB).length)} nomes de fungos`:'consulta ao GBIF (cópia da Flora do Brasil)';
+  const comp=[['Flora e Funga do Brasil (JBRJ)',useFfb?'ativa':'desligada',ffb],['Funga Capixaba (Fraga Jr. et al., 2023)',FCAP?'carregada':'não carregada',FCAP?`${fmt(FCAP.size)} espécies da lista`:'—'],['IBGE, limites municipais',MUN.ready?'carregados':'indisponíveis','usados para identificar o município de cada registro']];
+  return `<table><tr><th>Base</th><th>Origem</th><th>Situação</th><th>Registros baixados</th><th>Após tratamento</th><th>Nos filtros atuais</th></tr>${rows}</table>
+  <table style="margin-top:6px"><tr><th>Referência complementar</th><th>Situação</th><th>Detalhe</th></tr>${comp.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${esc(r[2])}</td></tr>`).join('')}</table>`;
+}
+function reportPrepare(){
+  RPT_TABS.forEach(t=>{DIRTY[t]=1;drawTab(t)});
+  rptSaved=TABS.map(t=>[t,$('#t-'+t).hidden]);
+  TABS.forEach(t=>{const sc=$('#t-'+t);sc.hidden=!RPT_TABS.includes(t);if(RPT_TABS.includes(t))sc.insertAdjacentHTML('afterbegin',`<h2 class="rpt">${RPT_TIT[t]}</h2>`)});
+  document.querySelectorAll('#t-bi .scroll,#t-bi .lst,#t-an .scroll,#t-an .lst,#t-q .scroll,#t-q .lst').forEach(c=>{const r=[...c.children];if(r.length>40){r.slice(30).forEach(x=>x.classList.add('rcut'));const n=document.createElement('div');n.className='rnote';n.textContent=`… mostrando os 30 primeiros de ${fmt(r.length)}. A lista completa está no painel e pode ser baixada em CSV.`;c.appendChild(n)}});
+  rptSubs=[];document.querySelectorAll('#t-bi .sub,#t-an .sub,#t-q .sub').forEach(e=>{if(/role para ver todos/.test(e.textContent)){rptSubs.push([e,e.innerHTML]);e.innerHTML=e.innerHTML.replace(/\s*·\s*role para ver todos/,'')}});
+  const quando=new Date().toLocaleString('pt-BR'),dados=BASE&&!LIVE?`Base do repositório v${BASE.version}, atualizada em ${dBR(BASE.lastUpdated)}`:`Consulta direta às fontes em ${new Date(DATA_TS||Date.now()).toLocaleString('pt-BR')}`;
+  const top=[...SP].sort((a,b)=>b.n-a.n).slice(0,40);
+  $('#printinfo').innerHTML=`<h1>Funga Capixaba · relatório</h1>
+  <div>Gerado em ${quando} · ${esc(APP.autor.titulo)} ${esc(APP.autor.nome)} · ${esc(dados)}</div>
+  <h2>Bases consultadas</h2>${rptBases()}
+  <div style="margin-top:4px">Tratamento: duplicados entre fontes ${$('#udup').checked?`removidos (${fmt(dupT())})`:'mantidos'} · limite ao ES e a Trindade ${$('#ulim').checked?`ligado (${fmt(dropped)} registros fora do limite ignorados)`:'desligado'} · nomes ${$('#utax').checked?'unidos pelo GBIF Backbone (sinônimos)':'como informados'}.</div>
+  <h2>Filtros aplicados</h2><div>${ACT.length?ACT.map(c=>esc(c[0])).join(' · '):'Nenhum filtro: todos os registros da base tratada.'}<br>${fmt(view.length)} de ${fmt(all.length)} registros.</div>`;
+  $('#printtail').innerHTML=`<h2 class="rpt">Táxons mais registrados</h2>
+  <table><tr><th>Táxon</th><th>Nível</th><th>Registros</th><th>Fontes</th><th>Funga do Brasil</th><th>Funga Capixaba (2023)</th></tr>${top.map(s=>`<tr><td><i>${esc(s.sci)}</i></td><td>${esc(RANK[s.rank]||s.rank)}</td><td class="num">${fmt(s.n)}</td><td>${[...s.srcs].map(x=>SRC[x].n).join(', ')}</td><td>${ffbBadge(s)}</td><td>${fcapBadge(s)}</td></tr>`).join('')}</table>
+  <h2>Referências das bases consultadas</h2><ol>${dataRefs().map(r=>`<li><b>${esc(r[0])}.</b> ${esc(r[1])}</li>`).join('')}</ol>
+  <h2>Como citar este painel</h2><div>${esc(citeShort())}</div>
+  <div style="margin-top:8px;font-size:9.5px;color:#62748c">© 2026 Carlos Augusto Vidigal Fraga Jr. Todos os direitos reservados. Projeto individual, em constante aprimoramento; é proibida a cópia ou a redistribuição sem autorização por escrito do autor. Os dados exibidos pertencem às suas fontes originais.</div>`;
+}
+function reportRestore(){
+  document.querySelectorAll('.rpt,.rnote').forEach(e=>e.remove());
+  document.querySelectorAll('.rcut').forEach(e=>e.classList.remove('rcut'));
+  rptSubs.forEach(([e,h])=>{e.innerHTML=h});rptSubs=[];
+  if(rptSaved){rptSaved.forEach(([t,h])=>{$('#t-'+t).hidden=h});rptSaved=null}
+  $('#printinfo').innerHTML='';$('#printtail').innerHTML='';
+}
 $('#printBtn').onclick=()=>{
-  $('#printinfo').innerHTML=`<b>Funga Capixaba · relatório</b> — ${new Date().toLocaleString('pt-BR')}<br>Filtros: ${ACT.length?ACT.map(c=>esc(c[0])).join(' · '):'nenhum'}<br>${fmt(view.length)} de ${fmt(all.length)} registros · ${esc(citeShort())}`;
-  go('bi');setTimeout(()=>window.print(),300);
+  reportPrepare();
+  window.addEventListener('afterprint',reportRestore,{once:true});
+  setTimeout(()=>window.print(),300);
 };
 /* paleta para daltonismo */
 const PAL={std:{inat:'#e8508a',jabot:'#1d4f9c',gbif:'#27b3e6',sibbr:'#8e5bd1'},cb:{inat:'#D55E00',jabot:'#0072B2',gbif:'#009E73',sibbr:'#CC79A7'}};
@@ -1197,7 +1333,7 @@ function render(){
   const geo=view.filter(o=>o.lat!==null).length;
   const res=view.filter(o=>o.grade==='research').length;
   $('#kpis').innerHTML=[
-    [fmt(view.length),'registros'],[fmt(nSp),'espécies identificadas'],[fmt(sp.length),'Taxa distintos'],
+    [fmt(view.length),'registros'],[fmt(nSp),'espécies identificadas'],[fmt(sp.length),'táxons distintos'],
     [fmt(nObs),'observadores (iNat)'],[fmt(nCol),'coletores (herbários)'],[fmt(geo),'georreferenciados'],[(gN=>gN?Math.round(res/gN*100)+'%':'–')(view.filter(o=>o.grade).length),'grau de pesquisa (iNat)']
   ].map(([a,b])=>`<div class="kpi">${hbtn(KPK[b])}<b>${a}</b><span>${b}</span></div>`).join('');
   renderActive();
@@ -1393,15 +1529,31 @@ async function resolveFfb(){
 }
 const FFB_PR={A:0,S:1,N:2};
 function ffbForNames(names){let best=null;names.forEach(n=>{const kk=keyOf(String(n).split(' ').slice(0,2).join(' ')),e=FFB[kk]||(FFB_FILE?{s:'N'}:undefined);if(e&&(!best||FFB_PR[e.s]<FFB_PR[best.s]))best=e});return best}
+const FFB_HI=['genus','family','order','class','phylum'];
+let FFB_GEN=null;   /* gênero -> ES, derivado dos nomes de espécies (vale para arquivos antigos, sem a seção “higher”) */
+function ffbHigher(s){   /* táxon acima de espécie: o nome existe na lista oficial? algum representante ocorre no ES? */
+  const nome=String(s.sci||'').split(' ')[0],key=keyOf(nome),H=FFB_INFO&&FFB_INFO.higher;
+  if(!FFB_FILE||!nome)return null;
+  if(H&&H[s.rank]){const v=H[s.rank][key];return v===undefined?{s:'N',h:1}:{s:'A',es:v,h:1}}
+  if(s.rank==='genus'){if(!FFB_GEN){FFB_GEN={};for(const [k,e] of Object.entries(FFB)){if(e.s!=='A')continue;const g=k.split(' ')[0],c=FFB_GEN[g];FFB_GEN[g]=c===1||e.es===1?1:(c===0||e.es===0)?0:-1}}const v=FFB_GEN[key];return v===undefined?{s:'N',h:1}:{s:'A',es:v,h:1}}
+  return {s:'?',h:1};   /* família e acima: precisa do arquivo atualizado pela rotina semanal */
+}
+const ffbEntry=s=>(s&&s.rank&&FFB_HI.includes(s.rank))?ffbHigher(s):ffbForNames(s.syn);
 function ffbBadge(s){
   if(!useFfb)return '–';
-  const e=ffbForNames(s.syn);
+  const e=ffbEntry(s);
+  if(e&&e.s==='?')return '<span title="Para conferir famílias, ordens e classes, atualize a base (rode a rotina semanal no GitHub: Actions → Run workflow)">–</span>';
   if(!e)return FFBRUN?'<small>…</small>':'–';
+  if(e.h){
+    const st2=e.s==='A'?'<span class="bdg ok" title="O nome consta na Flora e Funga do Brasil (há espécies deste grupo na lista)">consta</span>':'<span class="bdg bad" title="O nome não foi encontrado na Flora e Funga do Brasil">não consta</span>';
+    const es2=e.s==='N'?'':e.es===1?' <span class="bdg ok" title="Há espécies deste grupo com ocorrência no Espírito Santo segundo a lista">ES ✓</span>':e.es===0?' <span class="bdg warn" title="Nenhuma espécie deste grupo consta no Espírito Santo na lista: possível novo registro para o estado">ES ✗</span>':' <span class="bdg" title="Sem dados de distribuição">ES ?</span>';
+    return st2+es2;
+  }
   const st=e.s==='A'?'<span class="bdg ok" title="Nome aceito na Flora e Funga do Brasil">aceito</span>':e.s==='S'?`<span class="bdg warn" title="Sinônimo na Flora e Funga do Brasil. Nome aceito: ${esc(e.a)}">sin. → ${esc(e.a)}</span>`:'<span class="bdg bad" title="Nome não encontrado na Flora e Funga do Brasil">não consta</span>';
   const es=e.s==='N'?'':e.es===1?' <span class="bdg ok" title="O Espírito Santo consta na distribuição">ES ✓</span>':e.es===0?' <span class="bdg warn" title="O Espírito Santo não consta na distribuição: possível novo registro para o estado">ES ✗</span>':' <span class="bdg" title="Sem dados de distribuição">ES ?</span>';
   return st+es;
 }
-function ffbCols(s){const e=ffbForNames(s.syn);return e?[{A:'aceito',S:'sinonimo',N:'nao_consta'}[e.s],e.a||'',e.es===1?'sim':e.es===0?'nao':'sem_dado']:['','','']}
+function ffbCols(s){const e=ffbEntry(s);return e&&e.s!=='?'?[e.h?(e.s==='A'?'consta':'nao_consta'):{A:'aceito',S:'sinonimo',N:'nao_consta'}[e.s],e.a||'',e.es===1?'sim':e.es===0?'nao':'sem_dado']:['','','']}
 function ffbStats(sp){const o={A:0,S:0,N:0,pend:0};sp.forEach(s=>{const e=ffbForNames(s.syn);if(e)o[e.s]++;else o.pend++});return o}
 let FFBL={novos:[],sin:[],nc:[]};
 function ffbStatus(){
@@ -1456,7 +1608,7 @@ async function loadFfbFile(){
     const j=await r.json();if(!j||!j.names)return false;
     for(const k in FFB)delete FFB[k];
     for(const [k,v] of Object.entries(j.names))FFB[k]={s:v[0],a:v[1]||'',es:v[2]};
-    FFB_FILE=true;FFB_INFO=j;return true;
+    FFB_FILE=true;FFB_INFO=j;FFB_GEN=null;return true;
   }catch(e){return false}
 }
 
@@ -1558,19 +1710,24 @@ function renderAbout(){
     <h2>Palestras e apresentações</h2>${ABOUT.eventos.length?ABOUT.eventos.map(b=>`<div class="pub"><b>${esc(b.ano)}</b> · ${esc(b.ref)}</div>`).join(''):'<p>Não encontrei registros públicos de palestras e apresentações. Acrescente-os em <b>ABOUT.eventos</b> no começo do script.</p>'}
     <h2>Autoria desta ferramenta</h2><p>${esc(APP.nome)} · versão ${esc(APP.versao)} · desenvolvida por <b>${esc(APP.autor.titulo)} ${esc(APP.autor.nome)}</b>. Veja a aba “Como citar”.</p>`;
 }
+function dataRefs(){
+  const h=hojeBR();
+  return [['iNaturalist (projeto Funga Capixaba)',`iNaturalist contributors (${new Date().getFullYear()}). Observações do projeto Funga Capixaba. ${APP.inat}. Acesso em: ${h}.`],
+    ['GBIF',`GBIF.org (${h}). GBIF Occurrence Data, fungos do Espírito Santo. https://www.gbif.org. Para publicações, gere um download com DOI no GBIF: esta ferramenta consulta a API ao vivo e não cria DOI.`],
+    ['SiBBr',`Sistema de Informação sobre a Biodiversidade Brasileira (SiBBr). Ocorrências de fungos. https://www.sibbr.gov.br. Acesso em: ${h}.`],
+    ['JABOT (herbário RB e parceiros)',`Instituto de Pesquisas Jardim Botânico do Rio de Janeiro. JABOT, Banco de Dados da Flora e Funga do Brasil. https://jabot.jbrj.gov.br. Acesso em: ${h}.`],
+    ['speciesLink',`speciesLink network. Centro de Referência em Informação Ambiental (CRIA). https://specieslink.net. Acesso em: ${h}.`],
+    ['Funga Capixaba (lista de espécies)','Fraga Junior CAV, Gumboski EL, Feuerstein SC, Cáceres MES, Aptroot A & Magnago AC (2023) Funga Capixaba: Ascomycota and lichen-forming fungi. Rodriguésia 74: e00692022. https://doi.org/10.1590/2175-7860202374044'],
+    ['Flora e Funga do Brasil (checklist)','Brazil Flora G (2026). Flora e Funga do Brasil - Lista Oficial. Versão 393.430. Instituto de Pesquisas Jardim Botânico do Rio de Janeiro. Checklist dataset. https://doi.org/10.15468/1mtkaw'],
+    ['Limites municipais',`IBGE. Malhas geográficas (API de malhas). https://servicodados.ibge.gov.br/api/docs/malhas. Acesso em: ${h}.`],
+    ['Imagem de satélite','Imagery © Esri, Maxar, Earthstar Geographics e a comunidade de usuários GIS.']];
+}
 function renderCite(){
   const u=citeUrl()||'[endereço — informe em APP.url quando hospedar]',lk=APP.doi?`https://doi.org/${APP.doi}`:u,h=hojeBR();
   const abnt=`${APP.autor.abnt}. ${APP.nome}: ${APP.sub.charAt(0).toLowerCase()+APP.sub.slice(1)}. Versão ${APP.versao}. [S. l.]: [s. n.], ${APP.ano}. Software. Disponível em: ${lk}. Acesso em: ${h}.`;
   const apa=`${APP.autor.apa} (${APP.ano}). ${APP.nome}: ${APP.sub} (Versão ${APP.versao}) [Software]. ${lk}`;
   const bib=`@software{fraga${APP.ano}fungacapixaba,\n  author  = {${APP.autor.bib}},\n  title   = {${APP.nome}: ${APP.sub}},\n  year    = {${APP.ano}},\n  version = {${APP.versao}},\n  url     = {${lk}},\n  note    = {Acesso em: ${h}}\n}`;
-  const dados=[
-    ['iNaturalist (projeto Funga Capixaba)',`iNaturalist contributors (${new Date().getFullYear()}). Observações do projeto Funga Capixaba. ${APP.inat}. Acesso em: ${h}.`],
-    ['GBIF',`GBIF.org (${h}). GBIF Occurrence Data, fungos do Espírito Santo. https://www.gbif.org. Para publicações, gere um download com DOI no GBIF: esta ferramenta consulta a API ao vivo e não cria DOI.`],
-    ['SiBBr',`Sistema de Informação sobre a Biodiversidade Brasileira (SiBBr). Ocorrências de fungos. https://www.sibbr.gov.br. Acesso em: ${h}.`],
-    ['JABOT (herbário RB e parceiros)',`Instituto de Pesquisas Jardim Botânico do Rio de Janeiro. JABOT, Banco de Dados da Flora e Funga do Brasil. https://jabot.jbrj.gov.br. Acesso em: ${h}.`],
-    ['Flora e Funga do Brasil (checklist)','Brazil Flora G (2026). Flora e Funga do Brasil - Lista Oficial. Versão 393.430. Instituto de Pesquisas Jardim Botânico do Rio de Janeiro. Checklist dataset. https://doi.org/10.15468/1mtkaw'],
-    ['Limites municipais',`IBGE. Malhas geográficas (API de malhas). https://servicodados.ibge.gov.br/api/docs/malhas. Acesso em: ${h}.`],
-    ['Imagem de satélite','Imagery © Esri, Maxar, Earthstar Geographics e a comunidade de usuários GIS.']];
+  const dados=dataRefs();
   const box=(t,x)=>`<h4 style="margin:16px 0 4px">${t} <button type="button" class="link" data-copy="${esc(x)}">copiar</button></h4><div class="citebox">${esc(x)}</div>`;
   $('#citeBody').innerHTML=`<h2>Como citar esta ferramenta</h2>
     <p>Use uma das formas abaixo. A data de acesso é a de hoje, e o endereço vem de <b>APP.url</b> (ou do endereço atual, quando a página está hospedada).</p>
@@ -1823,7 +1980,7 @@ const HELP={
  'f.sin':H('Sinônimos na Funga do Brasil',{w:'Espécies registradas com um nome que hoje é sinônimo.',c:'Mostra o nome registrado e, depois da seta, o nome aceito na lista oficial. Vale para corrigir a identificação na origem.'}),
  'f.nc':H('Não constam na Funga do Brasil',{w:'Espécies cujo nome não foi encontrado na lista oficial.',c:'Pode ser erro de grafia, nome novo ainda não incluído, morfoespécie ou táxon fora do escopo da lista. Confira a grafia primeiro.',a:'A comparação usa gênero e epíteto; autores e “cf.” são ignorados.'}),
 
- 'col.ffb':H('Coluna Funga do Brasil',{w:'A situação do nome na lista oficial Flora e Funga do Brasil.',c:['<b>aceito</b>: nome vigente.','<b>sin. → nome</b>: sinônimo; o nome aceito aparece depois da seta.','<b>não consta</b>: nome não encontrado na lista.','<b>ES ✓ / ES ✗ / ES ?</b>: o Espírito Santo consta, não consta ou não há dados na distribuição da espécie. ES ✗ é um possível novo registro para o estado.']}),
+ 'col.ffb':H('Coluna Funga do Brasil',{w:'A situação do nome na lista oficial Flora e Funga do Brasil.',c:['<b>aceito</b>: nome vigente.','<b>sin. → nome</b>: sinônimo; o nome aceito aparece depois da seta.','<b>não consta</b>: nome não encontrado na lista.','<b>ES ✓ / ES ✗ / ES ?</b>: o Espírito Santo consta, não consta ou não há dados na distribuição da espécie. ES ✗ é um possível novo registro para o estado.','Para gênero, família, ordem e classe, <b>consta</b> significa que o nome existe na lista oficial (há espécies do grupo nela), e o selo ES indica se alguma delas ocorre no Espírito Santo.']}),
  'col.funga':H('Coluna Funga Capixaba (2023)',{w:'Se a espécie consta na lista de Fraga Jr. et al. (2023), Funga Capixaba: Ascomycota e fungos liquenizados.',c:'Compara gênero e epíteto da espécie, e dos sinônimos registrados, com os 525 nomes da tabela suplementar do artigo.',a:'A lista cobre só Ascomycota e fungos liquenizados. Para outros grupos, “não consta” reflete apenas o escopo da lista.'}),
 
  'q.cores':H('Como ler as cores',{w:'Verde, amarelo e rosa indicam se o percentual é bom, merece atenção ou é crítico.',c:['Com coordenadas: verde a partir de 80%, amarelo a partir de 50%.','Informa precisão: 70% e 30%. Precisão ≤ 1 km: 60% e 30%.','ID até espécie: 80% e 50%. Data, observador/coletor e município: 90% e 50%.','Altitude: 50% e 20%.'],q:'Os percentuais usam os registros filtrados.'}),
@@ -1876,6 +2033,7 @@ initChart();
 loadHash();fillSelects();
 (async()=>{
   const [base,hasCache]=await Promise.all([loadBase(),cacheLoad(),loadFfbFile(),loadFcap()]);
+  if($('#cfcap'))$('#cfcap').textContent=FCAP?fmt(FCAP.size):'–';
   const now=Date.now(),baseTs=base?(Date.parse(base.lastUpdated)||0):0;
   let mode='';
   if(base&&(!hasCache||baseTs>CACHE_TS)){            // base do repositório mais nova que o cache local (ou sem cache)

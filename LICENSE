@@ -1,0 +1,119 @@
+FUNGA CAPIXABA
+Sistema de integração de registros e monitoramento da Funga Capixaba
+
+Copyright © 2026 Carlos Augusto Vidigal Fraga Jr. Todos os direitos reservados.
+All rights reserved.
+
+================================================================================
+LICENÇA DE USO (PORTUGUÊS)
+================================================================================
+
+1. NATUREZA DO PROJETO
+
+Este é um projeto INDIVIDUAL, de autoria de Carlos Augusto Vidigal Fraga Jr.
+("Autor"), em desenvolvimento e aprimoramento contínuos. Não é um projeto
+colaborativo nem de código aberto. Seu conteúdo, seu funcionamento e sua
+disponibilidade podem mudar, ser corrigidos ou ser retirados a qualquer
+momento, sem aviso.
+
+2. O QUE ESTA LICENÇA ABRANGE
+
+Esta licença abrange a obra do Autor (a "Obra"): o código-fonte (HTML, CSS,
+JavaScript, scripts e fluxos de trabalho de automação), a estrutura e o design
+da interface, a identidade visual, os textos, as explicações e os materiais de
+apresentação (incluindo roteiros, legendas e vídeos) deste repositório e da
+página publicada a partir dele.
+
+3. DIREITOS RESERVADOS
+
+Nenhuma licença ou permissão, expressa ou implícita, é concedida sobre a Obra,
+exceto o que está descrito na seção 4. Sem autorização PRÉVIA e POR ESCRITO do
+Autor, é proibido:
+
+  a) copiar, reproduzir ou duplicar a Obra, no todo ou em parte;
+  b) modificar, adaptar, traduzir ou criar obras derivadas a partir da Obra;
+  c) distribuir, publicar, hospedar, sublicenciar, vender, alugar ou ceder a
+     Obra, no todo ou em parte, por qualquer meio;
+  d) usar a Obra, no todo ou em parte, como base de outro projeto, painel,
+     ferramenta ou serviço, inclusive de uso institucional, acadêmico ou
+     comercial;
+  e) remover, ocultar ou alterar os avisos de autoria e de direitos autorais.
+
+4. USOS PERMITIDOS
+
+  a) Acessar e usar o painel publicado pelo Autor, apenas para consulta,
+     estudo e pesquisa, sem copiar o código, o design ou os textos.
+  b) Citar o painel e os resultados exibidos, com a devida atribuição ao
+     Autor (há um modelo na aba "Como citar" do próprio painel).
+  c) Os usos que a lei permite independentemente de licença (por exemplo, as
+     limitações previstas na Lei nº 9.610/1998).
+  d) Nota sobre o GitHub: ao manter este repositório público, os Termos de
+     Serviço do GitHub permitem que outros usuários o visualizem e criem forks
+     dentro da própria plataforma. Isso não concede nenhum dos direitos
+     reservados na seção 3 fora desse contexto.
+
+5. PEDIDOS DE AUTORIZAÇÃO
+
+Pedidos de autorização devem ser feitos por escrito ao Autor, pelos canais de
+contato do projeto Funga Capixaba (Instagram @fungacapixaba e projeto
+"Funga Capixaba" no iNaturalist). A autorização só vale se for concedida por
+escrito e descrever o uso permitido, e vale apenas para esse uso.
+
+6. DADOS DE TERCEIROS E COMPONENTES
+
+Os dados exibidos pelo painel pertencem às suas fontes originais (iNaturalist,
+GBIF, JABOT/Jardim Botânico do Rio de Janeiro, SiBBr, speciesLink, Flora e
+Funga do Brasil, IBGE e outras) e seguem as licenças e os termos de uso de cada
+uma. Esta licença NÃO os cobre e não concede nem retira direitos sobre eles.
+A lista de espécies de Fraga Junior et al. (2023), publicada na Rodriguésia, é
+obra de acesso aberto sob licença própria (Creative Commons Attribution),
+que não é alterada por este documento. Bibliotecas de terceiros usadas pela
+página (por exemplo, Leaflet e Chart.js) mantêm as suas próprias licenças.
+
+7. AUSÊNCIA DE GARANTIA
+
+A Obra é fornecida "no estado em que se encontra", sem garantias de qualquer
+tipo, expressas ou implícitas, inclusive de adequação a uma finalidade
+específica. Por ser um projeto em aprimoramento, os dados e os cálculos
+exibidos podem conter erros ou omissões e devem ser conferidos nas fontes
+originais antes de qualquer uso científico, técnico ou de tomada de decisão.
+Na máxima extensão permitida pela lei, o Autor não responde por danos
+decorrentes do uso da Obra.
+
+8. DESCUMPRIMENTO
+
+O uso em desacordo com esta licença sujeita o responsável às medidas e às
+sanções previstas em lei, em especial na Lei nº 9.609/1998 (programas de
+computador) e na Lei nº 9.610/1998 (direitos autorais).
+
+================================================================================
+LICENSE (ENGLISH SUMMARY)
+================================================================================
+
+This is an individual project by Carlos Augusto Vidigal Fraga Jr. (the
+"Author"), under continuous development. It is not open source and not a
+collaborative project.
+
+All rights reserved. No permission is granted to copy, reproduce, modify,
+translate, adapt, distribute, publish, host, sublicense, sell, or create
+derivative works from the source code, design, texts or presentation materials
+of this project, in whole or in part, without the Author's prior written
+permission.
+
+Permitted: (a) accessing and using the published dashboard for personal
+consultation, study and research; (b) citing the dashboard and its results with
+proper attribution (see the "Como citar" tab); (c) uses allowed by law
+regardless of license; (d) as stated in the GitHub Terms of Service, viewing
+and forking this public repository within the GitHub platform, which does not
+grant any other right.
+
+Third-party data (iNaturalist, GBIF, JABOT/JBRJ, SiBBr, speciesLink, Flora e
+Funga do Brasil, IBGE and others) belong to their original sources and follow
+their own licenses and terms; this license does not cover them. Third-party
+libraries keep their own licenses.
+
+The work is provided "as is", without warranty of any kind. Data and
+calculations may contain errors and should be checked against the original
+sources. Requests for permission must be made in writing to the Author through
+the project's contact channels (Instagram @fungacapixaba and the "Funga
+Capixaba" project on iNaturalist).
